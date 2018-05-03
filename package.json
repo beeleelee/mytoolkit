@@ -1,0 +1,23 @@
+{
+  "name": "mytookit",
+  "version": "1.0.0",
+  "description": "Collection of javascript tools in my daily useage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/beeleelee/myToolkit.git"
+  },
+  "keywords": [
+    "javascript",
+    "toolkit"
+  ],
+  "author": "alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beeleelee/myToolkit/issues"
+  },
+  "homepage": "https://github.com/beeleelee/myToolkit#readme"
+}
