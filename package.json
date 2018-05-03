@@ -2,8 +2,9 @@
   "name": "mytookit",
   "version": "1.0.0",
   "description": "Collection of javascript tools in my daily useage.",
-  "main": "index.js",
+  "main": "mytoolkit.js",
   "scripts": {
+    "build": "rollup index.js --o mytoolkit.js --format es",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/beeleelee/myToolkit/issues"
   },
-  "homepage": "https://github.com/beeleelee/myToolkit#readme"
+  "homepage": "https://github.com/beeleelee/myToolkit#readme",
+  "devDependencies": {
+    "rollup": "^0.58.2"
+  }
 }
