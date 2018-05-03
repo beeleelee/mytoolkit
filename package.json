@@ -4,7 +4,7 @@
   "description": "Collection of javascript tools in my daily useage.",
   "main": "mytoolkit.js",
   "scripts": {
-    "build": "rollup index.js --o mytoolkit.js --format es",
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/beeleelee/myToolkit#readme",
   "devDependencies": {
-    "rollup": "^0.58.2"
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup-plugin-babel": "^3.0.4"
   }
 }

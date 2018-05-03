@@ -1,38 +1,49 @@
-const now = (function () {
-  let now;
+var now = function () {
+  var now = void 0;
   if (typeof performance !== 'undefined') {
-    now = () => performance.now();
+    now = function now() {
+      return performance.now();
+    };
   } else {
-    now = () => +new Date;
+    now = function now() {
+      return +new Date();
+    };
   }
-  return now
-})();
+  return now;
+}();
 
-const nextFrame = requestAnimationFrame;
-const subscribers = {};
-let id = 0, isTicking = false;
+var utils = /*#__PURE__*/Object.freeze({
+  now: now
+});
 
-const getId = () => id++;
-const add = func => {
-  let key = `clock_${getId()}`;
+var nextFrame = requestAnimationFrame;
+var subscribers = {};
+var id = 0,
+    isTicking = false;
+
+var getId = function getId() {
+  return id++;
+};
+var add = function add(func) {
+  var key = 'clock_' + getId();
   subscribers[key] = func;
   if (!isTicking) {
     tick();
   }
-  return key
+  return key;
 };
-const remove = id => {
+var remove = function remove(id) {
   if (subscribers[id]) {
     delete subscribers[id];
   }
 };
-const tick = () => {
-  let keys = Object.keys(subscribers);
+var tick = function tick() {
+  var keys = Object.keys(subscribers);
   if (keys.length === 0) {
     isTicking = false;
   } else {
-    let time = now();
-    keys.forEach(key => {
+    var time = now();
+    keys.forEach(function (key) {
       subscribers[key](time);
     });
     nextFrame(tick);
@@ -40,39 +51,64 @@ const tick = () => {
   }
 };
 
-
 var Clock = {
-  add,
-  remove
-}
+  add: add,
+  remove: remove
+};
 
-const noop = () => { };
-class Tween {
-  constructor({
-    duration = 0,
-    render,
-    target
-  }) {
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var noop = function noop() {};
+
+var Tween = function () {
+  function Tween(_ref) {
+    var _ref$duration = _ref.duration,
+        duration = _ref$duration === undefined ? 0 : _ref$duration,
+        render = _ref.render,
+        target = _ref.target;
+    classCallCheck(this, Tween);
+
     this.duration = duration;
     this.startTime = 0;
     this.currentTime = 0;
     this.render = render || noop;
     this.step = this.step.bind(this);
   }
-  start() {
+
+  Tween.prototype.start = function start() {
     this.startTime = this.currentTime = now();
     this.clockId = Clock.add(this.step);
-  }
-  stop() {
+  };
+
+  Tween.prototype.stop = function stop() {
     Clock.remove(this.clockId);
     this.clockId = null;
     console.log('tween stop');
-  }
-  step(time) {
+  };
+
+  Tween.prototype.step = function step(time) {
     this.currentTime = time;
-    let span = time - this.startTime;
-    let leftTime = this.duration - span;
-    let percent = 0;
+    var span = time - this.startTime;
+    var leftTime = this.duration - span;
+    var percent = 0;
     if (leftTime > 0) {
       //console.log(span / this.duration)
       percent = span / this.duration;
@@ -80,40 +116,44 @@ class Tween {
       percent = 1;
       this.stop();
     }
-    return percent
-  }
+    return percent;
+  };
 
-}
+  return Tween;
+}();
 
-class Deceleration {
-  constructor(options) {
+var Deceleration = function () {
+  function Deceleration(options) {
+    classCallCheck(this, Deceleration);
+
     this.step = this.step.bind(this);
     this.setOptions(options);
   }
-  setOptions(options = {}) {
-    let {
-      velocity,
-      resistance = 0.001
-    } = options;
+
+  Deceleration.prototype.setOptions = function setOptions() {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var velocity = options.velocity,
+        _options$resistance = options.resistance,
+        resistance = _options$resistance === undefined ? 0.001 : _options$resistance;
+
     if (velocity) {
       this.velocity = velocity;
     }
     this.resistance = resistance;
-    this.options = {
-      ...this.options,
-      ...options
-    };
-    return this
-  }
-  start() {
+    this.options = _extends({}, this.options, options);
+    return this;
+  };
+
+  Deceleration.prototype.start = function start() {
     this.startTime = this.prevTime = this.currentTime = now();
     this.sign = this.velocity > 0 ? 1 : -1;
     this.prevV = Math.abs(this.velocity);
     this.clockId = Clock.add(this.step);
 
-    return this
-  }
-  stop() {
+    return this;
+  };
+
+  Deceleration.prototype.stop = function stop() {
     Clock.remove(this.clockId);
     this.clockId = null;
     console.log('deceleration stop');
@@ -121,12 +161,13 @@ class Deceleration {
       this.options.onEnd();
     }
 
-    return this
-  }
-  step(time) {
+    return this;
+  };
+
+  Deceleration.prototype.step = function step(time) {
     this.currentTime = time;
-    let span = time - this.prevTime;
-    let v = this.prevV;
+    var span = time - this.prevTime;
+    var v = this.prevV;
     if (v <= 0) {
       console.log('will stop dec', v);
       v = 0;
@@ -134,7 +175,7 @@ class Deceleration {
     } else {
 
       //console.log(span)
-      let displacement = v * span - (this.resistance * Math.pow(span, 2)) / 2;
+      var displacement = v * span - this.resistance * Math.pow(span, 2) / 2;
 
       console.log(this.sign * displacement, v);
       if (this.options.onStep) {
@@ -144,21 +185,24 @@ class Deceleration {
       this.prevTime = this.currentTime;
       this.prevV = this.prevV - this.resistance * span;
     }
-  }
-}
+  };
+
+  return Deceleration;
+}();
 
 Array.prototype.last = function (from) {
   from = from || 1;
   if (this.length - from < 0) {
-    return this[0]
+    return this[0];
   }
-  return this[this.length - from]
+  return this[this.length - from];
 };
 
 var index = {
-  Clock,
-  Tween,
-  Deceleration
-}
+  Clock: Clock,
+  Tween: Tween,
+  Deceleration: Deceleration
+};
 
 export default index;
+export { utils as Utils, Clock, Tween, Deceleration };
