@@ -2,7 +2,7 @@
   "name": "mytoolkit",
   "version": "1.0.0",
   "description": "Collection of javascript tools in my daily useage.",
-  "main": "mytoolkit.js",
+  "main": "dist/mytoolkit.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"

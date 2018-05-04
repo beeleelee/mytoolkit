@@ -3,7 +3,6 @@
 .Ds_Store
 *.log
 node_modules
-dist
 .idea/
 .yarn-cache
 .cache
