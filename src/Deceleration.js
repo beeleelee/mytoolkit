@@ -15,10 +15,7 @@ export default class Deceleration {
       this.velocity = velocity
     }
     this.resistance = resistance
-    this.options = {
-      ...this.options,
-      ...options
-    }
+    this.options = Object.assign({}, this.options, options)
     return this
   }
   start() {

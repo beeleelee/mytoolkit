@@ -15,10 +15,7 @@ export default class Tween {
     } = options
     this.duration = duration
     
-    this.options = {
-      ...this.options,
-      ...options
-    }
+    this.options = Object.assign({}, this.options, options)
     
   }
   start() {

@@ -1,6 +1,6 @@
 {
   "name": "mytoolkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collection of javascript tools in my daily useage.",
   "main": "dist/mytoolkit.js",
   "scripts": {
