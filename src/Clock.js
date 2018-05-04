@@ -1,6 +1,6 @@
 import { now } from './utils'
 
-const nextFrame = requestAnimationFrame
+const nextFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame
 const subscribers = {}
 let id = 0, isTicking = false
 
