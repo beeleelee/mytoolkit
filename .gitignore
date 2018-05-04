@@ -7,3 +7,4 @@ node_modules
 .yarn-cache
 .cache
 package-lock.json
+/dist
