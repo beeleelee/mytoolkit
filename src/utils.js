@@ -1,3 +1,5 @@
+import './augment'
+
 export const now = (function () {
   let now
   if (typeof performance !== 'undefined') {
