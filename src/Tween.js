@@ -16,7 +16,6 @@ export default class Tween {
     this.duration = duration
     
     this.options = Object.assign({}, this.options, options)
-    
   }
   start() {
     this.startTime = this.currentTime = currentTime()
@@ -34,7 +33,7 @@ export default class Tween {
     if(this.options.onEnd){
       this.options.onEnd(this)
     }
-    console.log('tween stop')
+    // console.log('tween stop')
   }
   step(time) {
     this.currentTime = time
@@ -55,5 +54,4 @@ export default class Tween {
       this.stop()
     }
   }
-
 }

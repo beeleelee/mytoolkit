@@ -1,5 +1,5 @@
-import { now } from './utils'
-import Clock from './Clock'
+import currentTime from './currentTime'
+import tick from './tick'
 
 export default class Deceleration {
   constructor(options) {
@@ -19,15 +19,15 @@ export default class Deceleration {
     return this
   }
   start() {
-    this.prevTime = this.currentTime = now()
+    this.prevTime = this.currentTime = currentTime()
     this.sign = this.velocity > 0 ? 1 : -1
     this.prevV = Math.abs(this.velocity)
-    this.clockId = Clock.add(this.step)
+    this.clockId = tick.add(this.step)
 
     return this
   }
   stop() {
-    Clock.remove(this.clockId)
+    tick.remove(this.clockId)
     this.clockId = null
     //console.log('deceleration stop')
     if (this.options.onEnd) {
