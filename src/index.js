@@ -8,6 +8,7 @@ import fillZero from './fillZero'
 import IDFactory from './IDFactory'
 import randInt from './randInt'
 import randStr from './randStr'
+import setStyle from './setStyle'
 
 export {
   currentTime,
@@ -20,4 +21,5 @@ export {
   IDFactory,
   randInt,
   randStr,
+  setStyle,
 }
