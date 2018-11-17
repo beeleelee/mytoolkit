@@ -2,7 +2,7 @@
   "name": "mytoolkit",
   "version": "1.1.0",
   "description": "my javascript toolkit",
-  "main": "dist/mytoolkit.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && babel src --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,5 +27,6 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "rimraf": "^2.6.2"
-  }
+  },
+  "dependencies": {}
 }
