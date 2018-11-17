@@ -5,6 +5,8 @@ import Deceleration from './deceleration'
 import typeOf from './typeOf'
 import addComma from './addComma'
 import fillZero from './fillZero'
+import IDFactory from './IDFactory'
+import randInt from './randInt'
 
 export {
   currentTime,
@@ -14,4 +16,6 @@ export {
   typeOf,
   addComma,
   fillZero,
+  IDFactory,
+  randInt,
 }
