@@ -1,5 +1,5 @@
-import Clock from './Clock'
-import { now } from './utils'
+import tick from './tick'
+import currentTime from './currentTime'
 
 export default class Tween {
   constructor(options){
@@ -19,11 +19,16 @@ export default class Tween {
     
   }
   start() {
-    this.startTime = this.currentTime = now()
-    this.clockId = Clock.add(this.step)
+    this.startTime = this.currentTime = currentTime()
+    this.clockId = tick.add(this.step)
+    return this
+  }
+  pause() {
+    tick.remove(this.clockId)
+    this.clockId = null 
   }
   stop() {
-    Clock.remove(this.clockId)
+    tick.remove(this.clockId)
     this.clockId = null
     this.percent = 0
     if(this.options.onEnd){

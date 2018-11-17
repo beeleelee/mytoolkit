@@ -1,6 +1,12 @@
-import { now } from './utils'
+import currentTime from './currentTime'
 
-const nextFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame
+const nextFrame = (function () {
+  if(typeof window !== 'undefined'){
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame
+  }
+  return func => setTimeout(func, 1000 / 60)
+})()
+
 const subscribers = {}
 let id = 0, isTicking = false
 
@@ -23,7 +29,7 @@ const tick = () => {
   if (keys.length === 0) {
     isTicking = false
   } else {
-    let time = now()
+    let time = currentTime()
     keys.forEach(key => {
       subscribers[key](time)
     })
@@ -31,7 +37,6 @@ const tick = () => {
     isTicking = true
   }
 }
-
 
 export default {
   add,

@@ -6,5 +6,4 @@ node_modules
 .idea/
 .yarn-cache
 .cache
-package-lock.json
 /dist

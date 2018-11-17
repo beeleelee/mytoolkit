@@ -1,15 +1,15 @@
 {
   "name": "mytoolkit",
-  "version": "1.0.3",
-  "description": "Collection of javascript tools in my daily useage.",
+  "version": "1.1.0",
+  "description": "my javascript toolkit",
   "main": "dist/mytoolkit.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rimraf dist && babel src --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/beeleelee/myToolkit.git"
+    "url": "git+ssh://git@github.com/beeleelee/mytoolkit.git"
   },
   "keywords": [
     "javascript",
@@ -18,15 +18,14 @@
   "author": "alex",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/beeleelee/myToolkit/issues"
+    "url": "https://github.com/beeleelee/mytoolkit/issues"
   },
-  "homepage": "https://github.com/beeleelee/myToolkit#readme",
+  "homepage": "https://github.com/beeleelee/mytoolkit#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-uglify": "^3.0.0"
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "rimraf": "^2.6.2"
   }
 }

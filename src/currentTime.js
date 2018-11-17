@@ -1,6 +1,4 @@
-import './augment'
-
-export const now = (function () {
+export const currentTime = (function () {
   let now
   if (typeof performance !== 'undefined') {
     now = () => performance.now()
@@ -9,3 +7,5 @@ export const now = (function () {
   }
   return now
 })()
+
+export default currentTime
