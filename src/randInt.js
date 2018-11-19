@@ -1,6 +1,6 @@
 import typeOf from './typeOf.js'
 
-export default function randInt(min, max) {
+export function randInt(min, max) {
   min = parseInt(min)
   max = parseInt(max)
   if(typeOf(min) !== 'Number'){
@@ -13,3 +13,5 @@ export default function randInt(min, max) {
   }
   return Math.floor(Math.random() * (max - min) + min)
 }
+
+export default randInt

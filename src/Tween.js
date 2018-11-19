@@ -1,7 +1,7 @@
 import tick from './tick'
 import currentTime from './currentTime'
 
-export default class Tween {
+export class Tween {
   constructor(options){
     this.startTime = 0
     this.currentTime = 0
@@ -55,3 +55,5 @@ export default class Tween {
     }
   }
 }
+
+export default Tween 

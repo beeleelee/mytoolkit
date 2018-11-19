@@ -4,7 +4,7 @@ import Tween from './tween'
 import Deceleration from './deceleration'
 import typeOf from './typeOf'
 import addComma from './addComma'
-import fillZero from './fillZero'
+import padZero from './padZero'
 import IDFactory from './IDFactory'
 import randInt from './randInt'
 import randStr from './randStr'
@@ -17,7 +17,7 @@ export {
   Deceleration,
   typeOf,
   addComma,
-  fillZero,
+  padZero,
   IDFactory,
   randInt,
   randStr,

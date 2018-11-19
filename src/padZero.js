@@ -1,6 +1,6 @@
 import typeOf from './typeOf'
 
-export default function fillZero(num, size = 2) {
+export function padZero(num, size = 2) {
   let numberToFill = parseFloat(num)
   if(typeOf(numberToFill) !== 'Number'){
     throw new TypeError('fillZero needs number for its first parameter!')
@@ -14,3 +14,5 @@ export default function fillZero(num, size = 2) {
   
   return Array.from({length: fillSize}).map(item => 0).join('') + numberToFill
 }
+
+export default padZero

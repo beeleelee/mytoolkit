@@ -12,7 +12,7 @@ const setSingleStyle = (ele, name, value) => {
   }
 }
 
-const setStyle = (ele, name, value) => {
+export const setStyle = (ele, name, value) => {
   if(typeOf(name) === 'Object') {
     Object.keys(name)
       .map(n => {
@@ -49,3 +49,5 @@ function getStyleKeys() {
 
   return styleKeys
 }
+
+export default setStyle 

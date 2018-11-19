@@ -37,8 +37,9 @@ const tick = () => {
     isTicking = true
   }
 }
-
-export default {
+export const _tick = {
   add,
-  remove
+  remove 
 }
+
+export default _tick

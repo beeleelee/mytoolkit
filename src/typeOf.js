@@ -1,4 +1,4 @@
-export default function typeOf(obj) {
+export function typeOf(obj) {
   let objName = Object.prototype.toString.call(obj)
   objName = objName.slice(8, -1)
   if(objName === 'Number' && isNaN(obj)){
@@ -6,3 +6,5 @@ export default function typeOf(obj) {
   }
   return objName 
 }
+
+export default typeOf 

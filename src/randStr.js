@@ -1,7 +1,7 @@
 import typeOf from './typeOf'
 import randInt from './randInt'
 
-export default function randStr(size = 6, sourceCode) {
+export function randStr(size = 6, sourceCode) {
   let code = '0123456789abcdefghijklmnopqrstuvwxyzsABCDEFGHIJKLMNOPQRSTUVWXYZ'
   let characters = Array.from({length: size})
 
@@ -12,3 +12,5 @@ export default function randStr(size = 6, sourceCode) {
   
   return characters.map(() => code[randInt(codeLength)]).join('')
 }
+
+export default randStr

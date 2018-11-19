@@ -1,7 +1,7 @@
 import currentTime from './currentTime'
 import tick from './tick'
 
-export default class Deceleration {
+export class Deceleration {
   constructor(options) {
     this.step = this.step.bind(this)
     this.setOptions(options)
@@ -58,3 +58,5 @@ export default class Deceleration {
     }
   }
 }
+
+export default Deceleration

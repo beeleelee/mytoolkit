@@ -1,6 +1,6 @@
 import typeOf from './typeOf'
 
-export default function addComma(num) {
+export function addComma(num) {
   let numberToAddComma = parseFloat(num)
   if (typeOf(numberToAddComma) !== 'Number') {
     throw new TypeError('addComma need number form its parameter!')
@@ -11,3 +11,5 @@ export default function addComma(num) {
   let mod = base.length > 3 ? base.length % 3 : 0
   return sign + (mod ? base.substr(0, mod) + ',' : '') + base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1,') + decimal
 }
+
+export default addComma 
