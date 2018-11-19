@@ -43,6 +43,7 @@ function getStyleKeys() {
   styleKeys = keys.reduce((res, key) => {
     let name = key.replace(/^webkit(\w)/, (a, s) => s.toLowerCase())
     res[name] = key 
+    return res 
   }, {})
 
   divElement = null 
