@@ -26,7 +26,7 @@ export const setStyle = (ele, name, value) => {
 function checkVendorPrefix(name) {
   let styleKeys = getStyleKeys()
 
-  return stylekeys[name] || name
+  return styleKeys[name] || name
 }
 
 function getStyleKeys() {

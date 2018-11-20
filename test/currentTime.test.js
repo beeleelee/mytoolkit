@@ -1,10 +1,12 @@
 import test from 'ava'
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
-  currentTime
+  currentTime,
+  typeOf
 } = mytoolkit 
 
 test('currentTime', t => {
-  console.log(currentTime())
-  t.pass()
+  let time = currentTime()
+  t.is(typeOf(time), 'Number')
+  t.is(String(time).length, 13)
 })

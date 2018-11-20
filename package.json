@@ -1,6 +1,6 @@
 {
   "name": "mytoolkit",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "my javascript toolkit",
   "main": "dist/mytoolkit.cjs.js",
   "module": "dist/mytoolkit.esm.js",
@@ -31,6 +31,7 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "ava": "1.0.0-rc.2",
+    "browser-env": "^3.2.5",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3",
