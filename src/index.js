@@ -9,6 +9,7 @@ import IDFactory from './IDFactory'
 import randInt from './randInt'
 import randStr from './randStr'
 import setStyle from './setStyle'
+import deepCopy from './deepCopy'
 
 export {
   currentTime,
@@ -22,4 +23,5 @@ export {
   randInt,
   randStr,
   setStyle,
+  deepCopy,
 }
