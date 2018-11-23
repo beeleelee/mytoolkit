@@ -32,6 +32,8 @@
     "@babel/preset-env": "^7.1.6",
     "ava": "1.0.0-rc.2",
     "browser-env": "^3.2.5",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3",
