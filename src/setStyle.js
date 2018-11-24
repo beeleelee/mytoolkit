@@ -7,7 +7,7 @@ const setSingleStyle = (ele, name, value) => {
     throw new Error('missing HTML node element for setStyle!')
   }
   name = checkVendorPrefix(name)
-  if(name && value){
+  if(typeOf(name) !== 'Undefined' && typeOf(value) !== 'Undefined'){
     ele.style[name] = value
   }
 }

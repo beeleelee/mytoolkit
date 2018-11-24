@@ -6,7 +6,11 @@ const {
 
 test('typeOf', t => {
   t.is(typeOf(NaN), 'NaN')
-  t.is(typeOf(4), 'Number')
+  t.is(typeOf(0), 'Number')
   t.is(typeOf({}), 'Object')
   t.is(typeOf([]), 'Array')
+  t.is(typeOf(), 'Undefined')
+  t.is(typeOf(null), 'Null')
+  t.is(typeOf(/.+/), 'RegExp')
+  t.is(typeOf(false), 'Boolean')
 })
