@@ -36,8 +36,8 @@ function getStyleKeys() {
     throw new Error('missing document!')
   }
 
-  let divElement = document.createElement('div')
-  let keys = Object.keys(divElement.style).filter(
+  let computedStyles = Array.from(getComputedStyle(document.body))
+  let keys = Object.keys(computedStyles).filter(
     key => /^webkit(transform|transition)$/i.test(key)
   )
   styleKeys = keys.reduce((res, key) => {
@@ -45,8 +45,6 @@ function getStyleKeys() {
     res[name] = key 
     return res 
   }, {})
-
-  divElement = null 
 
   return styleKeys
 }
