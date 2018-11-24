@@ -12,6 +12,7 @@ import setStyle from './setStyle'
 import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
+import stampToDS from './stampToDS'
 
 export {
   currentTime,
@@ -28,4 +29,5 @@ export {
   deepCopy,
   trim,
   timestamp,
+  stampToDS,
 }
