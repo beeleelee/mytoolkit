@@ -11,6 +11,7 @@ import randStr from './randStr'
 import setStyle from './setStyle'
 import deepCopy from './deepCopy'
 import trim from './trim'
+import timestamp from './timestamp'
 
 export {
   currentTime,
@@ -26,4 +27,5 @@ export {
   setStyle,
   deepCopy,
   trim,
+  timestamp,
 }
