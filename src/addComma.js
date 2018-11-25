@@ -1,5 +1,9 @@
 import typeOf from './typeOf'
-
+/**
+ * 
+ * @param {String|Number} num -  1000 | 10000000.001
+ * @returns {String} 1,000 | 10,000,000.001
+ */
 export function addComma(num) {
   let numberToAddComma = parseFloat(num)
   if (typeOf(numberToAddComma) !== 'Number') {
