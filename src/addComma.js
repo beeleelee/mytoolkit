@@ -7,7 +7,7 @@ export function addComma(num) {
   }
   let sign = numberToAddComma < 0 ? '-' : ''
   let base = parseInt(Math.abs(numberToAddComma)) + ''
-  let decimal = (numberToAddComma + '').replace(/\-?\d*/, '')
+  let decimal = (numberToAddComma + '').replace(/-?\d*/, '')
   let mod = base.length > 3 ? base.length % 3 : 0
   return sign + (mod ? base.substr(0, mod) + ',' : '') + base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1,') + decimal
 }
