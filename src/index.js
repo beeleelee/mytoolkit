@@ -13,6 +13,7 @@ import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
 import stampToDS from './stampToDS'
+import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
 
 export {
   currentTime,
@@ -30,4 +31,6 @@ export {
   trim,
   timestamp,
   stampToDS,
+  padStart,
+  padEnd
 }

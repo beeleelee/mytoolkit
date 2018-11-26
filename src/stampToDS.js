@@ -11,7 +11,7 @@ const supportedFormats = [
 /**
  * 
  * @param {String|Number} stamp - timestamp, maybe miniseconds
- * @param {String} format - supported format as follow:
+ * @param {String} [format] - supported format as follow:
  *                          'yyyy-mm-dd hh:mm:ss'
  *                          'yyyy-mm-dd hh:mm'
  *                          'yyyy-mm-dd'
