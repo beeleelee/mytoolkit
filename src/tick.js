@@ -1,4 +1,4 @@
-import currentTime from './currentTime'
+import performanceNow from './performanceNow'
 
 const nextFrame = (function () {
   if(typeof window !== 'undefined'){
@@ -29,7 +29,7 @@ const tick = () => {
   if (keys.length === 0) {
     isTicking = false
   } else {
-    let time = currentTime()
+    let time = performanceNow()
     keys.forEach(key => {
       subscribers[key](time)
     })

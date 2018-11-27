@@ -1,11 +1,3 @@
-export const currentTime = (function () {
-  let now
-  if (typeof performance !== 'undefined') {
-    now = () => performance.now()
-  } else {
-    now = () => +new Date
-  }
-  return now
-})()
+export const currentTime = () => +new Date
 
 export default currentTime

@@ -1,4 +1,5 @@
 import currentTime from './currentTime'
+import performanceNow from './performanceNow'
 import tick from './tick'
 import Tween from './tween'
 import Deceleration from './deceleration'
@@ -17,6 +18,7 @@ import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
 
 export {
   currentTime,
+  performanceNow,
   tick,
   Tween,
   Deceleration,

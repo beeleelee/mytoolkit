@@ -1,5 +1,5 @@
 import tick from './tick'
-import currentTime from './currentTime'
+import performanceNow from './performanceNow'
 
 export class Tween {
   constructor(options){
@@ -18,7 +18,7 @@ export class Tween {
     this.options = Object.assign({}, this.options, options)
   }
   start() {
-    this.startTime = this.currentTime = currentTime()
+    this.startTime = this.currentTime = performanceNow()
     this.clockId = tick.add(this.step)
     return this
   }

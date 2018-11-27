@@ -1,4 +1,4 @@
-import currentTime from './currentTime'
+import performanceNow from './performanceNow'
 import tick from './tick'
 
 export class Deceleration {
@@ -19,7 +19,7 @@ export class Deceleration {
     return this
   }
   start() {
-    this.prevTime = this.currentTime = currentTime()
+    this.prevTime = this.currentTime = performanceNow()
     this.sign = this.velocity > 0 ? 1 : -1
     this.prevV = Math.abs(this.velocity)
     this.clockId = tick.add(this.step)
