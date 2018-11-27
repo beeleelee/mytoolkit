@@ -16,6 +16,7 @@ import timestamp from './timestamp'
 import stampToDS from './stampToDS'
 import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
 import addKey from './addKey'
+import isSet from './isSet'
 
 export {
   currentTime,
@@ -37,4 +38,5 @@ export {
   padStart,
   padEnd,
   addKey,
+  isSet,
 }
