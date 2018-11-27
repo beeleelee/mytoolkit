@@ -18,13 +18,14 @@ import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
 import addKey from './addKey'
 import isSet from './isSet'
 import charLength from './charLength'
+import isUInt from './isUInt'
 
 export {
+  Tween,
+  Deceleration,
   currentTime,
   performanceNow,
   tick,
-  Tween,
-  Deceleration,
   typeOf,
   addComma,
   padZero,
@@ -39,6 +40,7 @@ export {
   padStart,
   padEnd,
   addKey,
-  isSet,
   charLength,
+  isSet,
+  isUInt,
 }
