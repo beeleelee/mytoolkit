@@ -53,7 +53,7 @@ export function _dateConvert(from = currentTime(), targetType = 'dateString', fo
 }
 
 function secondsConvert(from, targetType, format) {
-  if(targetType !== 'date' || targetType !== 'dateString'){
+  if(!(targetType === 'date' || targetType === 'dateString')){
     throw new TypeError(`unexpected targetType: ${targetType}`)
   }
 
