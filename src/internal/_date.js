@@ -73,17 +73,43 @@ function DSConvert(from, targetType) {
   if(targetType === 'dateString'){
     return from 
   }
-  let reg1 = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/
-  let reg2 = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/
-  let reg3 = /^\d{4}-\d{2}-\d{2}$/
-  let reg4 = /^\d{4}-\d{2}$/
-  let reg5 = /^\d{2}:\d{2}:\d{2}$/
-  let reg6 = /^\d{2}:\d{2}$/
-  let year, month, date, hours, minutes, seconds
-  if(reg1.test(from)){
-
+  let reg1 = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/
+  let reg2 = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})$/
+  let reg3 = /^(\d{4})-(\d{2})-(\d{2})$/
+  let reg4 = /^(\d{4})-(\d{2})$/
+  let reg5 = /^(\d{2}):(\d{2}):(\d{2})$/
+  let reg6 = /^(\d{2}):(\d{2})$/
+  let today = new Date()
+  let DS = String(from)
+  let match, d
+  if(match = DS.match(reg1)){
+    d = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6])
   }
-  
+  if(match = DS.match(reg2)){
+    d = new Date(match[1], match[2] - 1, match[3], match[4], match[5])
+  }
+  if(match = DS.match(reg3)){
+    d = new Date(match[1], match[2] - 1, match[3])
+  }
+  if(match = DS.match(reg4)){
+    d = new Date(match[1], match[2] - 1)
+  }
+  if(match = DS.match(reg5)){
+    d = new Date(today.getFullYear(), today.getMonth(), today.getDate(), match[1], match[2], match[3])
+  }
+  if(match = DS.match(reg6)){
+    d = new Date(today.getFullYear(), today.getMonth(), today.getDate(), match[1], match[2])
+  }
+  if(!d){
+    throw new Error('unexpected input!')
+  }
+  if(targetType === 'seconds'){
+    return Math.round(d.getTime() / 1000)
+  }
+  if(targetType === 'miniseconds'){
+    return d.getTime()
+  }
+  return d 
 }
 
 function DConvert(from, targetType, format) {
