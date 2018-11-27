@@ -73,6 +73,16 @@ function DSConvert(from, targetType) {
   if(targetType === 'dateString'){
     return from 
   }
+  let reg1 = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/
+  let reg2 = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/
+  let reg3 = /^\d{4}-\d{2}-\d{2}$/
+  let reg4 = /^\d{4}-\d{2}$/
+  let reg5 = /^\d{2}:\d{2}:\d{2}$/
+  let reg6 = /^\d{2}:\d{2}$/
+  let year, month, date, hours, minutes, seconds
+  if(reg1.test(from)){
+
+  }
   
 }
 
