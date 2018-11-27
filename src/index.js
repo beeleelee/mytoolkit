@@ -15,6 +15,7 @@ import trim from './trim'
 import timestamp from './timestamp'
 import stampToDS from './stampToDS'
 import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
+import addKey from './addKey'
 
 export {
   currentTime,
@@ -34,5 +35,6 @@ export {
   timestamp,
   stampToDS,
   padStart,
-  padEnd
+  padEnd,
+  addKey,
 }
