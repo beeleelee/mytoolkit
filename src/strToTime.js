@@ -6,8 +6,8 @@ import { _dateConvert } from './internal/_date'
 /**
  * 
  * @param {Sting} dateString 
- * @param {Boolean} seconds - true | false
  * @param {String} format - supported formats
+ * @param {Boolean} seconds - true | false
  * 
  * @returns {String} - '1543047456700'
  */
