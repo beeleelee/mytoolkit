@@ -13,7 +13,7 @@ import setStyle from './setStyle'
 import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
-import stampToDS from './stampToDS'
+import timeToStr from './timeToStr'
 import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
 import addKey from './addKey'
 import isSet from './isSet'
@@ -37,7 +37,7 @@ export {
   deepCopy,
   trim,
   timestamp,
-  stampToDS,
+  timeToStr,
   padStart,
   padEnd,
   addKey,
