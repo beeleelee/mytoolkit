@@ -5,7 +5,6 @@ const {
 } = mytoolkit 
 
 test('randInt', t => {
-  console.log(randInt(5))
   t.true(randInt(5) < 5)
   t.true(randInt(5) < 5)
   t.true(randInt(5) < 5)

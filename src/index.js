@@ -13,15 +13,22 @@ import setStyle from './setStyle'
 import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
-import stampToDS from './stampToDS'
+import timeToStr from './timeToStr'
+import strToTime from './strToTime'
+import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
+import addKey from './addKey'
+import isSet from './isSet'
+import charLength from './charLength'
+import isUInt from './isUInt'
+import isEmail from './isEmail'
 
 export {
+  Tween,
+  Deceleration,
   currentTime,
   performanceNow,
   tick,
-  Tween,
-  Deceleration,
   typeOf,
   addComma,
   padZero,
@@ -32,7 +39,14 @@ export {
   deepCopy,
   trim,
   timestamp,
-  stampToDS,
+  timeToStr,
+  strToTime,
+  strToDate,
   padStart,
-  padEnd
+  padEnd,
+  addKey,
+  charLength,
+  isSet,
+  isUInt,
+  isEmail,
 }
