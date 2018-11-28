@@ -14,6 +14,7 @@ import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
 import timeToStr from './timeToStr'
+import strToTime from './strToTime'
 import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
 import addKey from './addKey'
@@ -39,6 +40,7 @@ export {
   trim,
   timestamp,
   timeToStr,
+  strToTime,
   strToDate,
   padStart,
   padEnd,
