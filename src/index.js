@@ -19,6 +19,7 @@ import addKey from './addKey'
 import isSet from './isSet'
 import charLength from './charLength'
 import isUInt from './isUInt'
+import isEmail from './isEmail'
 
 export {
   Tween,
@@ -43,4 +44,5 @@ export {
   charLength,
   isSet,
   isUInt,
+  isEmail,
 }
