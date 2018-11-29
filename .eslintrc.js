@@ -6,6 +6,7 @@ module.exports = {
         "node": true
     },
     "extends": "eslint:recommended",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -17,6 +18,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/prop-types": 0,
         "indent": [
             "error",
             2
