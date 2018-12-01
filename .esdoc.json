@@ -1,6 +1,7 @@
 {
   "source": "./src",
   "destination": "./docs",
+  "excludes": ["_date.js", "_easing.js", "_pad.js"],
   "plugins": [
     {
       "name": "esdoc-standard-plugin"

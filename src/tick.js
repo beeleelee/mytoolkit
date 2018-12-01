@@ -15,7 +15,7 @@ const add = func => {
   let key = `clock_${getId()}`
   subscribers[key] = func
   if (!isTicking) {
-    tick()
+    nextTick()
   }
   return key
 }
@@ -24,7 +24,7 @@ const remove = id => {
     delete subscribers[id]
   }
 }
-const tick = () => {
+const nextTick = () => {
   let keys = Object.keys(subscribers)
   if (keys.length === 0) {
     isTicking = false
@@ -33,13 +33,13 @@ const tick = () => {
     keys.forEach(key => {
       subscribers[key](time)
     })
-    nextFrame(tick)
+    nextFrame(nextTick)
     isTicking = true
   }
 }
-export const _tick = {
+export const tick = {
   add,
   remove 
 }
 
-export default _tick
+export default tick

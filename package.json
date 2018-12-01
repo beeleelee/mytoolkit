@@ -1,6 +1,6 @@
 {
   "name": "mytoolkit",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "my javascript toolkit",
   "main": "dist/mytoolkit.cjs.js",
   "module": "dist/mytoolkit.esm.js",
@@ -32,6 +32,7 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "ava": "1.0.0-rc.2",
+    "babel-eslint": "^10.0.1",
     "browser-env": "^3.2.5",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
@@ -44,5 +45,7 @@
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-uglify": "^6.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bezier-easing": "^2.1.0"
+  }
 }

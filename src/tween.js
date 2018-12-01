@@ -1,20 +1,24 @@
 import tick from './tick'
 import performanceNow from './performanceNow'
+import * as TimeFunction from './internal/_easing'
+
+const defaultEase = a => a
 
 export class Tween {
-  constructor(options){
+  constructor(options) {
     this.startTime = 0
     this.currentTime = 0
-    this.percent = 0 
+    this.percent = 0
     this.setOptions(options)
     this.step = this.step.bind(this)
   }
-  setOptions(options = {}){
+  setOptions(options = {}) {
     let {
-      duration = 0
+      duration = 0,
+      ease = 'easeInOutCubic',
     } = options
     this.duration = duration
-    
+    this.ease = TimeFunction[ease] || defaultEase
     this.options = Object.assign({}, this.options, options)
   }
   start() {
@@ -24,13 +28,13 @@ export class Tween {
   }
   pause() {
     tick.remove(this.clockId)
-    this.clockId = null 
+    this.clockId = null
   }
   stop() {
     tick.remove(this.clockId)
     this.clockId = null
     this.percent = 0
-    if(this.options.onEnd){
+    if (this.options.onEnd) {
       this.options.onEnd(this)
     }
     // console.log('tween stop')
@@ -45,12 +49,12 @@ export class Tween {
       this.percent = span / this.duration
     } else {
       this.percent = 1
-      shouldStop = true 
+      shouldStop = true
     }
-    if(this.options.onStep){
-      this.options.onStep(this, this.percent)
+    if (this.options.onStep) {
+      this.options.onStep(this, this.ease(this.percent))
     }
-    if(shouldStop){
+    if (shouldStop) {
       this.stop()
     }
   }

@@ -18,30 +18,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "mytoolkit/src/internal/_date.js~_dateconvert",
-    "function/index.html#static-function-_dateConvert",
-    "<span>_dateConvert</span> <span class=\"search-result-import-path\">mytoolkit/src/internal/_date.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/internal/_pad.js~_padend",
-    "function/index.html#static-function-_padEnd",
-    "<span>_padEnd</span> <span class=\"search-result-import-path\">mytoolkit/src/internal/_pad.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/internal/_pad.js~_padstart",
-    "function/index.html#static-function-_padStart",
-    "<span>_padStart</span> <span class=\"search-result-import-path\">mytoolkit/src/internal/_pad.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/tick.js~_tick",
-    "variable/index.html#static-variable-_tick",
-    "<span>_tick</span> <span class=\"search-result-import-path\">mytoolkit/src/tick.js</span>",
-    "variable"
-  ],
-  [
     "mytoolkit/src/addcomma.js~addcomma",
     "function/index.html#static-function-addComma",
     "<span>addComma</span> <span class=\"search-result-import-path\">mytoolkit/src/addComma.js</span>",
@@ -130,6 +106,12 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-strToTime",
     "<span>strToTime</span> <span class=\"search-result-import-path\">mytoolkit/src/strToTime.js</span>",
     "function"
+  ],
+  [
+    "mytoolkit/src/tick.js~tick",
+    "variable/index.html#static-variable-tick",
+    "<span>tick</span> <span class=\"search-result-import-path\">mytoolkit/src/tick.js</span>",
+    "variable"
   ],
   [
     "mytoolkit/src/timetostr.js~timetostr",
@@ -561,18 +543,6 @@ window.esdocSearchIndex = [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
-    "file"
-  ],
-  [
-    "src/internal/_date.js",
-    "file/src/internal/_date.js.html",
-    "src/internal/_date.js",
-    "file"
-  ],
-  [
-    "src/internal/_pad.js",
-    "file/src/internal/_pad.js.html",
-    "src/internal/_pad.js",
     "file"
   ],
   [

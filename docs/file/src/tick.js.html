@@ -51,10 +51,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-trim">trim</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-typeOf">typeOf</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-performanceNow">performanceNow</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-_tick">_tick</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#internal">internal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_dateConvert">_dateConvert</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_padEnd">_padEnd</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_padStart">_padStart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tick">tick</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -77,7 +74,7 @@ const add = func =&gt; {
   let key = `clock_${getId()}`
   subscribers[key] = func
   if (!isTicking) {
-    tick()
+    nextTick()
   }
   return key
 }
@@ -86,7 +83,7 @@ const remove = id =&gt; {
     delete subscribers[id]
   }
 }
-const tick = () =&gt; {
+const nextTick = () =&gt; {
   let keys = Object.keys(subscribers)
   if (keys.length === 0) {
     isTicking = false
@@ -95,16 +92,16 @@ const tick = () =&gt; {
     keys.forEach(key =&gt; {
       subscribers[key](time)
     })
-    nextFrame(tick)
+    nextFrame(nextTick)
     isTicking = true
   }
 }
-export const _tick = {
+export const tick = {
   add,
   remove 
 }
 
-export default _tick</code></pre>
+export default tick</code></pre>
 
 </div>
 
