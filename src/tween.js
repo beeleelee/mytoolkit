@@ -2,7 +2,7 @@ import tick from './tick'
 import performanceNow from './performanceNow'
 import * as TimeFunction from './internal/_easing'
 
-const defaultEase = a => a
+const linearEase = a => a
 
 export class Tween {
   constructor(options) {
@@ -15,10 +15,10 @@ export class Tween {
   setOptions(options = {}) {
     let {
       duration = 0,
-      ease = 'easeInOutCubic',
+      ease,
     } = options
     this.duration = duration
-    this.ease = TimeFunction[ease] || defaultEase
+    this.ease = TimeFunction[ease] || linearEase
     this.options = Object.assign({}, this.options, options)
   }
   start() {
