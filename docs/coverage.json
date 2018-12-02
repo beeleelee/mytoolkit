@@ -1,6 +1,6 @@
 {
-  "coverage": "20.33%",
-  "expectCount": 59,
+  "coverage": "18.75%",
+  "expectCount": 64,
   "actualCount": 12,
   "files": {
     "src/IDFactory.js": {
@@ -55,6 +55,20 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/delay.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/echo.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
     "src/isEmail.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -71,6 +85,13 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/noop.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
     },
     "src/padZero.js": {
       "expectCount": 1,
@@ -151,22 +172,24 @@
       "undocumentLines": []
     },
     "src/tween.js": {
-      "expectCount": 13,
+      "expectCount": 15,
       "actualCount": 0,
       "undocumentLines": [
-        4,
         5,
-        6,
         7,
         8,
-        12,
-        16,
-        18,
+        9,
+        10,
+        11,
+        15,
         20,
+        21,
         22,
-        25,
+        24,
+        26,
         29,
-        38
+        33,
+        42
       ]
     },
     "src/typeOf.js": {

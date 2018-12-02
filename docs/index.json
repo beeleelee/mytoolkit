@@ -1140,8 +1140,106 @@
   {
     "__docId__": 79,
     "kind": "file",
+    "name": "src/delay.js",
+    "content": "import typeOf from './typeOf'\n\nexport function delay(func, wait = 0, ...args) {\n  if (typeOf(func) !== 'Function') {\n    throw new TypeError(`unexpected type of ${typeOf(func)}`)\n  }\n  if (typeOf(wait) !== 'Number') {\n    throw new TypeError(`unexpected type of ${typeOf(wait)}`)\n  }\n  return setTimeout(() => {\n    func(...args)\n  }, wait)\n}\n\nexport default delay ",
+    "static": true,
+    "longname": "/Users/lifeng/www/mytoolkit/src/delay.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 80,
+    "kind": "function",
+    "name": "delay",
+    "memberof": "src/delay.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/delay.js~delay",
+    "access": "public",
+    "export": true,
+    "importPath": "mytoolkit/src/delay.js",
+    "importStyle": "{delay}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "func",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "wait",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 0,
+        "defaultValue": "0"
+      },
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "file",
+    "name": "src/echo.js",
+    "content": "export function echo(arg) {\n  return arg\n}\n\nexport default echo ",
+    "static": true,
+    "longname": "/Users/lifeng/www/mytoolkit/src/echo.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 82,
+    "kind": "function",
+    "name": "echo",
+    "memberof": "src/echo.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/echo.js~echo",
+    "access": "public",
+    "export": true,
+    "importPath": "mytoolkit/src/echo.js",
+    "importStyle": "{echo}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "arg",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "file",
     "name": "src/index.js",
-    "content": "import currentTime from './currentTime'\nimport performanceNow from './performanceNow'\nimport tick from './tick'\nimport Tween from './tween'\nimport Deceleration from './deceleration'\nimport typeOf from './typeOf'\nimport addComma from './addComma'\nimport padZero from './padZero'\nimport IDFactory from './IDFactory'\nimport randInt from './randInt'\nimport randStr from './randStr'\nimport setStyle from './setStyle'\nimport deepCopy from './deepCopy'\nimport trim from './trim'\nimport timestamp from './timestamp'\nimport timeToStr from './timeToStr'\nimport strToTime from './strToTime'\nimport strToDate from './strToDate'\nimport { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'\nimport addKey from './addKey'\nimport isSet from './isSet'\nimport charLength from './charLength'\nimport isUInt from './isUInt'\nimport isEmail from './isEmail'\n\nexport {\n  Tween,\n  Deceleration,\n  currentTime,\n  performanceNow,\n  tick,\n  typeOf,\n  addComma,\n  padZero,\n  IDFactory,\n  randInt,\n  randStr,\n  setStyle,\n  deepCopy,\n  trim,\n  timestamp,\n  timeToStr,\n  strToTime,\n  strToDate,\n  padStart,\n  padEnd,\n  addKey,\n  charLength,\n  isSet,\n  isUInt,\n  isEmail,\n}",
+    "content": "import currentTime from './currentTime'\nimport performanceNow from './performanceNow'\nimport tick from './tick'\nimport Tween from './tween'\nimport Deceleration from './deceleration'\nimport typeOf from './typeOf'\nimport addComma from './addComma'\nimport padZero from './padZero'\nimport IDFactory from './IDFactory'\nimport randInt from './randInt'\nimport randStr from './randStr'\nimport setStyle from './setStyle'\nimport deepCopy from './deepCopy'\nimport trim from './trim'\nimport timestamp from './timestamp'\nimport timeToStr from './timeToStr'\nimport strToTime from './strToTime'\nimport strToDate from './strToDate'\nimport { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'\nimport addKey from './addKey'\nimport charLength from './charLength'\nimport delay from './delay'\nimport echo from './echo'\nimport noop from './noop'\nimport isSet from './isSet'\nimport isUInt from './isUInt'\nimport isEmail from './isEmail'\n\nexport {\n  Tween,\n  Deceleration,\n  currentTime,\n  performanceNow,\n  tick,\n  typeOf,\n  addComma,\n  padZero,\n  IDFactory,\n  randInt,\n  randStr,\n  setStyle,\n  deepCopy,\n  trim,\n  timestamp,\n  timeToStr,\n  strToTime,\n  strToDate,\n  padStart,\n  padEnd,\n  addKey,\n  charLength,\n  delay,\n  echo,\n  noop,\n  isSet,\n  isUInt,\n  isEmail,\n}",
     "static": true,
     "longname": "/Users/lifeng/www/mytoolkit/src/index.js",
     "access": "public",
@@ -1149,7 +1247,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 80,
+    "__docId__": 84,
     "kind": "file",
     "name": "src/isEmail.js",
     "content": "export const isEmail = (emailAdress) => {\n  let emailRE = /^(?:[-\\w])+(?:\\.[-\\w]+)*@(?:[-\\w])+(?:(?:\\.[-\\w]+)+)$/\n  if (emailAdress && emailRE.test(emailAdress)) {\n    return true\n  }\n\n  return false\n}\n\nexport default isEmail ",
@@ -1160,7 +1258,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 81,
+    "__docId__": 85,
     "kind": "function",
     "name": "isEmail",
     "memberof": "src/isEmail.js",
@@ -1190,7 +1288,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 86,
     "kind": "file",
     "name": "src/isSet.js",
     "content": "import typeOf from './typeOf'\n/**\n * we assume Undefined or Null as unsetted value\n * @params {*} value - value to be check\n * @returns {Boolean} if typeOf value is Undefined or Null return false, else return true \n */\nexport function isSet (value) {\n  const type = typeOf(value)\n  return type !== 'Undefined' && type !== 'Null'\n}\n\nexport default isSet ",
@@ -1201,7 +1299,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 83,
+    "__docId__": 87,
     "kind": "function",
     "name": "isSet",
     "memberof": "src/isSet.js",
@@ -1243,7 +1341,7 @@
     ]
   },
   {
-    "__docId__": 84,
+    "__docId__": 88,
     "kind": "file",
     "name": "src/isUInt.js",
     "content": "/**\n * \n * @param {Number|String} uint - unsigned int\n * @return (true | false)\n */\nexport function isUInt (uint) {\n  return /^\\d+$/.test(uint)\n}\n\nexport default isUInt",
@@ -1254,7 +1352,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 85,
+    "__docId__": 89,
     "kind": "function",
     "name": "isUInt",
     "memberof": "src/isUInt.js",
@@ -1291,7 +1389,37 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 90,
+    "kind": "file",
+    "name": "src/noop.js",
+    "content": "export function noop() { }\nexport default noop ",
+    "static": true,
+    "longname": "/Users/lifeng/www/mytoolkit/src/noop.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 91,
+    "kind": "function",
+    "name": "noop",
+    "memberof": "src/noop.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/noop.js~noop",
+    "access": "public",
+    "export": true,
+    "importPath": "mytoolkit/src/noop.js",
+    "importStyle": "{noop}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 92,
     "kind": "file",
     "name": "src/padZero.js",
     "content": "import { _padStart } from './internal/_pad'\n/**\n * \n * @param {Number|String} num - the number going to be padded\n * @param {NUmber} [size] - the length of the return string after padding\n * @returns {String} - the padded string\n */\nexport function padZero(num, size = 2) {\n  return _padStart(num, size, 0)\n}\n\nexport default padZero",
@@ -1302,7 +1430,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 87,
+    "__docId__": 93,
     "kind": "function",
     "name": "padZero",
     "memberof": "src/padZero.js",
@@ -1355,7 +1483,7 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 94,
     "kind": "file",
     "name": "src/performanceNow.js",
     "content": "export const performanceNow = (function () {\n  let now\n  if (typeof performance !== 'undefined') {\n    now = () => performance.now()\n  } else {\n    now = () => +new Date\n  }\n  return now\n})()\n\nexport default performanceNow",
@@ -1366,7 +1494,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 89,
+    "__docId__": 95,
     "kind": "variable",
     "name": "performanceNow",
     "memberof": "src/performanceNow.js",
@@ -1386,7 +1514,7 @@
     }
   },
   {
-    "__docId__": 90,
+    "__docId__": 96,
     "kind": "file",
     "name": "src/randInt.js",
     "content": "import typeOf from './typeOf.js'\n\nexport function randInt(min, max) {\n  min = parseInt(min)\n  max = parseInt(max)\n  if(typeOf(min) !== 'Number'){\n    throw new TypeError('randInt needs number from its parameter!')\n  }\n\n  if(!max){\n    max = min \n    min = 0\n  }\n  return Math.floor(Math.random() * (max - min) + min)\n}\n\nexport default randInt",
@@ -1397,7 +1525,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 91,
+    "__docId__": 97,
     "kind": "function",
     "name": "randInt",
     "memberof": "src/randInt.js",
@@ -1433,7 +1561,7 @@
     }
   },
   {
-    "__docId__": 92,
+    "__docId__": 98,
     "kind": "file",
     "name": "src/randStr.js",
     "content": "import typeOf from './typeOf'\nimport randInt from './randInt'\n\nexport function randStr(size = 6, sourceCode) {\n  let code = '0123456789abcdefghijklmnopqrstuvwxyzsABCDEFGHIJKLMNOPQRSTUVWXYZ'\n  let characters = Array.from({length: size})\n\n  if(typeOf(sourceCode) === 'String'){\n    code = sourceCode\n  }\n  let codeLength = code.length\n  \n  return characters.map(() => code[randInt(codeLength)]).join('')\n}\n\nexport default randStr",
@@ -1444,7 +1572,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 93,
+    "__docId__": 99,
     "kind": "function",
     "name": "randStr",
     "memberof": "src/randStr.js",
@@ -1483,7 +1611,7 @@
     }
   },
   {
-    "__docId__": 94,
+    "__docId__": 100,
     "kind": "file",
     "name": "src/setStyle.js",
     "content": "import typeOf from './typeOf'\n\nlet styleKeys = null \n\nconst setSingleStyle = (ele, name, value) => {\n  if(!ele || !ele.style){\n    throw new Error('missing HTML node element for setStyle!')\n  }\n  name = checkVendorPrefix(name)\n  if(typeOf(name) !== 'Undefined' && typeOf(value) !== 'Undefined'){\n    ele.style[name] = value\n  }\n}\n\nexport const setStyle = (ele, name, value) => {\n  if(typeOf(name) === 'Object') {\n    Object.keys(name)\n      .map(n => {\n        setSingleStyle(ele, n, name[n])\n      })\n  }else{\n    setSingleStyle(ele, name, value)\n  }\n}\n\nfunction checkVendorPrefix(name) {\n  let styleKeys = getStyleKeys()\n\n  return styleKeys[name] || name\n}\n\nfunction getStyleKeys() {\n  if(styleKeys !== null) return styleKeys \n\n  if(typeof document === 'undefined'){\n    throw new Error('missing document!')\n  }\n\n  let computedStyles = Array.from(getComputedStyle(document.body))\n  let keys = Object.keys(computedStyles).filter(\n    key => /^webkit(transform|transition)$/i.test(key)\n  )\n  styleKeys = keys.reduce((res, key) => {\n    let name = key.replace(/^webkit(\\w)/, (a, s) => s.toLowerCase())\n    res[name] = key \n    return res \n  }, {})\n\n  return styleKeys\n}\n\nexport default setStyle ",
@@ -1494,7 +1622,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 95,
+    "__docId__": 101,
     "kind": "variable",
     "name": "styleKeys",
     "memberof": "src/setStyle.js",
@@ -1515,7 +1643,7 @@
     "ignore": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 102,
     "kind": "function",
     "name": "setSingleStyle",
     "memberof": "src/setStyle.js",
@@ -1554,7 +1682,7 @@
     "ignore": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 103,
     "kind": "function",
     "name": "setStyle",
     "memberof": "src/setStyle.js",
@@ -1592,7 +1720,7 @@
     "return": null
   },
   {
-    "__docId__": 98,
+    "__docId__": 104,
     "kind": "function",
     "name": "checkVendorPrefix",
     "memberof": "src/setStyle.js",
@@ -1623,7 +1751,7 @@
     "ignore": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 105,
     "kind": "function",
     "name": "getStyleKeys",
     "memberof": "src/setStyle.js",
@@ -1647,7 +1775,7 @@
     "ignore": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 106,
     "kind": "file",
     "name": "src/strToDate.js",
     "content": "import isSet from './isSet'\nimport { _dateConvert } from './internal/_date'\n/**\n * \n * @param {String} dateString \n * @param {String} format \n * \n * @returns {Date} - instance of Date\n */\nexport function strToDate(dateString, format) {\n  if(!isSet(dateString)){\n    return new Date()\n  }\n  return _dateConvert(dateString, 'date', format)\n}\n\nexport default strToDate",
@@ -1658,7 +1786,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 101,
+    "__docId__": 107,
     "kind": "function",
     "name": "strToDate",
     "memberof": "src/strToDate.js",
@@ -1710,7 +1838,7 @@
     }
   },
   {
-    "__docId__": 102,
+    "__docId__": 108,
     "kind": "file",
     "name": "src/strToTime.js",
     "content": "import isSet from './isSet'\nimport timestamp from './timestamp'\nimport currentTime from './currentTime'\nimport { _dateConvert } from './internal/_date'\n\n/**\n * \n * @param {Sting} dateString \n * @param {String} format - supported formats\n * @param {Boolean} seconds - true | false\n * \n * @returns {String} - '1543047456700'\n */\nexport function strToTime(dateString, format, seconds) {\n  if(!isSet(dateString)){\n    return seconds ? timestamp() : currentTime()\n  }\n  return _dateConvert(dateString, seconds ? 'seconds' : 'miniseconds', format)\n}\n\nexport default strToTime ",
@@ -1721,7 +1849,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 103,
+    "__docId__": 109,
     "kind": "function",
     "name": "strToTime",
     "memberof": "src/strToTime.js",
@@ -1783,7 +1911,7 @@
     }
   },
   {
-    "__docId__": 104,
+    "__docId__": 110,
     "kind": "file",
     "name": "src/tick.js",
     "content": "import performanceNow from './performanceNow'\n\nconst nextFrame = (function () {\n  if(typeof window !== 'undefined'){\n    return window.requestAnimationFrame || window.webkitRequestAnimationFrame\n  }\n  return func => setTimeout(func, 1000 / 60)\n})()\n\nconst subscribers = {}\nlet id = 0, isTicking = false\n\nconst getId = () => id++\nconst add = func => {\n  let key = `clock_${getId()}`\n  subscribers[key] = func\n  if (!isTicking) {\n    nextTick()\n  }\n  return key\n}\nconst remove = id => {\n  if (subscribers[id]) {\n    delete subscribers[id]\n  }\n}\nconst nextTick = () => {\n  let keys = Object.keys(subscribers)\n  if (keys.length === 0) {\n    isTicking = false\n  } else {\n    let time = performanceNow()\n    keys.forEach(key => {\n      subscribers[key](time)\n    })\n    nextFrame(nextTick)\n    isTicking = true\n  }\n}\nexport const tick = {\n  add,\n  remove \n}\n\nexport default tick",
@@ -1794,7 +1922,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 105,
+    "__docId__": 111,
     "kind": "variable",
     "name": "nextFrame",
     "memberof": "src/tick.js",
@@ -1815,7 +1943,7 @@
     "ignore": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 112,
     "kind": "variable",
     "name": "subscribers",
     "memberof": "src/tick.js",
@@ -1836,7 +1964,7 @@
     "ignore": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 113,
     "kind": "variable",
     "name": "id",
     "memberof": "src/tick.js",
@@ -1857,7 +1985,7 @@
     "ignore": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 114,
     "kind": "function",
     "name": "getId",
     "memberof": "src/tick.js",
@@ -1877,7 +2005,7 @@
     "ignore": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 115,
     "kind": "function",
     "name": "add",
     "memberof": "src/tick.js",
@@ -1908,7 +2036,7 @@
     "ignore": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 116,
     "kind": "function",
     "name": "remove",
     "memberof": "src/tick.js",
@@ -1935,7 +2063,7 @@
     "ignore": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 117,
     "kind": "function",
     "name": "nextTick",
     "memberof": "src/tick.js",
@@ -1955,7 +2083,7 @@
     "ignore": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 118,
     "kind": "variable",
     "name": "tick",
     "memberof": "src/tick.js",
@@ -1975,7 +2103,7 @@
     }
   },
   {
-    "__docId__": 113,
+    "__docId__": 119,
     "kind": "file",
     "name": "src/timeToStr.js",
     "content": "import timestamp from './timestamp'\nimport { _dateConvert } from './internal/_date'\n\n/**\n * \n * @param {String|Number} time - timestamp, maybe miniseconds\n * @param {String} [format] - supported format as follow:\n *                          'yyyy-mm-dd hh:mm:ss'\n *                          'yyyy-mm-dd hh:mm'\n *                          'yyyy-mm-dd'\n *                          'yyyy-mm'\n *                          'hh:mm:ss'\n *                          'hh:mm'\n * @returns {String} - date string 2018-11-28, 2018-11-28 14:03:23, 2000-01-01 01:01\n */\nexport function timeToStr (time = timestamp(), format = 'yyyy-mm-dd hh:mm') {\n  return _dateConvert(time, 'dateString', format)\n}\n\nexport default timeToStr",
@@ -1986,7 +2114,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 114,
+    "__docId__": 120,
     "kind": "function",
     "name": "timeToStr",
     "memberof": "src/timeToStr.js",
@@ -2039,7 +2167,7 @@
     }
   },
   {
-    "__docId__": 115,
+    "__docId__": 121,
     "kind": "file",
     "name": "src/timestamp.js",
     "content": "import currentTime from './currentTime'\n\nexport function timestamp() {\n  return Math.round(currentTime() / 1000)\n}\n\nexport default timestamp ",
@@ -2050,7 +2178,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 116,
+    "__docId__": 122,
     "kind": "function",
     "name": "timestamp",
     "memberof": "src/timestamp.js",
@@ -2073,7 +2201,7 @@
     }
   },
   {
-    "__docId__": 117,
+    "__docId__": 123,
     "kind": "file",
     "name": "src/trim.js",
     "content": "/**\n * \n * @param {String} str - a string that to be trim spaces at begin or end of the string.\n * @returns {String} a string without spaces at begin or end of itself.\n */\nexport function trim(str) {\n  return (str + '').replace(/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g, '')\n}\n\nexport default trim ",
@@ -2084,7 +2212,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 118,
+    "__docId__": 124,
     "kind": "function",
     "name": "trim",
     "memberof": "src/trim.js",
@@ -2126,10 +2254,10 @@
     }
   },
   {
-    "__docId__": 119,
+    "__docId__": 125,
     "kind": "file",
     "name": "src/tween.js",
-    "content": "import tick from './tick'\nimport performanceNow from './performanceNow'\n\nexport class Tween {\n  constructor(options){\n    this.startTime = 0\n    this.currentTime = 0\n    this.percent = 0 \n    this.setOptions(options)\n    this.step = this.step.bind(this)\n  }\n  setOptions(options = {}){\n    let {\n      duration = 0\n    } = options\n    this.duration = duration\n    \n    this.options = Object.assign({}, this.options, options)\n  }\n  start() {\n    this.startTime = this.currentTime = performanceNow()\n    this.clockId = tick.add(this.step)\n    return this\n  }\n  pause() {\n    tick.remove(this.clockId)\n    this.clockId = null \n  }\n  stop() {\n    tick.remove(this.clockId)\n    this.clockId = null\n    this.percent = 0\n    if(this.options.onEnd){\n      this.options.onEnd(this)\n    }\n    // console.log('tween stop')\n  }\n  step(time) {\n    this.currentTime = time\n    let span = time - this.startTime\n    let leftTime = this.duration - span\n    let shouldStop = false\n    if (leftTime > 0) {\n      //console.log(span / this.duration)\n      this.percent = span / this.duration\n    } else {\n      this.percent = 1\n      shouldStop = true \n    }\n    if(this.options.onStep){\n      this.options.onStep(this, this.percent)\n    }\n    if(shouldStop){\n      this.stop()\n    }\n  }\n}\n\nexport default Tween ",
+    "content": "import tick from './tick'\nimport performanceNow from './performanceNow'\nimport * as TimeFunction from './internal/_easing'\n\nconst linearEase = a => a\n\nexport class Tween {\n  constructor(options) {\n    this.startTime = 0\n    this.currentTime = 0\n    this.percent = 0\n    this.setOptions(options)\n    this.step = this.step.bind(this)\n  }\n  setOptions(options = {}) {\n    let {\n      duration = 0,\n      ease,\n    } = options\n    this.duration = duration\n    this.ease = TimeFunction[ease] || linearEase\n    this.options = Object.assign({}, this.options, options)\n  }\n  start() {\n    this.startTime = this.currentTime = performanceNow()\n    this.clockId = tick.add(this.step)\n    return this\n  }\n  pause() {\n    tick.remove(this.clockId)\n    this.clockId = null\n  }\n  stop() {\n    tick.remove(this.clockId)\n    this.clockId = null\n    this.percent = 0\n    if (this.options.onEnd) {\n      this.options.onEnd(this)\n    }\n    // console.log('tween stop')\n  }\n  step(time) {\n    this.currentTime = time\n    let span = time - this.startTime\n    let leftTime = this.duration - span\n    let shouldStop = false\n    if (leftTime > 0) {\n      //console.log(span / this.duration)\n      this.percent = span / this.duration\n    } else {\n      this.percent = 1\n      shouldStop = true\n    }\n    if (this.options.onStep) {\n      this.options.onStep(this, this.ease(this.percent))\n    }\n    if (shouldStop) {\n      this.stop()\n    }\n  }\n}\n\nexport default Tween ",
     "static": true,
     "longname": "/Users/lifeng/www/mytoolkit/src/tween.js",
     "access": "public",
@@ -2137,7 +2265,34 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 120,
+    "__docId__": 126,
+    "kind": "function",
+    "name": "linearEase",
+    "memberof": "src/tween.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/tween.js~linearEase",
+    "access": "public",
+    "export": false,
+    "importPath": "mytoolkit/src/tween.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "a",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 127,
     "kind": "class",
     "name": "Tween",
     "memberof": "src/tween.js",
@@ -2148,12 +2303,12 @@
     "importPath": "mytoolkit/src/tween.js",
     "importStyle": "{Tween}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 7,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 121,
+    "__docId__": 128,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/tween.js~Tween",
@@ -2163,11 +2318,11 @@
     "longname": "src/tween.js~Tween#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 8,
     "undocument": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 129,
     "kind": "member",
     "name": "startTime",
     "memberof": "src/tween.js~Tween",
@@ -2175,7 +2330,7 @@
     "longname": "src/tween.js~Tween#startTime",
     "access": "public",
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 9,
     "undocument": true,
     "type": {
       "types": [
@@ -2184,7 +2339,7 @@
     }
   },
   {
-    "__docId__": 123,
+    "__docId__": 130,
     "kind": "member",
     "name": "currentTime",
     "memberof": "src/tween.js~Tween",
@@ -2192,7 +2347,7 @@
     "longname": "src/tween.js~Tween#currentTime",
     "access": "public",
     "description": null,
-    "lineNumber": 7,
+    "lineNumber": 10,
     "undocument": true,
     "type": {
       "types": [
@@ -2201,7 +2356,7 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 131,
     "kind": "member",
     "name": "percent",
     "memberof": "src/tween.js~Tween",
@@ -2209,7 +2364,7 @@
     "longname": "src/tween.js~Tween#percent",
     "access": "public",
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 11,
     "undocument": true,
     "type": {
       "types": [
@@ -2218,7 +2373,7 @@
     }
   },
   {
-    "__docId__": 126,
+    "__docId__": 133,
     "kind": "method",
     "name": "setOptions",
     "memberof": "src/tween.js~Tween",
@@ -2228,7 +2383,7 @@
     "longname": "src/tween.js~Tween#setOptions",
     "access": "public",
     "description": null,
-    "lineNumber": 12,
+    "lineNumber": 15,
     "undocument": true,
     "params": [
       {
@@ -2244,7 +2399,7 @@
     "return": null
   },
   {
-    "__docId__": 127,
+    "__docId__": 134,
     "kind": "member",
     "name": "duration",
     "memberof": "src/tween.js~Tween",
@@ -2252,7 +2407,7 @@
     "longname": "src/tween.js~Tween#duration",
     "access": "public",
     "description": null,
-    "lineNumber": 16,
+    "lineNumber": 20,
     "undocument": true,
     "type": {
       "types": [
@@ -2261,49 +2416,29 @@
     }
   },
   {
-    "__docId__": 128,
+    "__docId__": 135,
+    "kind": "member",
+    "name": "ease",
+    "memberof": "src/tween.js~Tween",
+    "static": false,
+    "longname": "src/tween.js~Tween#ease",
+    "access": "public",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 136,
     "kind": "member",
     "name": "options",
     "memberof": "src/tween.js~Tween",
     "static": false,
     "longname": "src/tween.js~Tween#options",
-    "access": "public",
-    "description": null,
-    "lineNumber": 18,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 129,
-    "kind": "method",
-    "name": "start",
-    "memberof": "src/tween.js~Tween",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/tween.js~Tween#start",
-    "access": "public",
-    "description": null,
-    "lineNumber": 20,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 131,
-    "kind": "member",
-    "name": "clockId",
-    "memberof": "src/tween.js~Tween",
-    "static": false,
-    "longname": "src/tween.js~Tween#clockId",
     "access": "public",
     "description": null,
     "lineNumber": 22,
@@ -2315,7 +2450,44 @@
     }
   },
   {
-    "__docId__": 132,
+    "__docId__": 137,
+    "kind": "method",
+    "name": "start",
+    "memberof": "src/tween.js~Tween",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tween.js~Tween#start",
+    "access": "public",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "member",
+    "name": "clockId",
+    "memberof": "src/tween.js~Tween",
+    "static": false,
+    "longname": "src/tween.js~Tween#clockId",
+    "access": "public",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 140,
     "kind": "method",
     "name": "pause",
     "memberof": "src/tween.js~Tween",
@@ -2325,13 +2497,13 @@
     "longname": "src/tween.js~Tween#pause",
     "access": "public",
     "description": null,
-    "lineNumber": 25,
+    "lineNumber": 29,
     "undocument": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 134,
+    "__docId__": 142,
     "kind": "method",
     "name": "stop",
     "memberof": "src/tween.js~Tween",
@@ -2341,13 +2513,13 @@
     "longname": "src/tween.js~Tween#stop",
     "access": "public",
     "description": null,
-    "lineNumber": 29,
+    "lineNumber": 33,
     "undocument": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 137,
+    "__docId__": 145,
     "kind": "method",
     "name": "step",
     "memberof": "src/tween.js~Tween",
@@ -2357,7 +2529,7 @@
     "longname": "src/tween.js~Tween#step",
     "access": "public",
     "description": null,
-    "lineNumber": 38,
+    "lineNumber": 42,
     "undocument": true,
     "params": [
       {
@@ -2370,7 +2542,7 @@
     "return": null
   },
   {
-    "__docId__": 141,
+    "__docId__": 149,
     "kind": "file",
     "name": "src/typeOf.js",
     "content": "export function typeOf(obj) {\n  let objName = Object.prototype.toString.call(obj)\n  objName = objName.slice(8, -1)\n  if(objName === 'Number' && isNaN(obj)){\n    return 'NaN'\n  }\n  return objName \n}\n\nexport default typeOf ",
@@ -2381,7 +2553,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 142,
+    "__docId__": 150,
     "kind": "function",
     "name": "typeOf",
     "memberof": "src/typeOf.js",
@@ -2420,7 +2592,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"mytoolkit\",\n  \"version\": \"1.1.8\",\n  \"description\": \"my javascript toolkit\",\n  \"main\": \"dist/mytoolkit.cjs.js\",\n  \"module\": \"dist/mytoolkit.esm.js\",\n  \"browser\": \"dist/mytoolkit.umd.js\",\n  \"scripts\": {\n    \"build\": \"rollup -c\",\n    \"dev\": \"rollup -c -w\",\n    \"test\": \"ava\",\n    \"document\": \"rimraf docs && esdoc\",\n    \"pretest\": \"npm run build\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+ssh://git@github.com/beeleelee/mytoolkit.git\"\n  },\n  \"keywords\": [\n    \"javascript\",\n    \"toolkit\"\n  ],\n  \"author\": \"alex\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/beeleelee/mytoolkit/issues\"\n  },\n  \"homepage\": \"https://github.com/beeleelee/mytoolkit#readme\",\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.1.5\",\n    \"@babel/core\": \"^7.1.6\",\n    \"@babel/plugin-proposal-class-properties\": \"^7.1.0\",\n    \"@babel/preset-env\": \"^7.1.6\",\n    \"ava\": \"1.0.0-rc.2\",\n    \"babel-eslint\": \"^10.0.1\",\n    \"browser-env\": \"^3.2.5\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.9.0\",\n    \"eslint-plugin-react\": \"^7.11.1\",\n    \"rimraf\": \"^2.6.2\",\n    \"rollup\": \"^0.67.3\",\n    \"rollup-plugin-babel\": \"^4.0.3\",\n    \"rollup-plugin-commonjs\": \"^9.2.0\",\n    \"rollup-plugin-node-resolve\": \"^3.4.0\",\n    \"rollup-plugin-uglify\": \"^6.0.0\"\n  },\n  \"dependencies\": {\n    \"bezier-easing\": \"^2.1.0\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"mytoolkit\",\n  \"version\": \"1.1.10\",\n  \"description\": \"my javascript toolkit\",\n  \"main\": \"dist/mytoolkit.cjs.js\",\n  \"module\": \"dist/mytoolkit.esm.js\",\n  \"browser\": \"dist/mytoolkit.umd.js\",\n  \"scripts\": {\n    \"build\": \"rollup -c\",\n    \"dev\": \"rollup -c -w\",\n    \"test\": \"ava\",\n    \"document\": \"rimraf docs && esdoc\",\n    \"pretest\": \"npm run build\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+ssh://git@github.com/beeleelee/mytoolkit.git\"\n  },\n  \"keywords\": [\n    \"javascript\",\n    \"toolkit\"\n  ],\n  \"author\": \"alex\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/beeleelee/mytoolkit/issues\"\n  },\n  \"homepage\": \"https://github.com/beeleelee/mytoolkit#readme\",\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.1.5\",\n    \"@babel/core\": \"^7.1.6\",\n    \"@babel/plugin-proposal-class-properties\": \"^7.1.0\",\n    \"@babel/preset-env\": \"^7.1.6\",\n    \"ava\": \"1.0.0-rc.2\",\n    \"babel-eslint\": \"^10.0.1\",\n    \"browser-env\": \"^3.2.5\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.9.0\",\n    \"eslint-plugin-react\": \"^7.11.1\",\n    \"rimraf\": \"^2.6.2\",\n    \"rollup\": \"^0.67.3\",\n    \"rollup-plugin-babel\": \"^4.0.3\",\n    \"rollup-plugin-commonjs\": \"^9.2.0\",\n    \"rollup-plugin-node-resolve\": \"^3.4.0\",\n    \"rollup-plugin-uglify\": \"^6.0.0\"\n  },\n  \"dependencies\": {\n    \"bezier-easing\": \"^2.1.0\"\n  }\n}",
     "longname": "/Users/lifeng/www/mytoolkit/package.json",
     "name": "package.json",
     "static": true,

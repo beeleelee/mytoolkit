@@ -37,9 +37,12 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-charLength">charLength</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentTime">currentTime</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepCopy">deepCopy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-echo">echo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmail">isEmail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isSet">isSet</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isUInt">isUInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-noop">noop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-padZero">padZero</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randInt">randInt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randStr">randStr</a></span></span></li>
@@ -75,10 +78,13 @@ import timestamp from &apos;./timestamp&apos;
 import timeToStr from &apos;./timeToStr&apos;
 import strToTime from &apos;./strToTime&apos;
 import strToDate from &apos;./strToDate&apos;
-import { _padStart as padStart, _padEnd as padEnd} from &apos;./internal/_pad&apos;
+import { _padStart as padStart, _padEnd as padEnd } from &apos;./internal/_pad&apos;
 import addKey from &apos;./addKey&apos;
-import isSet from &apos;./isSet&apos;
 import charLength from &apos;./charLength&apos;
+import delay from &apos;./delay&apos;
+import echo from &apos;./echo&apos;
+import noop from &apos;./noop&apos;
+import isSet from &apos;./isSet&apos;
 import isUInt from &apos;./isUInt&apos;
 import isEmail from &apos;./isEmail&apos;
 
@@ -105,6 +111,9 @@ export {
   padEnd,
   addKey,
   charLength,
+  delay,
+  echo,
+  noop,
   isSet,
   isUInt,
   isEmail,

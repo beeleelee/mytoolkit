@@ -48,6 +48,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mytoolkit/src/delay.js~delay",
+    "function/index.html#static-function-delay",
+    "<span>delay</span> <span class=\"search-result-import-path\">mytoolkit/src/delay.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/echo.js~echo",
+    "function/index.html#static-function-echo",
+    "<span>echo</span> <span class=\"search-result-import-path\">mytoolkit/src/echo.js</span>",
+    "function"
+  ],
+  [
     "mytoolkit/src/isemail.js~isemail",
     "function/index.html#static-function-isEmail",
     "<span>isEmail</span> <span class=\"search-result-import-path\">mytoolkit/src/isEmail.js</span>",
@@ -63,6 +75,12 @@ window.esdocSearchIndex = [
     "mytoolkit/src/isuint.js~isuint",
     "function/index.html#static-function-isUInt",
     "<span>isUInt</span> <span class=\"search-result-import-path\">mytoolkit/src/isUInt.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/noop.js~noop",
+    "function/index.html#static-function-noop",
+    "<span>noop</span> <span class=\"search-result-import-path\">mytoolkit/src/noop.js</span>",
     "function"
   ],
   [
@@ -540,6 +558,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/delay.js",
+    "file/src/delay.js.html",
+    "src/delay.js",
+    "file"
+  ],
+  [
+    "src/echo.js",
+    "file/src/echo.js.html",
+    "src/echo.js",
+    "file"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -561,6 +591,12 @@ window.esdocSearchIndex = [
     "src/isuint.js",
     "file/src/isUInt.js.html",
     "src/isUInt.js",
+    "file"
+  ],
+  [
+    "src/noop.js",
+    "file/src/noop.js.html",
+    "src/noop.js",
     "file"
   ],
   [
@@ -657,6 +693,12 @@ window.esdocSearchIndex = [
     "src/tween.js~tween#duration",
     "class/src/tween.js~Tween.html#instance-member-duration",
     "src/tween.js~Tween#duration",
+    "member"
+  ],
+  [
+    "src/tween.js~tween#ease",
+    "class/src/tween.js~Tween.html#instance-member-ease",
+    "src/tween.js~Tween#ease",
     "member"
   ],
   [
