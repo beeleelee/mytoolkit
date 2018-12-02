@@ -20,6 +20,7 @@ import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import addKey from './addKey'
 import charLength from './charLength'
 import delay from './delay'
+import echo from './echo'
 import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
@@ -48,6 +49,7 @@ export {
   addKey,
   charLength,
   delay,
+  echo,
   isSet,
   isUInt,
   isEmail,
