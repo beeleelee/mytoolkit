@@ -16,10 +16,13 @@ import timestamp from './timestamp'
 import timeToStr from './timeToStr'
 import strToTime from './strToTime'
 import strToDate from './strToDate'
-import { _padStart as padStart, _padEnd as padEnd} from './internal/_pad'
+import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import addKey from './addKey'
-import isSet from './isSet'
 import charLength from './charLength'
+import delay from './delay'
+import echo from './echo'
+import noop from './noop'
+import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
 
@@ -46,6 +49,9 @@ export {
   padEnd,
   addKey,
   charLength,
+  delay,
+  echo,
+  noop,
   isSet,
   isUInt,
   isEmail,
