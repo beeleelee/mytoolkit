@@ -21,6 +21,7 @@ import addKey from './addKey'
 import charLength from './charLength'
 import delay from './delay'
 import echo from './echo'
+import noop from './noop'
 import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
@@ -50,6 +51,7 @@ export {
   charLength,
   delay,
   echo,
+  noop,
   isSet,
   isUInt,
   isEmail,
