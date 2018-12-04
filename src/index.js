@@ -22,6 +22,7 @@ import charLength from './charLength'
 import delay from './delay'
 import echo from './echo'
 import noop from './noop'
+import debounce from './debounce'
 import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
@@ -52,6 +53,7 @@ export {
   delay,
   echo,
   noop,
+  debounce,
   isSet,
   isUInt,
   isEmail,
