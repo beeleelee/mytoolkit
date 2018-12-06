@@ -1,6 +1,5 @@
 /**
- * this source come from www - https://www.cnblogs.com/dearxinli/p/7657512.html
-/**
+ * @see https://www.cnblogs.com/dearxinli/p/7657512.html
  * 计算字符串所占的内存字节数，默认使用UTF-8的编码方式计算，也可制定为UTF-16
  * UTF-8 是一种可变长度的 Unicode 编码格式，使用一至四个字节为每个字符编码
  * 
@@ -11,18 +10,18 @@
   * 010000 - 10FFFF(1048576个代码)  11110www(F0-F7) 10xxxxxx 10yyyyyy 10zzzzzz  四个字节
   * 
   * 注: Unicode在范围 D800-DFFF 中不存在任何字符
-  * {@link http://zh.wikipedia.org/wiki/UTF-8}
+  * @see http://zh.wikipedia.org/wiki/UTF-8
   * 
   * UTF-16 大部分使用两个字节编码，编码超出 65535 的使用四个字节
   * 000000 - 00FFFF  两个字节
   * 010000 - 10FFFF  四个字节
   * 
-  * {@link http://zh.wikipedia.org/wiki/UTF-16}
+  * @see http://zh.wikipedia.org/wiki/UTF-16
   * @param  {String} str 
   * @param  {String} charset utf-8, utf-16
   * @return {Number}
   */
-export function charLength (str, charset) {
+export function charLength(str, charset) {
   let total = 0
   let charCode, i, len
 
