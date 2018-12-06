@@ -1,6 +1,19 @@
 import performanceNow from './performanceNow'
 import tick from './tick'
-
+/**
+ * @class Deceleration - simple animation
+ *    - an animation that mimic natrual slow down during scrolling
+ * @example
+ * new Deceleration({
+ *  velocity: 1,
+ *  onStep: (movement) => {
+ *    console.log(movement)
+ *  },
+ *  onEnd: () => {
+ *    console.log('deceleration end')
+ *  }
+ * })
+ */
 export class Deceleration {
   constructor(options) {
     this.step = this.step.bind(this)
