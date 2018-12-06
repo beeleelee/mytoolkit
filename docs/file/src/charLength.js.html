@@ -36,6 +36,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addKey">addKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-charLength">charLength</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentTime">currentTime</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debounce">debounce</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepCopy">deepCopy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-echo">echo</a></span></span></li>
@@ -61,8 +62,7 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/charLength.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * this source come from www - https://www.cnblogs.com/dearxinli/p/7657512.html
-/**
+ * @see https://www.cnblogs.com/dearxinli/p/7657512.html
  * &#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x4E32;&#x6240;&#x5360;&#x7684;&#x5185;&#x5B58;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;UTF-8&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x8BA1;&#x7B97;&#xFF0C;&#x4E5F;&#x53EF;&#x5236;&#x5B9A;&#x4E3A;UTF-16
  * UTF-8 &#x662F;&#x4E00;&#x79CD;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684; Unicode &#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x81F3;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x4E3A;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x7F16;&#x7801;
  * 
@@ -73,18 +73,18 @@
   * 010000 - 10FFFF(1048576&#x4E2A;&#x4EE3;&#x7801;)  11110www(F0-F7) 10xxxxxx 10yyyyyy 10zzzzzz  &#x56DB;&#x4E2A;&#x5B57;&#x8282;
   * 
   * &#x6CE8;: Unicode&#x5728;&#x8303;&#x56F4; D800-DFFF &#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;
-  * {@link http://zh.wikipedia.org/wiki/UTF-8}
+  * @see http://zh.wikipedia.org/wiki/UTF-8
   * 
   * UTF-16 &#x5927;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5B57;&#x8282;&#x7F16;&#x7801;&#xFF0C;&#x7F16;&#x7801;&#x8D85;&#x51FA; 65535 &#x7684;&#x4F7F;&#x7528;&#x56DB;&#x4E2A;&#x5B57;&#x8282;
   * 000000 - 00FFFF  &#x4E24;&#x4E2A;&#x5B57;&#x8282;
   * 010000 - 10FFFF  &#x56DB;&#x4E2A;&#x5B57;&#x8282;
   * 
-  * {@link http://zh.wikipedia.org/wiki/UTF-16}
+  * @see http://zh.wikipedia.org/wiki/UTF-16
   * @param  {String} str 
   * @param  {String} charset utf-8, utf-16
   * @return {Number}
   */
-export function charLength (str, charset) {
+export function charLength(str, charset) {
   let total = 0
   let charCode, i, len
 

@@ -36,6 +36,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addKey">addKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-charLength">charLength</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentTime">currentTime</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debounce">debounce</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepCopy">deepCopy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-echo">echo</a></span></span></li>
@@ -62,7 +63,20 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/deceleration.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import performanceNow from &apos;./performanceNow&apos;
 import tick from &apos;./tick&apos;
-
+/**
+ * @class Deceleration - simple animation
+ *    - an animation that mimic natrual slow down during scrolling
+ * @example
+ * new Deceleration({
+ *  velocity: 1,
+ *  onStep: (movement) =&gt; {
+ *    console.log(movement)
+ *  },
+ *  onEnd: () =&gt; {
+ *    console.log(&apos;deceleration end&apos;)
+ *  }
+ * })
+ */
 export class Deceleration {
   constructor(options) {
     this.step = this.step.bind(this)

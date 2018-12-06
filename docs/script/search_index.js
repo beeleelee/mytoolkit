@@ -42,6 +42,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mytoolkit/src/debounce.js~debounce",
+    "function/index.html#static-function-debounce",
+    "<span>debounce</span> <span class=\"search-result-import-path\">mytoolkit/src/debounce.js</span>",
+    "function"
+  ],
+  [
     "mytoolkit/src/deepcopy.js~deepcopy",
     "function/index.html#static-function-deepCopy",
     "<span>deepCopy</span> <span class=\"search-result-import-path\">mytoolkit/src/deepCopy.js</span>",
@@ -465,6 +471,12 @@ window.esdocSearchIndex = [
     "src/currenttime.js",
     "file/src/currentTime.js.html",
     "src/currentTime.js",
+    "file"
+  ],
+  [
+    "src/debounce.js",
+    "file/src/debounce.js.html",
+    "src/debounce.js",
     "file"
   ],
   [
