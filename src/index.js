@@ -23,6 +23,7 @@ import delay from './delay'
 import echo from './echo'
 import noop from './noop'
 import debounce from './debounce'
+import compact from './compact'
 import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
@@ -54,6 +55,7 @@ export {
   echo,
   noop,
   debounce,
+  compact,
   isSet,
   isUInt,
   isEmail,
