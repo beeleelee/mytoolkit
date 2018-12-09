@@ -24,6 +24,7 @@ import echo from './echo'
 import noop from './noop'
 import debounce from './debounce'
 import compact from './compact'
+import uniq from './uniq'
 import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
@@ -56,6 +57,7 @@ export {
   noop,
   debounce,
   compact,
+  uniq,
   isSet,
   isUInt,
   isEmail,

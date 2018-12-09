@@ -10,7 +10,7 @@ export function uniq(array) {
     throw new TypeError(`unexpected type of ${typeOf(array)}, expected Array}`)
   }
 
-  return [...new Set(...array)]
+  return [...new Set(array)]
 }
 
 export default uniq 
