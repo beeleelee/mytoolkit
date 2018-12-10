@@ -1,4 +1,5 @@
 import typeOf from './typeOf'
+import dashToCamel from './dashToCamel'
 
 let styleKeys = null
 
@@ -9,6 +10,7 @@ const setSingleStyle = (ele, name, value) => {
   if (!ele || !ele.style) {
     throw new Error('missing HTML node element for setStyle!')
   }
+  name = dashToCamel(name)
   name = checkVendorPrefix(name)
   if (typeOf(name) !== 'Undefined' && typeOf(value) !== 'Undefined') {
     ele.style[name] = value
