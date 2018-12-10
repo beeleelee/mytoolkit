@@ -25,6 +25,7 @@ import noop from './noop'
 import debounce from './debounce'
 import compact from './compact'
 import uniq from './uniq'
+import dashToCamel from './dashToCamel'
 import isSet from './isSet'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
@@ -58,6 +59,7 @@ export {
   debounce,
   compact,
   uniq,
+  dashToCamel,
   isSet,
   isUInt,
   isEmail,
