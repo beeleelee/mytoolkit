@@ -1,7 +1,9 @@
 import performanceNow from './performanceNow'
-
+/**
+ * @ignore
+ */
 const nextFrame = (function () {
-  if(typeof window !== 'undefined'){
+  if (typeof window !== 'undefined') {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame
   }
   return func => setTimeout(func, 1000 / 60)
@@ -39,7 +41,7 @@ const nextTick = () => {
 }
 export const tick = {
   add,
-  remove 
+  remove
 }
 
 export default tick
