@@ -4,6 +4,20 @@ import * as TimeFunction from './internal/_easing'
 
 const linearEase = a => a
 
+/**
+ * @class Tween - simple animation
+ *    
+ * @example
+ * new Tween({
+ *  duration: 500,
+ *  onStep: (t, percent) => {
+ *    console.log(percent)
+ *  },
+ *  onEnd: () => {
+ *    console.log('tween end')
+ *  }
+ * })
+ */
 export class Tween {
   constructor(options) {
     this.startTime = 0
