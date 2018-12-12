@@ -1,5 +1,6 @@
 import typeOf from './typeOf'
 import dashToCamel from './dashToCamel'
+import trim from './trim'
 
 let styleKeys = null
 
@@ -13,7 +14,7 @@ const setSingleStyle = (ele, name, value) => {
   name = dashToCamel(name)
   name = checkVendorPrefix(name)
   if (typeOf(name) !== 'Undefined' && typeOf(value) !== 'Undefined') {
-    ele.style[name] = value
+    ele.style[name] = tryAddPX(name, value)
   }
 }
 
@@ -71,6 +72,60 @@ function getStyleKeys() {
   }, {})
 
   return styleKeys
+}
+
+const properties = [
+  'width',
+  'height',
+  'minWidth',
+  'maxWidth',
+  'minHeight',
+  'maxHeight',
+  'left',
+  'top',
+  'right',
+  'bottom',
+  'borderWidth',
+  'borderTopWidth',
+  'borderBottomWidth',
+  'borderLeftWidth',
+  'borderRightWidth',
+  'borderRadius',
+  'borderTopLeftRadius',
+  'borderTopRightRadius',
+  'borderBottomLeftRadius',
+  'borderBottomRightRadius',
+  'borderSpacing',
+  'fontSize',
+  'letterSpacing',
+  'margin',
+  'marginLeft',
+  'marginRight',
+  'marginTop',
+  'marginBottom',
+  'padding',
+  'paddingLeft',
+  'paddingRight',
+  'paddingTop',
+  'paddingBottom',
+]
+/**
+ * @ignore 
+ */
+function tryAddPX(name, value) {
+  // check if name in the property list which can add px, if not return value 
+  if (properties.indexOf(name) == -1) {
+    return value
+  }
+
+  let cValue = trim(value) - 0
+
+  // only add px to numeric value
+  if (typeOf(cValue) !== 'Number') {
+    return value
+  }
+
+  return `${cValue}px`
 }
 
 export default setStyle 
