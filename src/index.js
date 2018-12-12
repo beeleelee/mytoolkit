@@ -27,6 +27,7 @@ import compact from './compact'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import isSet from './isSet'
+import isUnset from './isUnset'
 import isUInt from './isUInt'
 import isEmail from './isEmail'
 
@@ -61,6 +62,7 @@ export {
   uniq,
   dashToCamel,
   isSet,
+  isUnset,
   isUInt,
   isEmail,
 }
