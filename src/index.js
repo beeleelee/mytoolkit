@@ -3,6 +3,7 @@ import performanceNow from './performanceNow'
 import tick from './tick'
 import Tween from './tween'
 import Deceleration from './deceleration'
+import Queue from './queue'
 import typeOf from './typeOf'
 import addComma from './addComma'
 import padZero from './padZero'
@@ -34,6 +35,7 @@ import isEmail from './isEmail'
 export {
   Tween,
   Deceleration,
+  Queue,
   currentTime,
   performanceNow,
   tick,
