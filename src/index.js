@@ -27,6 +27,7 @@ import debounce from './debounce'
 import compact from './compact'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
+import guard from './guard'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -63,6 +64,7 @@ export {
   compact,
   uniq,
   dashToCamel,
+  guard,
   isSet,
   isUnset,
   isUInt,
