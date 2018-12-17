@@ -28,6 +28,7 @@ import compact from './compact'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import guard from './guard'
+import shallowEqual from './shallowEqual'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -65,6 +66,7 @@ export {
   uniq,
   dashToCamel,
   guard,
+  shallowEqual,
   isSet,
   isUnset,
   isUInt,
