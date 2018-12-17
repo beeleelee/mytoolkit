@@ -20,7 +20,7 @@ export function shallowEqual(a, b) {
 
 function shallowEqualObject(a, b) {
   let aKeys = Object.keys(a)
-  if (aKeys.length !== Object.keys(b)) {
+  if (aKeys.length !== Object.keys(b).length) {
     return false
   }
 
