@@ -29,6 +29,7 @@ import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import guard from './guard'
 import shallowEqual from './shallowEqual'
+import deepEqual from './deepEqual'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -67,6 +68,7 @@ export {
   dashToCamel,
   guard,
   shallowEqual,
+  deepEqual,
   isSet,
   isUnset,
   isUInt,
