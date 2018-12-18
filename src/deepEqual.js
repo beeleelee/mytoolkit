@@ -14,9 +14,9 @@ export function deepEqual(a, b) {
 
   switch (typeA) {
     case 'Object':
-      return shallowEqualObject(a, b)
+      return deepEqualObject(a, b)
     case 'Array':
-      return shallowEqualArray(a, b)
+      return deepEqualArray(a, b)
     default:
       return false
   }
