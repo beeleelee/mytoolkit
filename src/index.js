@@ -11,6 +11,7 @@ import IDFactory from './IDFactory'
 import randInt from './randInt'
 import randStr from './randStr'
 import setStyle from './setStyle'
+import batchSetStyle from './batchSetStyle'
 import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
@@ -49,6 +50,7 @@ export {
   randInt,
   randStr,
   setStyle,
+  batchSetStyle,
   deepCopy,
   trim,
   timestamp,

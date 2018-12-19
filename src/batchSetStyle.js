@@ -10,11 +10,10 @@
 import setStyle from './setStyle'
 import delay from './delay'
 import Queue from './queue'
-import tick from './tick'
+import { nextFrame } from './tick'
 
-const tasks = new Queue()
+const tasks = new TaskQueue()
 let delayHandle = null
-let doingTask = false
 
 export function batchSetStyle(...args) {
   if (delayHandle) {
@@ -22,20 +21,48 @@ export function batchSetStyle(...args) {
     delayHandle = null
   }
   tasks.enqueue(args)
-  delayHandle = delay(doTask, 0)
-}
-
-function doTask() {
-  doingTask = true
-  let task
-  while (task = tasks.dequeue()) {
-    try {
-      setStyle(...task)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  doingTask = false
+  delayHandle = delay(() => {
+    tasks.doTask()
+  }, 0)
 }
 
 export default batchSetStyle
+
+class TaskQueue extends Queue {
+  constructor(options) {
+    super(options)
+    this.waittingTasks = []
+    this.doingTask = false
+  }
+  enqueue(item) {
+    if (this.doingTask) {
+      this.waittingTasks.push(item)
+    } else {
+      super.enqueue(item)
+    }
+    return this
+  }
+  doTask() {
+    this.doingTask = true
+    let task
+    while (task = tasks.dequeue()) {
+      try {
+        setStyle(...task)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    this.doingTask = false
+    if (this.waittingTasks.length > 0) {
+      this.mergeTask()
+      nextFrame(() => {
+        this.doTask()
+      })
+    }
+    return this
+  }
+  mergeTask() {
+    this.data = [...this.data, ...this.waittingTasks]
+    return this
+  }
+}
