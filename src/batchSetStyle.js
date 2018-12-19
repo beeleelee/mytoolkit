@@ -9,10 +9,33 @@
  */
 import setStyle from './setStyle'
 import delay from './delay'
-import queue from './queue'
+import Queue from './queue'
+import tick from './tick'
 
-export function batchSetStyle(element, name, value) {
+const tasks = new Queue()
+let delayHandle = null
+let doingTask = false
 
+export function batchSetStyle(...args) {
+  if (delayHandle) {
+    clearTimeout(delayHandle)
+    delayHandle = null
+  }
+  tasks.enqueue(args)
+  delayHandle = delay(doTask, 0)
+}
+
+function doTask() {
+  doingTask = true
+  let task
+  while (task = tasks.dequeue()) {
+    try {
+      setStyle(...task)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  doingTask = false
 }
 
 export default batchSetStyle
