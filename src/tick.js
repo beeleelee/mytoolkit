@@ -2,7 +2,7 @@ import performanceNow from './performanceNow'
 /**
  * @ignore
  */
-const nextFrame = (function () {
+export const nextFrame = (function () {
   if (typeof window !== 'undefined') {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame
   }
