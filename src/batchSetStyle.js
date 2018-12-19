@@ -12,22 +12,6 @@ import delay from './delay'
 import Queue from './queue'
 import { nextFrame } from './tick'
 
-const tasks = new TaskQueue()
-let delayHandle = null
-
-export function batchSetStyle(...args) {
-  if (delayHandle) {
-    clearTimeout(delayHandle)
-    delayHandle = null
-  }
-  tasks.enqueue(args)
-  delayHandle = delay(() => {
-    tasks.doTask()
-  }, 0)
-}
-
-export default batchSetStyle
-
 class TaskQueue extends Queue {
   constructor(options) {
     super(options)
@@ -66,3 +50,20 @@ class TaskQueue extends Queue {
     return this
   }
 }
+
+const tasks = new TaskQueue()
+let delayHandle = null
+
+export function batchSetStyle(...args) {
+  if (delayHandle) {
+    clearTimeout(delayHandle)
+    delayHandle = null
+  }
+  tasks.enqueue(args)
+  delayHandle = delay(() => {
+    tasks.doTask()
+  }, 0)
+}
+
+export default batchSetStyle
+
