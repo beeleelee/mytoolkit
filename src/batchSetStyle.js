@@ -27,6 +27,8 @@ class TaskQueue extends Queue {
     return this
   }
   doTask() {
+    if (this.doingTask) return
+
     this.doingTask = true
     let task
     while (task = tasks.dequeue()) {
@@ -62,6 +64,7 @@ export function batchSetStyle(...args) {
   tasks.enqueue(args)
   delayHandle = delay(() => {
     tasks.doTask()
+    delayHandle = null
   }, 0)
 }
 
