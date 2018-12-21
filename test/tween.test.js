@@ -5,6 +5,7 @@ const {
   typeOf
 } = mytoolkit
 
+
 test('new Tween(options) has default settings', t => {
   let tween = new Tween()
 

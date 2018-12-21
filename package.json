@@ -30,6 +30,7 @@
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
     "@babel/preset-env": "^7.1.6",
     "ava": "1.0.0-rc.2",
     "babel-eslint": "^10.0.1",
