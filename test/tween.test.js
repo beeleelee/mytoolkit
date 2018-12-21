@@ -4,13 +4,23 @@ const {
   Tween
 } = mytoolkit
 
-test('Tween', t => {
+test('Tween can be paused', t => {
   let tween = new Tween({
     duration: 500,
-    onStep: () => {
-
-    }
+    // onStep: (t, p) => {
+    //   console.log(t, p)
+    // },
+    // onPause: t => {
+    //   console.log(t)
+    // },
+    // onEnd: t => {
+    //   console.log(t)
+    // }
   })
   tween.start()
-  t.pass()
+  t.is(tween.pausedTime, null)
+  setTimeout(() => {
+    tween.pause()
+    t.true(tween.pausedTime)
+  }, 200)
 })
