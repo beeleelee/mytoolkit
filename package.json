@@ -8,8 +8,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "ava",
-    "tapetest": "tape test/tween.test.js",
+    "test": "tape test/**/*.js",
     "document": "rimraf docs && esdoc",
     "pretest": "npm run build"
   },
