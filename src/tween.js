@@ -23,6 +23,7 @@ export class Tween {
     this.startTime = 0
     this.currentTime = 0
     this.percent = 0
+    this.pausedTime = null
     this.setOptions(options)
     this.step = this.step.bind(this)
   }
@@ -39,18 +40,33 @@ export class Tween {
    * @todo add support for restart after pause
    */
   start() {
-    this.startTime = this.currentTime = performanceNow()
+    // ignore start call when already in tweening
+    if (this.isTweening()) return
+
+    this.currentTime = performanceNow()
+    if (this.pausedTime) {
+      this.startTime = this.startTime + (this.currentTime - this.pausedTime)
+    } else {
+      this.startTime = this.currentTime
+    }
     this.clockId = tick.add(this.step)
     return this
+  }
+  isTweening() {
+    return !!this.clockId
   }
   pause() {
     tick.remove(this.clockId)
     this.clockId = null
+    this.pausedTime = performanceNow()
   }
   stop() {
     tick.remove(this.clockId)
     this.clockId = null
     this.percent = 0
+    this.startTime = 0
+    this.currentTime = 0
+    this.pausedTime = null
     if (this.options.onEnd) {
       this.options.onEnd(this)
     }
