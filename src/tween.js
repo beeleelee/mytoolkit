@@ -25,6 +25,7 @@ export class Tween {
     this.percent = 0
     this.pausedTime = null
     this.clockId = null
+    this.options = {}
     this.setOptions(options)
     this.step = this.step.bind(this)
   }
