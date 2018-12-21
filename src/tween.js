@@ -59,6 +59,10 @@ export class Tween {
     tick.remove(this.clockId)
     this.clockId = null
     this.pausedTime = performanceNow()
+
+    if (this.options.onPause) {
+      this.options.onPause(this)
+    }
   }
   stop() {
     tick.remove(this.clockId)
