@@ -31,10 +31,10 @@ export class Tween {
   }
   setOptions(options = {}) {
     let {
-      duration = 0,
+      duration,
       ease,
     } = options
-    this.duration = duration
+    this.duration = duration || 0
     this.ease = TimeFunction[ease] || linearEase
     this.options = Object.assign({}, this.options, options)
   }
