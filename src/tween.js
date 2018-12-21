@@ -35,6 +35,9 @@ export class Tween {
     this.ease = TimeFunction[ease] || linearEase
     this.options = Object.assign({}, this.options, options)
   }
+  /**
+   * @todo add support for restart after pause
+   */
   start() {
     this.startTime = this.currentTime = performanceNow()
     this.clockId = tick.add(this.step)
