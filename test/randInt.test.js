@@ -1,4 +1,4 @@
-import test from 'ava'
+const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
   randInt
