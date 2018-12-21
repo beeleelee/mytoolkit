@@ -9,4 +9,6 @@ test('trim', t => {
   t.is(trim('\tabc\n'), 'abc')
   t.is(trim(' ab c '), 'ab c')
   t.is(trim(), '')
+
+  t.end()
 })

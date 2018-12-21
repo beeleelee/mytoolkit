@@ -1,8 +1,8 @@
 const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
-  typeOf 
-} = mytoolkit 
+  typeOf
+} = mytoolkit
 
 test('typeOf', t => {
   t.is(typeOf(NaN), 'NaN')
@@ -13,4 +13,6 @@ test('typeOf', t => {
   t.is(typeOf(null), 'Null')
   t.is(typeOf(/.+/), 'RegExp')
   t.is(typeOf(false), 'Boolean')
+
+  t.end()
 })

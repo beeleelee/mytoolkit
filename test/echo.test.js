@@ -9,4 +9,6 @@ test('echo', t => {
   t.is(echo('a'), 'a')
   let b = {}
   t.is(echo(b), b)
+
+  t.end()
 })

@@ -1,8 +1,8 @@
 const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
-  isSet 
-} = mytoolkit 
+  isSet
+} = mytoolkit
 
 test('isSet', t => {
   const obj = {
@@ -12,4 +12,6 @@ test('isSet', t => {
   t.true(isSet(obj.name))
   t.false(isSet(obj.id))
   t.false(isSet(obj.type))
+
+  t.end()
 })

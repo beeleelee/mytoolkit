@@ -13,4 +13,6 @@ test('guard', t => {
   t.is(guardZero(0), 1)
   t.deepEqual(guardNull(null), [])
   t.deepEqual(guardUnset(), {})
+
+  t.end()
 })

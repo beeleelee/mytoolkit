@@ -6,9 +6,9 @@ const {
 
 test('addKey', t => {
   const c1 = [
-    {name: 'a'},
-    {name: 'b'},
-    {name: 'c'},
+    { name: 'a' },
+    { name: 'b' },
+    { name: 'c' },
   ]
   const c2 = addKey(c1)
 
@@ -21,14 +21,16 @@ test('addKey', t => {
   t.is(c3[1].key, 'prefix1')
 
   const c4 = [
-    {id: 1},
-    {id: 2}
+    { id: 1 },
+    { id: 2 }
   ]
-  const c5 = addKey(c4) 
+  const c5 = addKey(c4)
   t.is(c5[0].key, '1')
   t.is(c5[1].key, '2')
 
   const c6 = addKey(c4, 'pre')
   t.is(c6[0].key, 'pre1')
   t.is(c6[1].key, 'pre2')
+
+  t.end()
 })

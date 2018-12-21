@@ -15,4 +15,6 @@ test('batchSetStyle', t => {
     t.is(div.style.height, '10px')
     t.is(div.style.transform, 'translate3d(0,0,0)')
   }, 1)
+
+  t.end()
 })

@@ -12,4 +12,6 @@ test('isSet', t => {
   t.false(isUnset(obj.name))
   t.true(isUnset(obj.id))
   t.true(isUnset(obj.type))
+
+  t.end()
 })

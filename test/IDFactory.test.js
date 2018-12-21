@@ -2,7 +2,7 @@ const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
   IDFactory
-} = mytoolkit 
+} = mytoolkit
 
 const ID1 = IDFactory(0)
 const ID100 = IDFactory(100)
@@ -16,4 +16,6 @@ test('IDFactory', t => {
   t.is(ID100(), 102)
   t.is(ID1(), 3)
   t.is(ID100(), 103)
+
+  t.end()
 })

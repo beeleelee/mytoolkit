@@ -17,4 +17,6 @@ test('queue', t => {
   t.is(q.dequeue(), 3)
   t.deepEqual(q.dequeue(), [4])
   t.is(q.dequeue()(5), 5)
+
+  t.end()
 })

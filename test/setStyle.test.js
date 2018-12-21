@@ -11,4 +11,6 @@ test('setStyle', t => {
   t.is(div.style.height, '10px')
   setStyle(div, 'transform', 'translate3d(0,0,0)')
   t.is(div.style.transform, 'translate3d(0,0,0)')
+
+  t.end()
 })

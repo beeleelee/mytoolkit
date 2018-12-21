@@ -3,10 +3,12 @@ const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
   currentTime,
   typeOf
-} = mytoolkit 
+} = mytoolkit
 
 test('currentTime', t => {
   let time = currentTime()
   t.is(typeOf(time), 'Number')
   t.is(String(time).length, 13)
+
+  t.end()
 })

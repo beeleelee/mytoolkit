@@ -9,4 +9,6 @@ test('dashToCamel', t => {
   t.is(dashToCamel('font-size'), 'fontSize')
   t.is(dashToCamel('align-items'), 'alignItems')
   t.is(dashToCamel('textAlign'), 'textAlign')
+
+  t.end()
 })

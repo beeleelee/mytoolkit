@@ -2,7 +2,7 @@ const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
   strToTime
-} = mytoolkit 
+} = mytoolkit
 
 test('timestamp', t => {
   let str1 = '2018-11-24 16:16:52'
@@ -12,4 +12,6 @@ test('timestamp', t => {
   t.true(strToTime(str2) <= 1543047456700)
   t.true(strToTime(str2, null, true) <= 1543047456)
   t.true(strToTime(str3, 'yyyy-mm-dd') <= 1543152558701)
+
+  t.end()
 })

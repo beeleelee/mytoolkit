@@ -1,8 +1,8 @@
 const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
-  Deceleration 
-} = mytoolkit 
+  Deceleration
+} = mytoolkit
 
 test('Deceleration', t => {
   let dec = new Deceleration({
@@ -13,4 +13,6 @@ test('Deceleration', t => {
   })
   dec.start()
   t.pass()
+
+  t.end()
 })

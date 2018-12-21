@@ -14,4 +14,6 @@ test('shallowEqual', t => {
   t.false(shallowEqual({ a: { b: 3 } }, { a: { b: 3 } }))
   t.true(shallowEqual(['a', 'b', 'c'], ['a', 'b', 'c']))
   t.true(shallowEqual({ a: 1, b: 2 }, { a: 1, b: 2 }))
+
+  t.end()
 })

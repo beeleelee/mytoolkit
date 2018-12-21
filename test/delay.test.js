@@ -18,4 +18,6 @@ test('delay', t => {
   })
   t.is(error2.message, 'unexpected type of String')
   delay(delayFunc, 0, 'a', 'b')
+
+  t.end()
 })

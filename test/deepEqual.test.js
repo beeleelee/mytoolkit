@@ -14,4 +14,6 @@ test('deepEqual', t => {
   t.true(deepEqual({ a: { b: 3 } }, { a: { b: 3 } }))
   t.true(deepEqual(['a', [1, 2, 3, { x: 'x', z: 'z' }], 'c'], ['a', [1, 2, 3, { x: 'x', z: 'z' }], 'c']))
   t.true(deepEqual({ a: 1, b: 2, c: ['t', 9, null, { n: 9 }] }, { a: 1, b: 2, c: ['t', 9, null, { n: 9 }] }))
+
+  t.end()
 })
