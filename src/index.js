@@ -31,6 +31,7 @@ import dashToCamel from './dashToCamel'
 import guard from './guard'
 import shallowEqual from './shallowEqual'
 import deepEqual from './deepEqual'
+import angle2deg from './angle2deg'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -71,6 +72,7 @@ export {
   guard,
   shallowEqual,
   deepEqual,
+  angle2deg,
   isSet,
   isUnset,
   isUInt,
