@@ -32,6 +32,7 @@ import guard from './guard'
 import shallowEqual from './shallowEqual'
 import deepEqual from './deepEqual'
 import angle2deg from './angle2deg'
+import deg2angle from './deg2angle'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -73,6 +74,7 @@ export {
   shallowEqual,
   deepEqual,
   angle2deg,
+  deg2angle,
   isSet,
   isUnset,
   isUInt,
