@@ -33,6 +33,7 @@ import shallowEqual from './shallowEqual'
 import deepEqual from './deepEqual'
 import angle2deg from './angle2deg'
 import deg2angle from './deg2angle'
+import excludeProps from './excludeProps'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -75,6 +76,7 @@ export {
   deepEqual,
   angle2deg,
   deg2angle,
+  excludeProps,
   isSet,
   isUnset,
   isUInt,
