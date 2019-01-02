@@ -16,3 +16,5 @@ export function excludeProps(obj, exclude = []) {
   })
   return r
 }
+
+export default excludeProps
