@@ -9,5 +9,8 @@ test('selectProps', t => {
   t.deepEqual(selectProps(o, 'a'), { a: 1 })
   t.deepEqual(selectProps(o, ['a', 'd']), { a: 1, d: 4 })
 
+  t.deepEqual(selectProps(o, name => name === 'd'), { d: 4 })
+  t.deepEqual(selectProps(o, name => name !== 'd'), { a: 1, b: 2, c: 3 })
+
   t.end()
 })
