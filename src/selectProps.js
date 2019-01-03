@@ -1,5 +1,4 @@
 import typeOf from './typeOf'
-import isSet from './isSet'
 
 export function selectProps(obj, select = []) {
   if (typeOf(obj) !== 'Object') {
@@ -8,11 +7,16 @@ export function selectProps(obj, select = []) {
   if (typeOf(select) === 'String') {
     select = [select]
   }
-  let r = {}
-  select.forEach(name => {
-    if (isSet(obj[name])) r[name] = obj[name]
+  const r = {}
+  const shouldSelect = (name) => {
+    if (typeOf(select) === 'Function') {
+      return select(name)
+    }
+    return select.indexOf(name) > -1
+  }
+  Object.keys(obj).forEach(name => {
+    if (shouldSelect(name)) r[name] = obj[name]
   })
-
   return r
 }
 
