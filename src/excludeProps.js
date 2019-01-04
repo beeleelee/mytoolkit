@@ -8,11 +8,15 @@ export function excludeProps(obj, exclude = []) {
   if (typeOf(exclude) === 'String') {
     exclude = [exclude]
   }
-  let r = {
-    ...obj
+  const r = {}
+  const shouldExclude = (name) => {
+    if (typeOf(exclude) === 'Function') {
+      return exclude(name)
+    }
+    return exclude.indexOf(name) > -1
   }
-  exclude.forEach(name => {
-    if (isSet(r[name])) delete r[name]
+  Object.keys(obj).forEach(name => {
+    if (!shouldExclude(name)) r[name] = obj[name]
   })
   return r
 }
