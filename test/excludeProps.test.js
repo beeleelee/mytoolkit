@@ -8,6 +8,8 @@ test('excludeProps', t => {
   const o = { a: 1, b: 2, c: 3, d: 4 }
   t.deepEqual(excludeProps(o, 'a'), { b: 2, c: 3, d: 4 })
   t.deepEqual(excludeProps(o, ['a', 'd']), { b: 2, c: 3 })
+  t.deepEqual(excludeProps(o, name => name === 'a'), { b: 2, c: 3, d: 4 })
+  t.deepEqual(excludeProps(o, name => name !== 'a'), { a: 1 })
 
   t.end()
 })
