@@ -5,7 +5,7 @@ export function quickSort(list, func = compare) {
   if (typeOf(list) !== 'Array') {
     throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
   }
-  let listLen = list.lenghth
+  let listLen = list.length
   if (listLen < 2) return [...list]
 
   let leftSide = []
@@ -19,7 +19,7 @@ export function quickSort(list, func = compare) {
       leftSide.push(item)
     }
   }
-  return [...quickSort(leftSide), headItem, ...quickSort(rightSide)]
+  return [...quickSort(leftSide, func), headItem, ...quickSort(rightSide, func)]
 }
 
 export default quickSort
