@@ -6,9 +6,9 @@ export function tail(list, size = 1) {
   }
   const realSize = Math.min(size, list.length)
   if (realSize === 0) return ''
-  if (realSize === 1) return list.slice(-1)
+  if (realSize === 1) return list.slice(-1)[0]
 
   return list.slice(-realSize)
 }
 
-export default tail
+export default tail 
