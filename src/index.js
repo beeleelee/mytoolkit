@@ -36,6 +36,7 @@ import deg2angle from './deg2angle'
 import excludeProps from './excludeProps'
 import selectProps from './selectProps'
 import compose from './compose'
+import head from './head'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -81,6 +82,7 @@ export {
   excludeProps,
   selectProps,
   compose,
+  head,
   isSet,
   isUnset,
   isUInt,
