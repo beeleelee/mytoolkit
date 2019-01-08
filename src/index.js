@@ -38,6 +38,7 @@ import selectProps from './selectProps'
 import compose from './compose'
 import head from './head'
 import tail from './tail'
+import middle from './middle'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -85,6 +86,7 @@ export {
   compose,
   head,
   tail,
+  middle,
   isSet,
   isUnset,
   isUInt,
