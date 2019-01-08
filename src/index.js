@@ -40,6 +40,7 @@ import head from './head'
 import tail from './tail'
 import middle from './middle'
 import midIndex from './midIndex'
+import quickSort from './quickSort'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -89,6 +90,7 @@ export {
   tail,
   middle,
   midIndex,
+  quickSort,
   isSet,
   isUnset,
   isUInt,
