@@ -6,7 +6,7 @@ export function middle(list) {
   }
   const len = list.length
 
-  return list[Math.floor(len / 2)]
+  return list[Math.floor((len + 1) / 2) - 1]
 }
 
 export default middle
