@@ -39,6 +39,7 @@ import compose from './compose'
 import head from './head'
 import tail from './tail'
 import middle from './middle'
+import midIndex from './midIndex'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -87,6 +88,7 @@ export {
   head,
   tail,
   middle,
+  midIndex,
   isSet,
   isUnset,
   isUInt,
