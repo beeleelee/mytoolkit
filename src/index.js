@@ -41,6 +41,7 @@ import tail from './tail'
 import middle from './middle'
 import midIndex from './midIndex'
 import quickSort from './quickSort'
+import shuffle from './shuffle'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -91,6 +92,7 @@ export {
   middle,
   midIndex,
   quickSort,
+  shuffle,
   isSet,
   isUnset,
   isUInt,
