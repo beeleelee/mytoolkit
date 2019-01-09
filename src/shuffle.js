@@ -8,7 +8,7 @@ export function shuffle(list) {
   const len = list.length
   const r = [...list]
   let randIdx, midValue
-  for (let i = 0; i < len; i++) {
+  for (let i = 0; i < len - 1; i++) {
     randIdx = randInt(i + 1, len)
     midValue = r[i]
     r[i] = r[randIdx]

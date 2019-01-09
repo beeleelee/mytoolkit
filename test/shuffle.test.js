@@ -1,12 +1,11 @@
 const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
-  randStr
+  shuffle
 } = mytoolkit
 
-test('randStr', t => {
-  t.true(randStr(9).length === 9)
-  t.pass()
-
+test('shuffle', t => {
+  let a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  t.notDeepEqual(shuffle(a), a)
   t.end()
 })
