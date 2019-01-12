@@ -42,6 +42,7 @@ import middle from './middle'
 import midIndex from './midIndex'
 import quickSort from './quickSort'
 import shuffle from './shuffle'
+import parseQuery from './parseQuery'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -93,6 +94,7 @@ export {
   midIndex,
   quickSort,
   shuffle,
+  parseQuery,
   isSet,
   isUnset,
   isUInt,
