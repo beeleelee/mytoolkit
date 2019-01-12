@@ -43,6 +43,7 @@ import midIndex from './midIndex'
 import quickSort from './quickSort'
 import shuffle from './shuffle'
 import parseQuery from './parseQuery'
+import obj2qs from './obj2qs'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -95,6 +96,7 @@ export {
   quickSort,
   shuffle,
   parseQuery,
+  obj2qs,
   isSet,
   isUnset,
   isUInt,
