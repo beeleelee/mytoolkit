@@ -1,6 +1,10 @@
 import typeOf from './typeOf'
 import isSet from './isSet'
-
+/**
+ * 
+ * @param {Object} obj - a plain object
+ * @returns {String} - a query string 
+ */
 export function obj2qs(obj) {
   if (typeOf(obj) !== 'Object') {
     throw new TypeError(`expect param to be plain object but got type of ${typeOf(obj)}`)
