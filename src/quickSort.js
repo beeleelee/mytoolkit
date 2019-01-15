@@ -5,6 +5,7 @@ import head from './head'
  * 
  * @param {Array} list - a simple array
  * @param {Function} func - a compare function
+ * @returns {Array} - a sorted list
  */
 export function quickSort(list, func = compare) {
   if (typeOf(list) !== 'Array') {
