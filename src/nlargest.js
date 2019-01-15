@@ -6,7 +6,7 @@ export function nlargest(list, num = 1) {
     throw new TypeError(`expect param to be type of Array, but got ${typeOf(list)}`)
   }
 
-  return quickSort(list).slice(0, num)
+  return quickSort(list, (a, b) => a < b).slice(0, num)
 }
 
 export default nlargest
