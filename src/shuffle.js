@@ -1,6 +1,11 @@
 import randInt from './randInt'
 import typeOf from './typeOf'
 
+/**
+ * 
+ * @param {Array} list - a simple array
+ * @returns {Array} - return a reordered list
+ */
 export function shuffle(list) {
   if (typeOf(list) !== 'Array') {
     throw new TypeError(`expect param type of Array but got ${typeOf(list)}`)
