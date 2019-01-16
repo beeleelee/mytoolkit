@@ -45,6 +45,7 @@ import shuffle from './shuffle'
 import parseQuery from './parseQuery'
 import obj2qs from './obj2qs'
 import nlargest from './nlargest'
+import nsmallest from './nsmallest'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -99,6 +100,7 @@ export {
   parseQuery,
   obj2qs,
   nlargest,
+  nsmallest,
   isSet,
   isUnset,
   isUInt,
