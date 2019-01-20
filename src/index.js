@@ -46,6 +46,7 @@ import parseQuery from './parseQuery'
 import obj2qs from './obj2qs'
 import nlargest from './nlargest'
 import nsmallest from './nsmallest'
+import queryJoin from './queryJoin'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -101,6 +102,7 @@ export {
   obj2qs,
   nlargest,
   nsmallest,
+  queryJoin,
   isSet,
   isUnset,
   isUInt,
