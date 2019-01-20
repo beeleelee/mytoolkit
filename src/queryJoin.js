@@ -1,14 +1,11 @@
 export function queryJoin(left, right) {
   let joinCharacter
-  let alreadHasQuery = left.indexOf('?') > -1
+  let alreadHasQuery = /[%\w]+=/.test(left)
   if (!alreadHasQuery) {
-    joinCharacter = '?'
+    joinCharacter = /\?$/.test(left) ? '' : '?'
   }
-  if (alreadHasQuery && /[\?&]$/.test(left)) {
-    joinCharacter = ''
-  }
-  if (alreadHasQuery && !/[\?&]$/.test(left)) {
-    joinCharacter = '&'
+  if (alreadHasQuery) {
+    joinCharacter = /&$/.test(left) ? '' : '&'
   }
   return [left, joinCharacter, right].join('')
 }
