@@ -1,48 +1,47 @@
+import setStyle from './setStyle'
+
+let remSetuped = false
+
 export function rem({
-  designWidth,
-  designDPR,
-  rem2px,
+  designWidth = 750,
+  designDPR = 1,
+  rem2px = 100,
+  bodyFontSize = 14,
   win,
   doc
 }) {
-  let documentElement = document.documentElement
+  let documentElement = doc.documentElement
   let dpr = win.devicePixelRatio || 1
+  let expectedWidth = designWidth * designDPR
+  let expectedDocumentElementFontSize = rem2px
 
+  !remSetuped && setBodyFontSize()
 
-}
+  function setDocumentElementFontSize() {
+    let adaptedWidth = documentElement.clientWidth * dpr
+    let adaptedDocumentElementFontSize = expectedDocumentElementFontSize * adaptedWidth / expectedWidth
+    setStyle(documentElement, 'font-size', adaptedDocumentElementFontSize)
+  }
 
-
-(function flexible(window, document) {
-
-  var docEl = document.documentElement
-  var dpr = window.devicePixelRatio || 1
-
-  // adjust body font size
   function setBodyFontSize() {
-    if (document.body) {
-      document.body.style.fontSize = (12 * dpr) + 'px'
+    if (doc.body) {
+      setStyle(doc.body, 'font-size', bodyFontSize * dpr)
     }
     else {
-      document.addEventListener('DOMContentLoaded', setBodyFontSize)
+      doc.addEventListener('DOMContentLoaded', setBodyFontSize)
     }
   }
-  setBodyFontSize();
+  if (!remSetuped) {
+    setDocumentElementFontSize()
 
-  // set 1rem = viewWidth / 10
-  function setRemUnit() {
-    var rem = docEl.clientWidth / 10
-    docEl.style.fontSize = rem + 'px'
+    // reset rem unit on page resize
+    window.addEventListener('resize', setDocumentElementFontSize)
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        setDocumentElementFontSize()
+      }
+    })
   }
 
-  setRemUnit()
-
-  // reset rem unit on page resize
-  window.addEventListener('resize', setRemUnit)
-  window.addEventListener('pageshow', function (e) {
-    if (e.persisted) {
-      setRemUnit()
-    }
-  })
-
-
-}(window, document))
+  remSetuped = true
+}
