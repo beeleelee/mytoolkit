@@ -45,3 +45,5 @@ export function rem({
 
   remSetuped = true
 }
+
+export default rem 

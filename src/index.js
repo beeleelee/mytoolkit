@@ -47,6 +47,7 @@ import obj2qs from './obj2qs'
 import nlargest from './nlargest'
 import nsmallest from './nsmallest'
 import queryJoin from './queryJoin'
+import rem from './rem'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -103,6 +104,7 @@ export {
   nlargest,
   nsmallest,
   queryJoin,
+  rem,
   isSet,
   isUnset,
   isUInt,
