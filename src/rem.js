@@ -21,6 +21,7 @@ export function rem({
     let adaptedWidth = documentElement.clientWidth * dpr
     let adaptedDocumentElementFontSize = expectedDocumentElementFontSize * adaptedWidth / expectedWidth
     setStyle(documentElement, 'font-size', adaptedDocumentElementFontSize)
+    console.log(`dpr: ${dpr}, expectedWidth: ${expectedWidth}, deFontSize: ${expectedDocumentElementFontSize}, adaptedWidth: ${adaptedWidth}, adaptedFontSize: ${adaptedDocumentElementFontSize}`)
   }
 
   function setBodyFontSize() {
