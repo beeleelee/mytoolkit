@@ -11,22 +11,22 @@ export function rem({
   doc
 }) {
   let documentElement = doc.documentElement
-  let dpr = win.devicePixelRatio || 1
+  const dpr = () => win.devicePixelRatio || 1
   let expectedWidth = designWidth * designDPR
   let expectedDocumentElementFontSize = rem2px
 
   !remSetuped && setBodyFontSize()
 
   function setDocumentElementFontSize() {
-    let adaptedWidth = documentElement.clientWidth * dpr
+    let adaptedWidth = documentElement.clientWidth * dpr()
     let adaptedDocumentElementFontSize = expectedDocumentElementFontSize * adaptedWidth / expectedWidth
     setStyle(documentElement, 'font-size', adaptedDocumentElementFontSize)
-    console.log(`dpr: ${dpr}, expectedWidth: ${expectedWidth}, deFontSize: ${expectedDocumentElementFontSize}, adaptedWidth: ${adaptedWidth}, adaptedFontSize: ${adaptedDocumentElementFontSize}`)
+    console.log(`dpr: ${dpr()}, expectedWidth: ${expectedWidth}, deFontSize: ${expectedDocumentElementFontSize}, adaptedWidth: ${adaptedWidth}, adaptedFontSize: ${adaptedDocumentElementFontSize}`)
   }
 
   function setBodyFontSize() {
     if (doc.body) {
-      setStyle(doc.body, 'font-size', bodyFontSize * dpr)
+      setStyle(doc.body, 'font-size', bodyFontSize * dpr())
     }
     else {
       doc.addEventListener('DOMContentLoaded', setBodyFontSize)
