@@ -48,6 +48,7 @@ import nlargest from './nlargest'
 import nsmallest from './nsmallest'
 import queryJoin from './queryJoin'
 import rem from './rem'
+import getProp from './getProp'
 import isSet from './isSet'
 import isUnset from './isUnset'
 import isUInt from './isUInt'
@@ -105,6 +106,7 @@ export {
   nsmallest,
   queryJoin,
   rem,
+  getProp,
   isSet,
   isUnset,
   isUInt,
