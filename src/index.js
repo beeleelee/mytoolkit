@@ -12,7 +12,6 @@ import randInt from './randInt'
 import randStr from './randStr'
 import setStyle from './setStyle'
 import batchSetStyle from './batchSetStyle'
-import deepCopy from './deepCopy'
 import trim from './trim'
 import timestamp from './timestamp'
 import timeToStr from './timeToStr'
@@ -29,7 +28,6 @@ import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import guard from './guard'
 import shallowEqual from './shallowEqual'
-import deepEqual from './deepEqual'
 import angle2deg from './angle2deg'
 import deg2angle from './deg2angle'
 import excludeProps from './excludeProps'
@@ -67,7 +65,6 @@ export {
   randStr,
   setStyle,
   batchSetStyle,
-  deepCopy,
   trim,
   timestamp,
   timeToStr,
@@ -85,7 +82,6 @@ export {
   dashToCamel,
   guard,
   shallowEqual,
-  deepEqual,
   angle2deg,
   deg2angle,
   excludeProps,
