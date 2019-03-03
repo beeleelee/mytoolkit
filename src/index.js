@@ -25,7 +25,6 @@ import delay from './delay'
 import echo from './echo'
 import noop from './noop'
 import debounce from './debounce'
-import compact from './compact'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import guard from './guard'
@@ -51,6 +50,7 @@ import rem from './rem'
 import getProp from './getProp'
 
 export * from './base'
+export * from './array'
 
 export {
   Tween,
@@ -81,7 +81,6 @@ export {
   echo,
   noop,
   debounce,
-  compact,
   uniq,
   dashToCamel,
   guard,

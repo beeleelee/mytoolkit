@@ -66,3 +66,115 @@ export const isEmail = (emailAddress) => {
 export function isUInt(uint) {
   return /^\d+$/.test(uint)
 }
+
+/**
+ * 
+ * @param {*} obj - any type in javascript
+ * @return the copy of obj
+ * 
+ */
+export function deepCopy(obj) {
+  let type = typeOf(obj)
+  let r
+  switch (type) {
+  case 'Object':
+    r = {}
+    Object.keys(obj)
+      .forEach(key => {
+        r[key] = deepCopy(obj[key])
+      })
+    break
+  case 'Array':
+    r = []
+    obj.forEach((v, k) => {
+      r[k] = deepCopy(v)
+    })
+    break
+  default:
+    r = obj
+  }
+  return r
+}
+
+/**
+ * @desc a way to tell if two object hold the same value recursively.
+ */
+export function deepEqual(a, b) {
+  if (a == b) return true
+
+  let typeA = typeOf(a)
+  let typeB = typeOf(b)
+
+  if (typeA !== typeB) return false
+
+  switch (typeA) {
+  case 'Object':
+    return deepEqualObject(a, b)
+  case 'Array':
+    return deepEqualArray(a, b)
+  default:
+    return false
+  }
+}
+
+function deepEqualObject(a, b) {
+  let aKeys = Object.keys(a)
+  if (aKeys.length !== Object.keys(b).length) {
+    return false
+  }
+
+  let r = true
+  aKeys.forEach(key => {
+    if (a[key] != b[key]) {
+      let ta = typeOf(a[key])
+      let tb = typeOf(b[key])
+      if (ta !== tb) {
+        r = false
+      } else {
+        switch (ta) {
+        case 'Object':
+          r = deepEqualObject(a[key], b[key])
+          break
+        case 'Array':
+          r = deepEqualArray(a[key], b[key])
+          break
+        default:
+          r = false
+          break
+        }
+      }
+    }
+  })
+  return r
+}
+
+function deepEqualArray(a, b) {
+  if (a.length !== b.length) {
+    return false
+  }
+
+  let r = true
+  a.forEach((v, i) => {
+    if (v != b[i]) {
+      let ta = typeOf(v)
+      let tb = typeOf(b[i])
+      if (ta !== tb) {
+        r = false
+      } else {
+        switch (ta) {
+        case 'Object':
+          r = deepEqualObject(v, b[i])
+          break
+        case 'Array':
+          r = deepEqualArray(v, b[i])
+          break
+        default:
+          r = false
+          break
+        }
+      }
+    }
+  })
+
+  return r
+}
