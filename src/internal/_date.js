@@ -1,7 +1,7 @@
 import typeOf from '../typeOf'
 import currentTime from '../currentTime'
 import padZero from '../padZero'
-import { isUInt } from '../is'
+import { isUInt } from '../base'
 
 const supportedFormats = [
   'yyyy-mm-dd hh:mm:ss',

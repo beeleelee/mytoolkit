@@ -1,4 +1,4 @@
-import { isSet } from './is'
+import { isSet } from './base'
 import timestamp from './timestamp'
 import currentTime from './currentTime'
 import { _dateConvert } from './internal/_date'

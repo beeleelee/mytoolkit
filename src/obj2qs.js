@@ -1,7 +1,7 @@
 import typeOf from './typeOf'
 import {
   isSet 
-} from './is'
+} from './base'
 /**
  * 
  * @param {Object} obj - a plain object

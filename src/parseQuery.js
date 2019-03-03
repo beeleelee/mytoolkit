@@ -1,7 +1,7 @@
 import typeOf from './typeOf'
 import {
   isSet
-} from './is'
+} from './base'
 
 export function parseQuery(queryString) {
   if (typeOf(queryString) !== 'String') {

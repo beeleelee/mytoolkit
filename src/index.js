@@ -50,7 +50,7 @@ import queryJoin from './queryJoin'
 import rem from './rem'
 import getProp from './getProp'
 
-export * from './is'
+export * from './base'
 
 export {
   Tween,

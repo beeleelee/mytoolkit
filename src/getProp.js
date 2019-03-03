@@ -1,5 +1,5 @@
 import typeOf from './typeOf'
-import { isUnset } from './is'
+import { isUnset } from './base'
 
 export function getProp(obj, nameArray, defaultValue = ''){
   if (typeOf(obj) !== 'Object') {
