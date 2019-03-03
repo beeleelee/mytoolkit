@@ -8,7 +8,7 @@
  *  4. use tick as setting frame, check remaining task at every frame
  */
 import setStyle from './setStyle'
-import delay from './delay'
+import { delay } from './func'
 import Queue from './queue'
 import { nextFrame } from './tick'
 

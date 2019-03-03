@@ -1,4 +1,20 @@
-import typeOf from './typeOf'
+import {
+  typeOf
+} from './base'
+
+/**
+ * @desc mimic command echo
+ * @param {Any} arg - currently only accept and return the first arg
+ * @returns {Any} - arg 
+ */
+export function echo(arg) {
+  return arg
+}
+
+/**
+ * @desc a empty function doing nothing when called
+ */
+export function noop() {}
 
 /**
  * 
@@ -18,5 +34,3 @@ export function delay(func, wait = 0, ...args) {
     func(...args)
   }, wait)
 }
-
-export default delay 

@@ -18,9 +18,6 @@ import strToTime from './strToTime'
 import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import charLength from './charLength'
-import delay from './delay'
-import echo from './echo'
-import noop from './noop'
 import debounce from './debounce'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
@@ -44,7 +41,7 @@ import getProp from './getProp'
 
 export * from './base'
 export * from './array'
-
+export * from './func'
 export * from './utils'
 
 export {
@@ -69,9 +66,6 @@ export {
   padStart,
   padEnd,
   charLength,
-  delay,
-  echo,
-  noop,
   debounce,
   uniq,
   dashToCamel,
