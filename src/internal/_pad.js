@@ -1,4 +1,6 @@
-import typeOf from '../typeOf'
+import {
+  typeOf
+} from '../base'
 
 const padStartProto = String.prototype.padStart
 const padEndProto = String.prototype.padEnd 
