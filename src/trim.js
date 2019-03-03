@@ -1,4 +1,4 @@
-import isUnset from './isUnset'
+import { isUnset } from './is'
 /**
  * 
  * @param {String} str - a string that to be trim spaces at begin or end of the string.

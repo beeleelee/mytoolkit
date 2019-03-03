@@ -1,5 +1,4 @@
 import typeOf from './typeOf'
-import isSet from './isSet'
 
 export function excludeProps(obj, exclude = []) {
   if (typeOf(obj) !== 'Object') {

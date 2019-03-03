@@ -1,5 +1,7 @@
 import typeOf from './typeOf'
-import isUnset from './isUnset'
+import {
+  isUnset
+} from './is'
 
 const defaultTest = value => !!value
 export function guard(test = defaultTest, safeValue) {

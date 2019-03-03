@@ -1,5 +1,7 @@
 import typeOf from './typeOf'
-import isSet from './isSet'
+import {
+  isSet
+} from './is'
 
 export function parseQuery(queryString) {
   if (typeOf(queryString) !== 'String') {
