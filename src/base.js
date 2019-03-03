@@ -7,6 +7,22 @@ export function typeOf(obj) {
   return objName
 }
 
+export function isObject(obj){
+  return typeOf(obj) === 'Object'
+}
+
+export function isArray(obj) {
+  return typeOf(obj) === 'Array'
+}
+
+export function isString(obj) {
+  return typeOf(obj) === 'String'
+}
+
+export function isNumber(obj) {
+  return typeOf(obj * 1) === 'Number'
+}
+
 
 /**
  * we assume Undefined or Null as unsetted value
