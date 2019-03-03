@@ -18,7 +18,6 @@ import timeToStr from './timeToStr'
 import strToTime from './strToTime'
 import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
-import addKey from './addKey'
 import charLength from './charLength'
 import delay from './delay'
 import echo from './echo'
@@ -27,7 +26,6 @@ import debounce from './debounce'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import guard from './guard'
-import shallowEqual from './shallowEqual'
 import angle2deg from './angle2deg'
 import deg2angle from './deg2angle'
 import excludeProps from './excludeProps'
@@ -72,7 +70,6 @@ export {
   strToDate,
   padStart,
   padEnd,
-  addKey,
   charLength,
   delay,
   echo,
@@ -81,7 +78,6 @@ export {
   uniq,
   dashToCamel,
   guard,
-  shallowEqual,
   angle2deg,
   deg2angle,
   excludeProps,
