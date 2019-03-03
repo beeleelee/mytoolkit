@@ -5,7 +5,6 @@ import Tween from './tween'
 import Deceleration from './deceleration'
 import Queue from './queue'
 import typeOf from './typeOf'
-import addComma from './addComma'
 import padZero from './padZero'
 import IDFactory from './IDFactory'
 import randInt from './randInt'
@@ -26,8 +25,6 @@ import debounce from './debounce'
 import uniq from './uniq'
 import dashToCamel from './dashToCamel'
 import guard from './guard'
-import angle2deg from './angle2deg'
-import deg2angle from './deg2angle'
 import excludeProps from './excludeProps'
 import selectProps from './selectProps'
 import compose from './compose'
@@ -48,6 +45,8 @@ import getProp from './getProp'
 export * from './base'
 export * from './array'
 
+export * from './utils'
+
 export {
   Tween,
   Deceleration,
@@ -56,7 +55,6 @@ export {
   performanceNow,
   tick,
   typeOf,
-  addComma,
   padZero,
   IDFactory,
   randInt,
@@ -78,8 +76,6 @@ export {
   uniq,
   dashToCamel,
   guard,
-  angle2deg,
-  deg2angle,
   excludeProps,
   selectProps,
   compose,

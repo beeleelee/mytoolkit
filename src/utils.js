@@ -1,4 +1,7 @@
-import typeOf from './typeOf'
+import {
+  typeOf 
+} from './base'
+
 /**
  * 
  * @param {String|Number} num -  1000 | 10000000.001
@@ -16,4 +19,10 @@ export function addComma(num) {
   return sign + (mod ? base.substr(0, mod) + ',' : '') + base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1,') + decimal
 }
 
-export default addComma 
+export function angle2deg(angle) {
+  return angle * 180 / Math.PI
+}
+
+export function deg2angle(deg) {
+  return deg * Math.PI / 180
+}
