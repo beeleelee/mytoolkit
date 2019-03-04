@@ -1,3 +1,5 @@
+import { isUnset } from './base'
+
 /**
  * @see https://www.cnblogs.com/dearxinli/p/7657512.html
  * 计算字符串所占的内存字节数，默认使用UTF-8的编码方式计算，也可制定为UTF-16
@@ -50,4 +52,16 @@ export function charLength(str, charset) {
     }
   }
   return total
+}
+
+/**
+ * 
+ * @param {String} str - a string that to be trim spaces at begin or end of the string.
+ * @returns {String} a string without spaces at begin or end of itself.
+ */
+export function trim(str) {
+  if (isUnset(str)) { // if str is undefined or null, return empty string
+    return ''
+  }
+  return (str + '').replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
 }

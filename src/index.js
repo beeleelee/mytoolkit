@@ -10,7 +10,6 @@ import randInt from './randInt'
 import randStr from './randStr'
 import setStyle from './setStyle'
 import batchSetStyle from './batchSetStyle'
-import trim from './trim'
 import timeToStr from './timeToStr'
 import strToTime from './strToTime'
 import strToDate from './strToDate'
@@ -54,7 +53,6 @@ export {
   randStr,
   setStyle,
   batchSetStyle,
-  trim,
   timeToStr,
   strToTime,
   strToDate,
