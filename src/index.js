@@ -24,7 +24,6 @@ import dashToCamel from './dashToCamel'
 import guard from './guard'
 import excludeProps from './excludeProps'
 import selectProps from './selectProps'
-import compose from './compose'
 import head from './head'
 import tail from './tail'
 import middle from './middle'
@@ -72,7 +71,6 @@ export {
   guard,
   excludeProps,
   selectProps,
-  compose,
   head,
   tail,
   middle,

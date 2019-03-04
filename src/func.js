@@ -14,7 +14,7 @@ export function echo(arg) {
 /**
  * @desc a empty function doing nothing when called
  */
-export function noop() {}
+export function noop() { }
 
 /**
  * 
@@ -33,4 +33,8 @@ export function delay(func, wait = 0, ...args) {
   return setTimeout(() => {
     func(...args)
   }, wait)
+}
+
+export function compose(...fns) {
+  return fns.reduce((c, fn) => (...args) => c(fn(...args)))
 }
