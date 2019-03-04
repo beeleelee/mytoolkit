@@ -1,4 +1,7 @@
-import { isUnset } from './base'
+import {
+  typeOf,
+  isUnset
+} from './base'
 
 /**
  * @see https://www.cnblogs.com/dearxinli/p/7657512.html
@@ -64,4 +67,22 @@ export function trim(str) {
     return ''
   }
   return (str + '').replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
+}
+
+
+export function dashToCamel(dashStr) {
+  if (typeOf(dashStr) !== 'String') {
+    throw new TypeError(`dashToCamel expected a dashStr, but got ${typeOf(dashStr)}`)
+  }
+  if (dashStr.indexOf('-') === -1) {
+    return dashStr
+  }
+  let camelStr = dashStr
+  camelStr = trim(camelStr)
+  // remove the dash at begin or end
+  camelStr = camelStr.replace(/^-|-$/g, '')
+
+  camelStr = camelStr.replace(/-(\w)/g, (m, w) => w.toUpperCase())
+
+  return camelStr
 }

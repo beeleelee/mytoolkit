@@ -8,15 +8,12 @@ import padZero from './padZero'
 import IDFactory from './IDFactory'
 import randInt from './randInt'
 import randStr from './randStr'
-import setStyle from './setStyle'
-import batchSetStyle from './batchSetStyle'
 import timeToStr from './timeToStr'
 import strToTime from './strToTime'
 import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import debounce from './debounce'
 import uniq from './uniq'
-import dashToCamel from './dashToCamel'
 import guard from './guard'
 import excludeProps from './excludeProps'
 import selectProps from './selectProps'
@@ -31,7 +28,6 @@ import obj2qs from './obj2qs'
 import nlargest from './nlargest'
 import nsmallest from './nsmallest'
 import queryJoin from './queryJoin'
-import rem from './rem'
 import getProp from './getProp'
 
 export * from './base'
@@ -39,6 +35,7 @@ export * from './array'
 export * from './func'
 export * from './string'
 export * from './utils'
+export * from './dom'
 
 export {
   Tween,
@@ -51,8 +48,6 @@ export {
   IDFactory,
   randInt,
   randStr,
-  setStyle,
-  batchSetStyle,
   timeToStr,
   strToTime,
   strToDate,
@@ -60,7 +55,6 @@ export {
   padEnd,
   debounce,
   uniq,
-  dashToCamel,
   guard,
   excludeProps,
   selectProps,
@@ -75,6 +69,5 @@ export {
   nlargest,
   nsmallest,
   queryJoin,
-  rem,
   getProp,
 }
