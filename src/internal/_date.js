@@ -1,8 +1,10 @@
-import { 
+import {
   typeOf,
   isUInt
 } from '../base'
-import currentTime from '../currentTime'
+import {
+  currentTime,
+} from '../utils'
 import padZero from '../padZero'
 
 const supportedFormats = [
@@ -40,29 +42,29 @@ const supportedTargetTypes = [
 
 export function _dateConvert(from = currentTime(), targetType = 'dateString', format = 'yyyy-mm-dd hh:mm') {
   let fromType = typeOf(from)
-  switch(fromType){
-  case 'String':
-  case 'Number':
-    if(isUInt(from)){
-      return secondsConvert(ensureMiniseconds(from), targetType, format)
-    }
-    return DSConvert(from, targetType)
-  case 'Date':
-    return DConvert(from, targetType, format)
-  default:
-    throw new TypeError(`_dateConvert - unexpected type of ${fromType}`)   
+  switch (fromType) {
+    case 'String':
+    case 'Number':
+      if (isUInt(from)) {
+        return secondsConvert(ensureMiniseconds(from), targetType, format)
+      }
+      return DSConvert(from, targetType)
+    case 'Date':
+      return DConvert(from, targetType, format)
+    default:
+      throw new TypeError(`_dateConvert - unexpected type of ${fromType}`)
   }
 }
 
 function secondsConvert(from, targetType, format) {
-  if(!(targetType === 'date' || targetType === 'dateString')){
+  if (!(targetType === 'date' || targetType === 'dateString')) {
     throw new TypeError(`unexpected targetType: ${targetType}`)
   }
 
   let d = new Date()
   d.setTime(from)
-  if(targetType === 'date'){
-    return d 
+  if (targetType === 'date') {
+    return d
   }
 
   return toDS(d, format)
@@ -72,8 +74,8 @@ function DSConvert(from, targetType) {
   if (!supportedTargetTypes.includes(targetType)) {
     throw new TypeError(`unexpected targetType: ${targetType}`)
   }
-  if(targetType === 'dateString'){
-    return from 
+  if (targetType === 'dateString') {
+    return from
   }
   let reg1 = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/
   let reg2 = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})$/
@@ -84,58 +86,58 @@ function DSConvert(from, targetType) {
   let today = new Date()
   let DS = String(from)
   let match, d
-  if(match = DS.match(reg1)){
+  if (match = DS.match(reg1)) {
     d = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6])
   }
-  if(match = DS.match(reg2)){
+  if (match = DS.match(reg2)) {
     d = new Date(match[1], match[2] - 1, match[3], match[4], match[5])
   }
-  if(match = DS.match(reg3)){
+  if (match = DS.match(reg3)) {
     d = new Date(match[1], match[2] - 1, match[3])
   }
-  if(match = DS.match(reg4)){
+  if (match = DS.match(reg4)) {
     d = new Date(match[1], match[2] - 1)
   }
-  if(match = DS.match(reg5)){
+  if (match = DS.match(reg5)) {
     d = new Date(today.getFullYear(), today.getMonth(), today.getDate(), match[1], match[2], match[3])
   }
-  if(match = DS.match(reg6)){
+  if (match = DS.match(reg6)) {
     d = new Date(today.getFullYear(), today.getMonth(), today.getDate(), match[1], match[2])
   }
-  if(!d){
+  if (!d) {
     throw new Error('unexpected input!')
   }
-  if(targetType === 'seconds'){
+  if (targetType === 'seconds') {
     return Math.round(d.getTime() / 1000)
   }
-  if(targetType === 'miniseconds'){
+  if (targetType === 'miniseconds') {
     return d.getTime()
   }
-  return d 
+  return d
 }
 
 function DConvert(from, targetType, format) {
-  switch(targetType) {
-  case 'seconds':
-    return Math.round(from.getTime() / 1000)
-  case 'miniseconds':
-    return from.getTime()
-  case 'dateString':
-    return toDS(from, format) 
-  default:
-    throw new TypeError(`_dateConvert - unexpected type of ${targetType}`)
+  switch (targetType) {
+    case 'seconds':
+      return Math.round(from.getTime() / 1000)
+    case 'miniseconds':
+      return from.getTime()
+    case 'dateString':
+      return toDS(from, format)
+    default:
+      throw new TypeError(`_dateConvert - unexpected type of ${targetType}`)
   }
 }
 
 function ensureMiniseconds(number) {
-  if((number + '').length === 10){
+  if ((number + '').length === 10) {
     return number * 1000
   }
   return number
 }
 
 function toDS(d, format) {
-  if(typeOf(d) !== 'Date'){
+  if (typeOf(d) !== 'Date') {
     throw new TypeError(`unexpected type: ${typeOf(d)}`)
   }
   if (!supportedFormats.includes(String(format).toLowerCase())) {
@@ -144,7 +146,7 @@ function toDS(d, format) {
 
   let year, month, date, hours, minutes, seconds,
     dateString = format
-  
+
   year = d.getFullYear()
   month = d.getMonth() + 1
   date = d.getDate()

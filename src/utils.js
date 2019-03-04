@@ -1,5 +1,5 @@
 import {
-  typeOf 
+  typeOf
 } from './base'
 
 /**
@@ -25,4 +25,18 @@ export function angle2deg(angle) {
 
 export function deg2angle(deg) {
   return deg * Math.PI / 180
+}
+
+/**
+ * @returns {Number} - miniseconds since 00:00:00 UTC on January 1, 1970
+ */
+
+export const currentTime = () => +new Date
+
+/**
+ * @desc - like currentTime but its seconds not miniseconds
+ * @returns - seconds since 00:00:00 UTC on January 1, 1970
+ */
+export function timestamp() {
+  return Math.round(currentTime() / 1000)
 }

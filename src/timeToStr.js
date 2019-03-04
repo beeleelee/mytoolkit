@@ -1,4 +1,6 @@
-import timestamp from './timestamp'
+import {
+  timestamp
+} from './utils'
 import { _dateConvert } from './internal/_date'
 
 /**
@@ -13,7 +15,7 @@ import { _dateConvert } from './internal/_date'
  *                          'hh:mm'
  * @returns {String} - date string 2018-11-28, 2018-11-28 14:03:23, 2000-01-01 01:01
  */
-export function timeToStr (time = timestamp(), format = 'yyyy-mm-dd hh:mm') {
+export function timeToStr(time = timestamp(), format = 'yyyy-mm-dd hh:mm') {
   return _dateConvert(time, 'dateString', format)
 }
 

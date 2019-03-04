@@ -1,6 +1,8 @@
 import { isSet } from './base'
-import timestamp from './timestamp'
-import currentTime from './currentTime'
+import {
+  timestamp,
+  currentTime,
+} from './utils'
 import { _dateConvert } from './internal/_date'
 
 /**
@@ -12,7 +14,7 @@ import { _dateConvert } from './internal/_date'
  * @returns {String} - '1543047456700'
  */
 export function strToTime(dateString, format, seconds) {
-  if(!isSet(dateString)){
+  if (!isSet(dateString)) {
     return seconds ? timestamp() : currentTime()
   }
   return _dateConvert(dateString, seconds ? 'seconds' : 'miniseconds', format)

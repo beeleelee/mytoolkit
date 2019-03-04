@@ -51,5 +51,3 @@ export function charLength(str, charset) {
   }
   return total
 }
-
-export default charLength
