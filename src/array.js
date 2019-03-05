@@ -48,6 +48,51 @@ export function head(list, size = 1) {
 /**
  * 
  * @param {Array} list - a simple array
+ * @param {Number} size - the size of the trancated list
+ * @return {Any | Array} - the trancated list or the last item 
+ */
+export function tail(list, size = 1) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
+  }
+  const realSize = Math.min(size, list.length)
+  if (realSize === 0) return ''
+  if (realSize === 1) return list.slice(-1)[0]
+
+  return list.slice(-realSize)
+}
+
+/**
+ * 
+ * @param {Array} list - a simple array
+ * @return {Any} - any type in the list
+ */
+export function middle(list) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
+  }
+  const len = list.length
+
+  return list[Math.floor((len + 1) / 2) - 1]
+}
+
+/**
+ * 
+ * @param {Array} list - a simple array
+ * @returns {Int} - the index of the middle item in the list 
+ */
+export function midIndex(list) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
+  }
+  const len = list.length
+
+  return Math.floor((len + 1) / 2) - 1
+}
+
+/**
+ * 
+ * @param {Array} list - a simple array
  * @param {Function} func - a compare function
  * @returns {Array} - a sorted list
  */

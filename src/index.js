@@ -14,9 +14,6 @@ import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import uniq from './uniq'
 import selectProps from './selectProps'
-import tail from './tail'
-import middle from './middle'
-import midIndex from './midIndex'
 import shuffle from './shuffle'
 import parseQuery from './parseQuery'
 import obj2qs from './obj2qs'
@@ -48,9 +45,6 @@ export {
   padEnd,
   uniq,
   selectProps,
-  tail,
-  middle,
-  midIndex,
   shuffle,
   parseQuery,
   obj2qs,
