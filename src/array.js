@@ -33,3 +33,73 @@ export function addKey(collection, prefix = '') {
     return copy
   })
 }
+
+export function head(list, size = 1) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
+  }
+  const realSize = Math.min(size, list.length)
+  if (realSize === 0) return ''
+  if (realSize === 1) return list[0]
+
+  return list.slice(0, realSize)
+}
+
+/**
+ * 
+ * @param {Array} list - a simple array
+ * @param {Function} func - a compare function
+ * @returns {Array} - a sorted list
+ */
+export function quickSort(list, func = compare) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
+  }
+  let listLen = list.length
+  if (listLen < 2) return [...list]
+
+  let leftSide = []
+  let rightSide = []
+  let headItem = head(list)
+  for (let i = 1; i < listLen; i++) {
+    let item = list[i]
+    if (func(item, headItem)) {
+      rightSide.push(item)
+    } else {
+      leftSide.push(item)
+    }
+  }
+  return [...quickSort(leftSide, func), headItem, ...quickSort(rightSide, func)]
+}
+
+function compare(a, b) {
+  return a > b
+}
+
+/**
+ * 
+ * @param {Array} list - a simple array
+ * @param {Number} num - the size of the largest list
+ * @return {Array} - the larget list
+ */
+export function nlargest(list, num = 1) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError(`expect param to be type of Array, but got ${typeOf(list)}`)
+  }
+
+  return quickSort(list, (a, b) => a < b).slice(0, num)
+}
+
+/**
+ * 
+ * @param {Array} list - a simple array
+ * @param {Number} num - the size of the smallest list
+ * @returns {Array} - the smallest list
+ */
+export function nsmallest(list, num = 1) {
+  if (typeOf(list) !== 'Array') {
+    throw new TypeError(`expect param to be type of Array, but got ${typeOf(list)}`)
+  }
+
+  return quickSort(list).slice(0, num)
+}
