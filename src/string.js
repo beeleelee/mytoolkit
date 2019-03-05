@@ -2,6 +2,7 @@ import {
   typeOf,
   isUnset
 } from './base'
+import { _padStart } from './internal/_pad'
 
 /**
  * @see https://www.cnblogs.com/dearxinli/p/7657512.html
@@ -85,4 +86,14 @@ export function dashToCamel(dashStr) {
   camelStr = camelStr.replace(/-(\w)/g, (m, w) => w.toUpperCase())
 
   return camelStr
+}
+
+/**
+ * 
+ * @param {Number|String} num - the number going to be padded
+ * @param {NUmber} [size] - the length of the return string after padding
+ * @returns {String} - the padded string
+ */
+export function padZero(num, size = 2) {
+  return _padStart(num, size, 0)
 }

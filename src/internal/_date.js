@@ -5,7 +5,9 @@ import {
 import {
   currentTime,
 } from '../utils'
-import padZero from '../padZero'
+import {
+  padZero
+} from '../string'
 
 const supportedFormats = [
   'yyyy-mm-dd hh:mm:ss',
