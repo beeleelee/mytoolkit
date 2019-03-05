@@ -2,6 +2,7 @@ import {
   typeOf,
   isSet,
 } from './base'
+import { _dateConvert } from './internal/_date'
 
 /**
  * 
@@ -73,4 +74,104 @@ export function parseQuery(queryString) {
   })
 
   return queryObject
+}
+
+/**
+ * 
+ * @param {String} left - a url or query string
+ * @param {String} right - a query string
+ * @returns {String} - a combined string
+ */
+export function queryJoin(left, right) {
+  let joinCharacter
+  let alreadHasQuery = /[%\w]+=/.test(left)
+  if (!alreadHasQuery) {
+    joinCharacter = /\?$/.test(left) ? '' : '?'
+  }
+  if (alreadHasQuery) {
+    joinCharacter = /&$/.test(left) ? '' : '&'
+  }
+  return [left, joinCharacter, right].join('')
+}
+
+/**
+ * @param {Number} min - a simple int 
+ * @param {Number} max - a simple int
+ * @returns {Number} - a random int between min and max, maybe include min but not max
+ */
+export function randInt(min, max) {
+  min = parseInt(min)
+  max = parseInt(max)
+  if (typeOf(min) !== 'Number') {
+    throw new TypeError('randInt needs number from its parameter!')
+  }
+
+  if (!max) {
+    max = min
+    min = 0
+  }
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
+/**
+ * 
+ * @param {Number} size - the size of the return string 
+ * @param {String} sourceCode - the source characters from which to generate the random string
+ * @returns {String} - a random string 
+ */
+export function randStr(size = 6, sourceCode) {
+  let code = '0123456789abcdefghijklmnopqrstuvwxyzsABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let characters = Array.from({ length: size })
+
+  if (typeOf(sourceCode) === 'String') {
+    code = sourceCode
+  }
+  let codeLength = code.length
+
+  return characters.map(() => code[randInt(codeLength)]).join('')
+}
+
+/**
+ * 
+ * @param {String} dateString 
+ * @param {String} format 
+ * 
+ * @returns {Date} - instance of Date
+ */
+export function strToDate(dateString, format) {
+  if (!isSet(dateString)) {
+    return new Date()
+  }
+  return _dateConvert(dateString, 'date', format)
+}
+
+/**
+ * 
+ * @param {Sting} dateString 
+ * @param {String} format - supported formats
+ * @param {Boolean} seconds - true | false
+ * 
+ * @returns {String} - '1543047456700'
+ */
+export function strToTime(dateString, format, seconds) {
+  if (!isSet(dateString)) {
+    return seconds ? timestamp() : currentTime()
+  }
+  return _dateConvert(dateString, seconds ? 'seconds' : 'miniseconds', format)
+}
+
+/**
+ * 
+ * @param {String|Number} time - timestamp, maybe miniseconds
+ * @param {String} [format] - supported format as follow:
+ *                          'yyyy-mm-dd hh:mm:ss'
+ *                          'yyyy-mm-dd hh:mm'
+ *                          'yyyy-mm-dd'
+ *                          'yyyy-mm'
+ *                          'hh:mm:ss'
+ *                          'hh:mm'
+ * @returns {String} - date string 2018-11-28, 2018-11-28 14:03:23, 2000-01-01 01:01
+ */
+export function timeToStr(time = timestamp(), format = 'yyyy-mm-dd hh:mm') {
+  return _dateConvert(time, 'dateString', format)
 }
