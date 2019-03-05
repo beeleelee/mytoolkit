@@ -3,7 +3,6 @@ import tick from './tick'
 import Tween from './tween'
 import Deceleration from './deceleration'
 import Queue from './queue'
-import typeOf from './typeOf'
 import padZero from './padZero'
 import randInt from './randInt'
 import randStr from './randStr'
@@ -32,7 +31,6 @@ export {
   Queue,
   performanceNow,
   tick,
-  typeOf,
   padZero,
   randInt,
   randStr,
