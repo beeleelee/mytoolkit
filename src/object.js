@@ -1,4 +1,6 @@
-import typeOf from './typeOf'
+import {
+  typeOf
+} from './base'
 
 export function excludeProps(obj, exclude = []) {
   if (typeOf(obj) !== 'Object') {
@@ -19,5 +21,3 @@ export function excludeProps(obj, exclude = []) {
   })
   return r
 }
-
-export default excludeProps

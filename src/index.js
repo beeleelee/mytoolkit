@@ -14,7 +14,6 @@ import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import uniq from './uniq'
 import guard from './guard'
-import excludeProps from './excludeProps'
 import selectProps from './selectProps'
 import head from './head'
 import tail from './tail'
@@ -31,6 +30,7 @@ import getProp from './getProp'
 
 export * from './base'
 export * from './array'
+export * from './object'
 export * from './func'
 export * from './string'
 export * from './utils'
@@ -54,7 +54,6 @@ export {
   padEnd,
   uniq,
   guard,
-  excludeProps,
   selectProps,
   head,
   tail,
