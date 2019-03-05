@@ -13,7 +13,6 @@ import strToTime from './strToTime'
 import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import uniq from './uniq'
-import guard from './guard'
 import selectProps from './selectProps'
 import head from './head'
 import tail from './tail'
@@ -52,7 +51,6 @@ export {
   padStart,
   padEnd,
   uniq,
-  guard,
   selectProps,
   head,
   tail,
