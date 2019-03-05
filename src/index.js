@@ -26,7 +26,6 @@ import obj2qs from './obj2qs'
 import nlargest from './nlargest'
 import nsmallest from './nsmallest'
 import queryJoin from './queryJoin'
-import getProp from './getProp'
 
 export * from './base'
 export * from './array'
@@ -66,5 +65,4 @@ export {
   nlargest,
   nsmallest,
   queryJoin,
-  getProp,
 }
