@@ -1,4 +1,6 @@
-import performanceNow from './performanceNow'
+import {
+  performanceNow,
+} from './dom'
 /**
  * @ignore
  */

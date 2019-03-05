@@ -1,4 +1,6 @@
-import performanceNow from './performanceNow'
+import {
+  performanceNow,
+} from './dom'
 import tick from './tick'
 /**
  * @class Deceleration - simple animation

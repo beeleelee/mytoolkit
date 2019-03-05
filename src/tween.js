@@ -1,5 +1,7 @@
 import tick from './tick'
-import performanceNow from './performanceNow'
+import {
+  performanceNow,
+} from './dom'
 import * as TimeFunction from './internal/_easing'
 
 const linearEase = a => a

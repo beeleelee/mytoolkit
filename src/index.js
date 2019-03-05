@@ -1,4 +1,3 @@
-import performanceNow from './performanceNow'
 import tick from './tick'
 import Tween from './tween'
 import Deceleration from './deceleration'
@@ -12,7 +11,6 @@ import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
 import uniq from './uniq'
 import selectProps from './selectProps'
 import shuffle from './shuffle'
-import parseQuery from './parseQuery'
 import queryJoin from './queryJoin'
 
 export * from './base'
@@ -28,7 +26,6 @@ export {
   Tween,
   Deceleration,
   Queue,
-  performanceNow,
   tick,
   randInt,
   randStr,
@@ -40,6 +37,5 @@ export {
   uniq,
   selectProps,
   shuffle,
-  parseQuery,
   queryJoin,
 }
