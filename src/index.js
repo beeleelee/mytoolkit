@@ -12,7 +12,6 @@ import timeToStr from './timeToStr'
 import strToTime from './strToTime'
 import strToDate from './strToDate'
 import { _padStart as padStart, _padEnd as padEnd } from './internal/_pad'
-import debounce from './debounce'
 import uniq from './uniq'
 import guard from './guard'
 import excludeProps from './excludeProps'
@@ -53,7 +52,6 @@ export {
   strToDate,
   padStart,
   padEnd,
-  debounce,
   uniq,
   guard,
   excludeProps,
