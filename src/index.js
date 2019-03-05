@@ -5,7 +5,6 @@ import Deceleration from './deceleration'
 import Queue from './queue'
 import typeOf from './typeOf'
 import padZero from './padZero'
-import IDFactory from './IDFactory'
 import randInt from './randInt'
 import randStr from './randStr'
 import timeToStr from './timeToStr'
@@ -35,7 +34,6 @@ export {
   tick,
   typeOf,
   padZero,
-  IDFactory,
   randInt,
   randStr,
   timeToStr,
