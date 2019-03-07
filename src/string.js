@@ -1,6 +1,8 @@
 import {
   typeOf,
-  isUnset
+  isUnset,
+  isString,
+  assert,
 } from './base'
 import { _padStart } from './internal/_pad'
 
@@ -72,9 +74,8 @@ export function trim(str) {
 
 
 export function dashToCamel(dashStr) {
-  if (typeOf(dashStr) !== 'String') {
-    throw new TypeError(`dashToCamel expected a dashStr, but got ${typeOf(dashStr)}`)
-  }
+  assert(isString(dashStr), `dashToCamel(dashStr): expect dashStr to be type of String, but got ${typeOf(dashStr)}`)
+
   if (dashStr.indexOf('-') === -1) {
     return dashStr
   }
