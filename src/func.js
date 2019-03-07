@@ -1,6 +1,9 @@
 import {
   typeOf,
-  isUnset,
+  isSet,
+  isFunction,
+  isNumber,
+  assert,
 } from './base'
 
 /**
@@ -25,12 +28,9 @@ export function noop() { }
  * @returns {Number} - relay of whate setTimeout returns
  */
 export function delay(func, wait = 0, ...args) {
-  if (typeOf(func) !== 'Function') {
-    throw new TypeError(`unexpected type of ${typeOf(func)}`)
-  }
-  if (typeOf(wait) !== 'Number') {
-    throw new TypeError(`unexpected type of ${typeOf(wait)}`)
-  }
+  assert(isFunction(func), `delay(func, wait, ...args): expect func to be type of Function, but got ${typeOf(func)}`)
+  assert(isNumber(wait), `delay(func, wait, ...args): expect wait to be type of Number, but got ${typeOf(wait)}`)
+
   return setTimeout(() => {
     func(...args)
   }, wait)
@@ -48,12 +48,8 @@ export function compose(...fns) {
  * @returns {Function} - a wrapper of func, multiple called wrapper during wait time, it will only call func one time.
  */
 export function debounce(func, wait = 0, immediate) {
-  if (typeOf(func) !== 'Function') {
-    throw new TypeError(`unexpected type of ${typeOf(func)}, expect type of Function`)
-  }
-  if (typeOf(wait) !== 'Number') {
-    throw new TypeError(`unexpected type of ${typeOf(wait)}, expect type of Number`)
-  }
+  assert(isFunction(func), `debounce(func, wait, ...args): expect func to be type of Function, but got ${typeOf(func)}`)
+  assert(isNumber(wait), `debounce(func, wait, ...args): expect wait to be type of Number, but got ${typeOf(wait)}`)
 
   let timeHandle = null
 
@@ -82,12 +78,9 @@ export function debounce(func, wait = 0, immediate) {
 
 const defaultTest = value => !!value
 export function guard(test = defaultTest, safeValue) {
-  if (typeOf(test) !== 'Function') {
-    throw new TypeError(`expected typeOf Function but got ${typeOf(test)}`)
-  }
-  if (isUnset(safeValue)) {
-    throw new TypeError(`expected safeValue to be set but got ${typeOf(safeValue)}`)
-  }
+  assert(isFunction(test), `guard(test, safeValue): expect test to be type of Function, but got ${typeOf(test)}`)
+  assert(isSet(safeValue), 'guard(test, safeValue): expect safeValue to be set')
+
   return value => {
     return test(value) ? value : safeValue
   }
