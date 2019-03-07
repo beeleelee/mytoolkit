@@ -1,6 +1,9 @@
 import {
   typeOf,
   isSet,
+  isNumber,
+  isString,
+  assert,
 } from './base'
 import { _dateConvert } from './internal/_date'
 
@@ -11,9 +14,8 @@ import { _dateConvert } from './internal/_date'
  */
 export function addComma(num) {
   let numberToAddComma = parseFloat(num)
-  if (typeOf(numberToAddComma) !== 'Number') {
-    throw new TypeError('addComma need number form its parameter!')
-  }
+  assert(isNumber(num), `addComma(num): expect num to be type of Number, but got ${typeOf(num)}`)
+
   let sign = numberToAddComma < 0 ? '-' : ''
   let base = parseInt(Math.abs(numberToAddComma)) + ''
   let decimal = (numberToAddComma + '').replace(/-?\d*/, '')
@@ -56,9 +58,8 @@ export function IDFactory(startValue = 1) {
 }
 
 export function parseQuery(queryString) {
-  if (typeOf(queryString) !== 'String') {
-    throw new TypeError(`expect param to be type of String, but got ${typeOf(queryString)}`)
-  }
+  assert(isString(queryString), `parseQuery(queryString): expect queryString to be type of String, but got ${typeOf(queryString)}`)
+
   let queryObject = {}, str = queryString, lastIdx, params
 
   lastIdx = queryString.lastIndexOf('?')
@@ -102,9 +103,7 @@ export function queryJoin(left, right) {
 export function randInt(min, max) {
   min = parseInt(min)
   max = parseInt(max)
-  if (typeOf(min) !== 'Number') {
-    throw new TypeError('randInt needs number from its parameter!')
-  }
+  assert(isNumber(min), `randInt(min): expect min to be type of Number, but got ${typeOf(min)}`)
 
   if (!max) {
     max = min
