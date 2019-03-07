@@ -1,6 +1,8 @@
 import {
   typeOf,
   deepCopy,
+  assert,
+  isArray,
 } from './base'
 import {
   randInt
@@ -11,11 +13,9 @@ import {
  * @param {Array} array - a simple array
  * @returns {Array} - a new array without false value
  */
-export function compact(array) {
-  if (typeOf(array) !== 'Array') {
-    throw new TypeError(`unexpected type of ${typeOf(array)}, expected Array}`)
-  }
-  return array.filter(item => item ? true : false)
+export function compact(list) {
+  assert(isArray(list), `compact(list): expect list to be type of Array, but got ${typeOf(list)}`)
+  return list.filter(item => item ? true : false)
 }
 
 /**
@@ -25,8 +25,9 @@ export function compact(array) {
  * @param {String} [prefix] - add prefix for each key
  * @returns {Array<Object>} - return a copy list of plain object who's 'key' property has been setted 
  */
-export function addKey(collection, prefix = '') {
-  return collection.map((item, key) => {
+export function addKey(list, prefix = '') {
+  assert(isArray(list), `addkey(list): expect list to be type of Array, but got ${typeOf(list)}`)
+  return list.map((item, key) => {
     if (typeOf(item.key) !== 'Undefined') {
       return item
     }
@@ -38,9 +39,7 @@ export function addKey(collection, prefix = '') {
 }
 
 export function head(list, size = 1) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
-  }
+  assert(isArray(list), `head(list, size): expect list to be type of Array, but got ${typeOf(list)}`)
   const realSize = Math.min(size, list.length)
   if (realSize === 0) return ''
   if (realSize === 1) return list[0]
@@ -55,9 +54,7 @@ export function head(list, size = 1) {
  * @return {Any | Array} - the trancated list or the last item 
  */
 export function tail(list, size = 1) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
-  }
+  assert(isArray(list), `tail(list, size): expect list to be type of Array, but got ${typeOf(list)}`)
   const realSize = Math.min(size, list.length)
   if (realSize === 0) return ''
   if (realSize === 1) return list.slice(-1)[0]
@@ -71,9 +68,7 @@ export function tail(list, size = 1) {
  * @return {Any} - any type in the list
  */
 export function middle(list) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
-  }
+  assert(isArray(list), `middle(list): expect list to be type of Array, but got ${typeOf(list)}`)
   const len = list.length
 
   return list[Math.floor((len + 1) / 2) - 1]
@@ -85,9 +80,7 @@ export function middle(list) {
  * @returns {Int} - the index of the middle item in the list 
  */
 export function midIndex(list) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
-  }
+  assert(isArray(list), `midIndex(list): expect list to be type of Array, but got ${typeOf(list)}`)
   const len = list.length
 
   return Math.floor((len + 1) / 2) - 1
@@ -100,9 +93,7 @@ export function midIndex(list) {
  * @returns {Array} - a sorted list
  */
 export function quickSort(list, func = compare) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError('expected param to be an Array! but got a type of ' + typeOf(list))
-  }
+  assert(isArray(list), `quickSort(list, func): expect list to be type of Array, but got ${typeOf(list)}`)
   let listLen = list.length
   if (listLen < 2) return [...list]
 
@@ -131,10 +122,7 @@ function compare(a, b) {
  * @return {Array} - the larget list
  */
 export function nlargest(list, num = 1) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError(`expect param to be type of Array, but got ${typeOf(list)}`)
-  }
-
+  assert(isArray(list), `nlargest(list, num): expect list to be type of Array, but got ${typeOf(list)}`)
   return quickSort(list, (a, b) => a < b).slice(0, num)
 }
 
@@ -145,10 +133,7 @@ export function nlargest(list, num = 1) {
  * @returns {Array} - the smallest list
  */
 export function nsmallest(list, num = 1) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError(`expect param to be type of Array, but got ${typeOf(list)}`)
-  }
-
+  assert(isArray(list), `nsmallest(list, num): expect list to be type of Array, but got ${typeOf(list)}`)
   return quickSort(list).slice(0, num)
 }
 
@@ -158,9 +143,7 @@ export function nsmallest(list, num = 1) {
  * @returns {Array} - return a reordered list
  */
 export function shuffle(list) {
-  if (typeOf(list) !== 'Array') {
-    throw new TypeError(`expect param type of Array but got ${typeOf(list)}`)
-  }
+  assert(isArray(list), `shuffle(list): expect list to be type of Array, but got ${typeOf(list)}`)
   const len = list.length
   const r = [...list]
   let randIdx, midValue
@@ -178,10 +161,8 @@ export function shuffle(list) {
  * @param {Array} array - a simple array
  * @returns {Array} - return a new array without doubled values
  */
-export function uniq(array) {
-  if (typeOf(array) !== 'Array') {
-    throw new TypeError(`unexpected type of ${typeOf(array)}, expected Array}`)
-  }
+export function uniq(list) {
+  assert(isArray(list), `uniq(list): expect list to be type of Array, but got ${typeOf(list)}`)
 
-  return [...new Set(array)]
+  return [...new Set(list)]
 }

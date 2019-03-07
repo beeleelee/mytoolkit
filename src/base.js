@@ -7,7 +7,7 @@ export function typeOf(obj) {
   return objName
 }
 
-export function isObject(obj){
+export function isObject(obj) {
   return typeOf(obj) === 'Object'
 }
 
@@ -21,6 +21,10 @@ export function isString(obj) {
 
 export function isNumber(obj) {
   return typeOf(obj * 1) === 'Number'
+}
+
+export function isFunction(obj) {
+  return typeOf(obj) === 'Function'
 }
 
 
@@ -77,21 +81,21 @@ export function deepCopy(obj) {
   let type = typeOf(obj)
   let r
   switch (type) {
-  case 'Object':
-    r = {}
-    Object.keys(obj)
-      .forEach(key => {
-        r[key] = deepCopy(obj[key])
+    case 'Object':
+      r = {}
+      Object.keys(obj)
+        .forEach(key => {
+          r[key] = deepCopy(obj[key])
+        })
+      break
+    case 'Array':
+      r = []
+      obj.forEach((v, k) => {
+        r[k] = deepCopy(v)
       })
-    break
-  case 'Array':
-    r = []
-    obj.forEach((v, k) => {
-      r[k] = deepCopy(v)
-    })
-    break
-  default:
-    r = obj
+      break
+    default:
+      r = obj
   }
   return r
 }
@@ -108,12 +112,12 @@ export function deepEqual(a, b) {
   if (typeA !== typeB) return false
 
   switch (typeA) {
-  case 'Object':
-    return deepEqualObject(a, b)
-  case 'Array':
-    return deepEqualArray(a, b)
-  default:
-    return false
+    case 'Object':
+      return deepEqualObject(a, b)
+    case 'Array':
+      return deepEqualArray(a, b)
+    default:
+      return false
   }
 }
 
@@ -132,15 +136,15 @@ function deepEqualObject(a, b) {
         r = false
       } else {
         switch (ta) {
-        case 'Object':
-          r = deepEqualObject(a[key], b[key])
-          break
-        case 'Array':
-          r = deepEqualArray(a[key], b[key])
-          break
-        default:
-          r = false
-          break
+          case 'Object':
+            r = deepEqualObject(a[key], b[key])
+            break
+          case 'Array':
+            r = deepEqualArray(a[key], b[key])
+            break
+          default:
+            r = false
+            break
         }
       }
     }
@@ -162,15 +166,15 @@ function deepEqualArray(a, b) {
         r = false
       } else {
         switch (ta) {
-        case 'Object':
-          r = deepEqualObject(v, b[i])
-          break
-        case 'Array':
-          r = deepEqualArray(v, b[i])
-          break
-        default:
-          r = false
-          break
+          case 'Object':
+            r = deepEqualObject(v, b[i])
+            break
+          case 'Array':
+            r = deepEqualArray(v, b[i])
+            break
+          default:
+            r = false
+            break
         }
       }
     }
@@ -188,12 +192,12 @@ export function shallowEqual(a, b) {
   if (typeA !== typeB) return false
 
   switch (typeA) {
-  case 'Object':
-    return shallowEqualObject(a, b)
-  case 'Array':
-    return shallowEqualArray(a, b)
-  default:
-    return false
+    case 'Object':
+      return shallowEqualObject(a, b)
+    case 'Array':
+      return shallowEqualArray(a, b)
+    default:
+      return false
   }
 }
 
@@ -225,4 +229,11 @@ function shallowEqualArray(a, b) {
   })
 
   return r
+}
+
+export function assert(condition, message) {
+  const assertion = isFunction(condition) ? !!condition() : !!condition
+  if (!assertion) {
+    throw new Error(message)
+  }
 }
