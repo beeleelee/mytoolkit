@@ -2,13 +2,16 @@ import {
   typeOf,
   isUnset,
   isSet,
+  isObject,
+  isString,
+  isArray,
+  assert,
 } from './base'
 
 export function excludeProps(obj, exclude = []) {
-  if (typeOf(obj) !== 'Object') {
-    throw new TypeError('expected plain object')
-  }
-  if (typeOf(exclude) === 'String') {
+  assert(isObject(obj), `excludeProps(obj, exclude): expect obj to be type of Object, but got ${typeOf(obj)}`)
+
+  if (isString(exclude)) {
     exclude = [exclude]
   }
   const r = {}
@@ -25,13 +28,9 @@ export function excludeProps(obj, exclude = []) {
 }
 
 export function getProp(obj, nameArray, defaultValue = '') {
-  if (typeOf(obj) !== 'Object') {
-    throw new TypeError(`expect param to be plain object but got type of ${typeOf(obj)}`)
-  }
+  assert(isObject(obj), `getProp(obj, nameArray, defaultValue): expect obj to be type of Object, but got ${typeOf(obj)}`)
+  assert(isArray(nameArray), `getProp(obj, nameArray, defaultValue): expect nameArray to be type of Array, but got ${typeOf(nameArray)}`)
 
-  if (typeOf(nameArray) !== 'Array') {
-    throw new TypeError(`expect param to be array but got type of ${typeOf(obj)}`)
-  }
   let value = obj
   for (let i = 0, l = nameArray.length; i < l; i++) {
     value = value[nameArray[i]]
@@ -48,9 +47,7 @@ export function getProp(obj, nameArray, defaultValue = '') {
  * @returns {String} - a query string 
  */
 export function obj2qs(obj) {
-  if (typeOf(obj) !== 'Object') {
-    throw new TypeError(`expect param to be plain object but got type of ${typeOf(obj)}`)
-  }
+  assert(isObject(obj), `obj2qs(obj): expect obj to be type of Object, but got ${typeOf(obj)}`)
 
   const params = Object.keys(obj).map(k => {
     let v = obj[k]
@@ -62,10 +59,9 @@ export function obj2qs(obj) {
 }
 
 export function selectProps(obj, select = []) {
-  if (typeOf(obj) !== 'Object') {
-    throw new TypeError('expected plain object')
-  }
-  if (typeOf(select) === 'String') {
+  assert(isObject(obj), `selectProps(obj, select): expect obj to be type of Object, but got ${typeOf(obj)}`)
+
+  if (isString(select)) {
     select = [select]
   }
   const r = {}
