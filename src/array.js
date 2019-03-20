@@ -25,15 +25,15 @@ export function compact(list) {
  * @param {String} [prefix] - add prefix for each key
  * @returns {Array<Object>} - return a copy list of plain object who's 'key' property has been setted 
  */
-export function addKey(list, prefix = '') {
+export function addKey(list, propName, prefix = '') {
   assert(isArray(list), `addkey(list): expect list to be type of Array, but got ${typeOf(list)}`)
   return list.map((item, key) => {
     if (typeOf(item.key) !== 'Undefined') {
       return item
     }
     let copy = deepCopy(item)
-
-    copy.key = prefix + (typeOf(copy.id) !== 'Undefined' ? copy.id : key)
+    propName = propName || 'id'
+    copy.key = prefix + (typeOf(copy[propName]) !== 'Undefined' ? copy[propName] : key)
     return copy
   })
 }
