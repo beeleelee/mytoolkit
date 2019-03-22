@@ -1,12 +1,12 @@
 const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
-  isEmptyArray
+  isEmptyString
 } = mytoolkit
 
-test('isEmptyArray', t => {
-  t.true(isEmptyArray([]))
-  t.false(isEmptyArray([1, 2, 3]))
+test('isEmptyString', t => {
+  t.true(isEmptyString(''))
+  t.false(isEmptyString('text'))
 
   t.end()
 })

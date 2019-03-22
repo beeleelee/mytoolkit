@@ -4,7 +4,7 @@ const {
   isEmptyObject
 } = mytoolkit
 
-test('isEmptyAObject', t => {
+test('isEmptyObject', t => {
   t.true(isEmptyObject({}))
   t.false(isEmptyObject({ a: 1 }))
 
