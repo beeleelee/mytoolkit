@@ -28,14 +28,20 @@ export function isFunction(obj) {
 }
 
 export function isEmptyArray(arr) {
+  assert(isArray(arr), `isEmptyArray(arr): expect arr to be type of Array, but got ${typeOf(arr)}`)
+
   return arr.length === 0
 }
 
 export function isEmptyObject(obj) {
+  assert(isObject(obj), `isEmptyObject(obj): expect obj to be type of Array, but got ${typeOf(obj)}`)
+
   return Object.keys(obj).length === 0
 }
 
 export function isEmptyString(str) {
+  assert(isString(str), `isEmptyString(str): expect str to be type of Array, but got ${typeOf(str)}`)
+
   return str === ''
 }
 
