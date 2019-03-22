@@ -76,3 +76,8 @@ export function selectProps(obj, select = []) {
   })
   return r
 }
+
+export function propCompact(obj) {
+  assert(isObject(obj), `propCompact(obj): expect obj to be type of Object, but got ${typeOf(obj)}`)
+
+}
