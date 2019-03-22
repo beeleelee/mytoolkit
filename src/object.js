@@ -6,6 +6,7 @@ import {
   isString,
   isArray,
   assert,
+  isEmpty,
 } from './base'
 
 export function excludeProps(obj, exclude = []) {
@@ -80,4 +81,13 @@ export function selectProps(obj, select = []) {
 export function propCompact(obj) {
   assert(isObject(obj), `propCompact(obj): expect obj to be type of Object, but got ${typeOf(obj)}`)
 
+  let compactedObj = {}
+  Object.keys(obj).forEach(key => {
+    let value = obj[key]
+    if (!isEmpty(value)) {
+      compactedObj[key] = value
+    }
+  })
+
+  return compactedObj
 }
