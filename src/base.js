@@ -27,6 +27,29 @@ export function isFunction(obj) {
   return typeOf(obj) === 'Function'
 }
 
+export function isEmptyArray(arr) {
+  return arr.length === 0
+}
+
+export function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0
+}
+
+export function isEmptyString(str) {
+  return str === ''
+}
+
+export function isEmpty(any) {
+  if (isUnset(any)) return true
+
+  if (isArray(any) && isEmptyArray(any)) return true
+
+  if (isObject(any) && isEmptyObject(any)) return true
+
+  if (isString(any) && isEmptyString(any)) return true
+
+  return false
+}
 
 /**
  * we assume Undefined or Null as unsetted value
