@@ -4,6 +4,8 @@ import {
   isNumber,
   isString,
   assert,
+  isArray,
+  isObject,
 } from './base'
 import { _dateConvert } from './internal/_date'
 
@@ -173,4 +175,19 @@ export function strToTime(dateString, format, seconds) {
  */
 export function timeToStr(time = timestamp(), format = 'yyyy-mm-dd hh:mm') {
   return _dateConvert(time, 'dateString', format)
+}
+
+export function reverse(obj) {
+  assert(isArray(obj) || isObject(obj) || isString(obj), `reverse(min): expect obj to be type of (Array|Object|String), but got ${typeOf(obj)}`)
+  if (isArray(obj)) {
+    return obj.reverse()
+  }
+  if (isString(obj)) {
+    return obj.split('').reverse().join('')
+  }
+  let reverseObj = {}
+  Object.keys(obj).forEach((v, k) => {
+    reverseObj[v] = k
+  })
+  return reverseObj
 }
