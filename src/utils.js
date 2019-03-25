@@ -186,8 +186,9 @@ export function reverse(obj) {
     return obj.split('').reverse().join('')
   }
   let reverseObj = {}
-  Object.keys(obj).forEach((v, k) => {
-    reverseObj[v] = k
+  Object.keys(obj).forEach(key => {
+    let v = obj[key]
+    reverseObj[v] = key
   })
   return reverseObj
 }
