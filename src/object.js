@@ -91,3 +91,17 @@ export function propCompact(obj) {
 
   return compactedObj
 }
+
+export function extend(target, ...args) {
+  assert(isObject(target), `extend(target, ...args): expect target to be type of Object, but got ${typeOf(target)}`)
+  let obj
+  for (let i = 0, l = args.length; i < l; i++) {
+    obj = args[0]
+    if (isObject(obj)) {
+      Object.keys(obj).forEach(key => {
+        target[key] = obj[key]
+      })
+    }
+  }
+  return target
+}
