@@ -1,1 +1,121 @@
-[]
+[
+  {
+    "name": "compact",
+    "filePath": "src/array.js",
+    "lines": [
+      {
+        "lineNumber": 10,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 11,
+        "line": " * "
+      },
+      {
+        "lineNumber": 12,
+        "line": " * @param {Array} array - a simple array"
+      },
+      {
+        "lineNumber": 13,
+        "line": " * @returns {Array} - a new array without false value"
+      },
+      {
+        "lineNumber": 14,
+        "line": " */"
+      },
+      {
+        "lineNumber": 15,
+        "line": "export function compact(list) {"
+      }
+    ],
+    "codeParams": [
+      "list"
+    ],
+    "docParams": [
+      "array"
+    ]
+  },
+  {
+    "name": "addKey",
+    "filePath": "src/array.js",
+    "lines": [
+      {
+        "lineNumber": 20,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 21,
+        "line": " * usage - react list render"
+      },
+      {
+        "lineNumber": 22,
+        "line": " * "
+      },
+      {
+        "lineNumber": 23,
+        "line": " * @param {Array<Object>} collection - a list of plain object"
+      },
+      {
+        "lineNumber": 24,
+        "line": " * @param {String} [prefix] - add prefix for each key"
+      },
+      {
+        "lineNumber": 25,
+        "line": " * @returns {Array<Object>} - return a copy list of plain object who's 'key' property has been setted "
+      },
+      {
+        "lineNumber": 26,
+        "line": " */"
+      },
+      {
+        "lineNumber": 27,
+        "line": "export function addKey(list, propName, prefix = '') {"
+      }
+    ],
+    "codeParams": [
+      "list",
+      "propName",
+      "prefix"
+    ],
+    "docParams": [
+      "collection",
+      "prefix"
+    ]
+  },
+  {
+    "name": "uniq",
+    "filePath": "src/array.js",
+    "lines": [
+      {
+        "lineNumber": 158,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 159,
+        "line": " * "
+      },
+      {
+        "lineNumber": 160,
+        "line": " * @param {Array} array - a simple array"
+      },
+      {
+        "lineNumber": 161,
+        "line": " * @returns {Array} - return a new array without doubled values"
+      },
+      {
+        "lineNumber": 162,
+        "line": " */"
+      },
+      {
+        "lineNumber": 163,
+        "line": "export function uniq(list) {"
+      }
+    ],
+    "codeParams": [
+      "list"
+    ],
+    "docParams": [
+      "array"
+    ]
+  }
+]

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/utils.js | mytoolkit</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="my javascript toolkit"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="mytoolkit"><meta property="twitter:description" content="my javascript toolkit"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/deceleration.js~Deceleration.html">Deceleration</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tween.js~Tween.html">Tween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addKey">addKey</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-compact">compact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-head">head</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-midIndex">midIndex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-middle">middle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nlargest">nlargest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nsmallest">nsmallest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-quickSort">quickSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tail">tail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uniq">uniq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assert">assert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepCopy">deepCopy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepEqual">deepEqual</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isArray">isArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmail">isEmail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmpty">isEmpty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmptyArray">isEmptyArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmptyObject">isEmptyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmptyString">isEmptyString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFunction">isFunction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isNumber">isNumber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isObject">isObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isSet">isSet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isString">isString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isUInt">isUInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isUnset">isUnset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shallowEqual">shallowEqual</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-typeOf">typeOf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-batchSetStyle">batchSetStyle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rem">rem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setStyle">setStyle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-drawArc">drawArc</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-drawEquilateral">drawEquilateral</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-drawLine">drawLine</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-compose">compose</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debounce">debounce</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-echo">echo</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-guard">guard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-noop">noop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-excludeProps">excludeProps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extend">extend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProp">getProp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-obj2qs">obj2qs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-propCompact">propCompact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-selectProps">selectProps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-charLength">charLength</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dashToCamel">dashToCamel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-padZero">padZero</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-trim">trim</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-IDFactory">IDFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addComma">addComma</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-angle2deg">angle2deg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentTime">currentTime</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deg2angle">deg2angle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parseQuery">parseQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-queryJoin">queryJoin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randInt">randInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randStr">randStr</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reverse">reverse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strToDate">strToDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strToTime">strToTime</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToStr">timeToStr</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timestamp">timestamp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-performanceNow">performanceNow</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-cityCN">cityCN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-provinceCN">provinceCN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-regionCN">regionCN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tick">tick</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  typeOf,
+  isSet,
+  isNumber,
+  isString,
+  assert,
+  isArray,
+  isObject,
+} from &apos;./base&apos;
+import { _dateConvert } from &apos;./internal/_date&apos;
+
+/**
+ * 
+ * @param {String|Number} num -  1000 | 10000000.001
+ * @returns {String} 1,000 | 10,000,000.001
+ */
+export function addComma(num) {
+  let numberToAddComma = parseFloat(num)
+  assert(isNumber(num), `addComma(num): expect num to be type of Number, but got ${typeOf(num)}`)
+
+  let sign = numberToAddComma &lt; 0 ? &apos;-&apos; : &apos;&apos;
+  let base = parseInt(Math.abs(numberToAddComma)) + &apos;&apos;
+  let decimal = (numberToAddComma + &apos;&apos;).replace(/-?\d*/, &apos;&apos;)
+  let mod = base.length &gt; 3 ? base.length % 3 : 0
+  return sign + (mod ? base.substr(0, mod) + &apos;,&apos; : &apos;&apos;) + base.substr(mod).replace(/(\d{3})(?=\d)/g, &apos;$1,&apos;) + decimal
+}
+
+export function angle2deg(angle) {
+  return angle * 180 / Math.PI
+}
+
+export function deg2angle(deg) {
+  return deg * Math.PI / 180
+}
+
+/**
+ * @returns {Number} - miniseconds since 00:00:00 UTC on January 1, 1970
+ */
+
+export const currentTime = () =&gt; +new Date
+
+/**
+ * @desc - like currentTime but its seconds not miniseconds
+ * @returns - seconds since 00:00:00 UTC on January 1, 1970
+ */
+export function timestamp() {
+  return Math.round(currentTime() / 1000)
+}
+
+/**
+ * 
+ * @param {Number} [startValue] - start value for generating ids
+ * @returns {Function} - id will plus 1 at each call of the func
+ * 
+ */
+export function IDFactory(startValue = 1) {
+  return function () {
+    return startValue++
+  }
+}
+
+export function parseQuery(queryString) {
+  assert(isString(queryString), `parseQuery(queryString): expect queryString to be type of String, but got ${typeOf(queryString)}`)
+
+  let queryObject = {}, str = queryString, lastIdx, params
+
+  lastIdx = queryString.lastIndexOf(&apos;?&apos;)
+  if (lastIdx &gt; -1) {
+    str = queryString.substring(lastIdx + 1)
+  }
+  params = str.split(&apos;&amp;&apos;)
+  params.forEach(param =&gt; {
+    let [k, v] = param.split(&apos;=&apos;)
+    if (isSet(k)) {
+      queryObject[k] = isSet(v) ? v : &apos;&apos;
+    }
+  })
+
+  return queryObject
+}
+
+/**
+ * 
+ * @param {String} left - a url or query string
+ * @param {String} right - a query string
+ * @returns {String} - a combined string
+ */
+export function queryJoin(left, right) {
+  let joinCharacter
+  let alreadHasQuery = /[%\w]+=/.test(left)
+  if (!alreadHasQuery) {
+    joinCharacter = /\?$/.test(left) ? &apos;&apos; : &apos;?&apos;
+  }
+  if (alreadHasQuery) {
+    joinCharacter = /&amp;$/.test(left) ? &apos;&apos; : &apos;&amp;&apos;
+  }
+  return [left, joinCharacter, right].join(&apos;&apos;)
+}
+
+/**
+ * @param {Number} min - a simple int 
+ * @param {Number} max - a simple int
+ * @returns {Number} - a random int between min and max, maybe include min but not max
+ */
+export function randInt(min, max) {
+  min = parseInt(min)
+  max = parseInt(max)
+  assert(isNumber(min), `randInt(min): expect min to be type of Number, but got ${typeOf(min)}`)
+
+  if (!max) {
+    max = min
+    min = 0
+  }
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
+/**
+ * 
+ * @param {Number} size - the size of the return string 
+ * @param {String} sourceCode - the source characters from which to generate the random string
+ * @returns {String} - a random string 
+ */
+export function randStr(size = 6, sourceCode) {
+  let code = &apos;0123456789abcdefghijklmnopqrstuvwxyzsABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;
+  let characters = Array.from({ length: size })
+
+  if (typeOf(sourceCode) === &apos;String&apos;) {
+    code = sourceCode
+  }
+  let codeLength = code.length
+
+  return characters.map(() =&gt; code[randInt(codeLength)]).join(&apos;&apos;)
+}
+
+/**
+ * 
+ * @param {String} dateString 
+ * @param {String} format 
+ * 
+ * @returns {Date} - instance of Date
+ */
+export function strToDate(dateString, format) {
+  if (!isSet(dateString)) {
+    return new Date()
+  }
+  return _dateConvert(dateString, &apos;date&apos;, format)
+}
+
+/**
+ * 
+ * @param {Sting} dateString 
+ * @param {String} format - supported formats
+ * @param {Boolean} seconds - true | false
+ * 
+ * @returns {String} - &apos;1543047456700&apos;
+ */
+export function strToTime(dateString, format, seconds) {
+  if (!isSet(dateString)) {
+    return seconds ? timestamp() : currentTime()
+  }
+  return _dateConvert(dateString, seconds ? &apos;seconds&apos; : &apos;miniseconds&apos;, format)
+}
+
+/**
+ * 
+ * @param {String|Number} time - timestamp, maybe miniseconds
+ * @param {String} [format] - supported format as follow:
+ *                          &apos;yyyy-mm-dd hh:mm:ss&apos;
+ *                          &apos;yyyy-mm-dd hh:mm&apos;
+ *                          &apos;yyyy-mm-dd&apos;
+ *                          &apos;yyyy-mm&apos;
+ *                          &apos;hh:mm:ss&apos;
+ *                          &apos;hh:mm&apos;
+ * @returns {String} - date string 2018-11-28, 2018-11-28 14:03:23, 2000-01-01 01:01
+ */
+export function timeToStr(time = timestamp(), format = &apos;yyyy-mm-dd hh:mm&apos;) {
+  return _dateConvert(time, &apos;dateString&apos;, format)
+}
+
+export function reverse(obj) {
+  assert(isArray(obj) || isObject(obj) || isString(obj), `reverse(min): expect obj to be type of (Array|Object|String), but got ${typeOf(obj)}`)
+  if (isArray(obj)) {
+    return obj.reverse()
+  }
+  if (isString(obj)) {
+    return obj.split(&apos;&apos;).reverse().join(&apos;&apos;)
+  }
+  let reverseObj = {}
+  Object.keys(obj).forEach(key =&gt; {
+    let v = obj[key]
+    reverseObj[v] = key
+  })
+  return reverseObj
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

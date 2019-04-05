@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/dom.js | mytoolkit</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="my javascript toolkit"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="mytoolkit"><meta property="twitter:description" content="my javascript toolkit"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/deceleration.js~Deceleration.html">Deceleration</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tween.js~Tween.html">Tween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addKey">addKey</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-compact">compact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-head">head</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-midIndex">midIndex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-middle">middle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nlargest">nlargest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nsmallest">nsmallest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-quickSort">quickSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tail">tail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uniq">uniq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assert">assert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepCopy">deepCopy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepEqual">deepEqual</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isArray">isArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmail">isEmail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmpty">isEmpty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmptyArray">isEmptyArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmptyObject">isEmptyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isEmptyString">isEmptyString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isFunction">isFunction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isNumber">isNumber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isObject">isObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isSet">isSet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isString">isString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isUInt">isUInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isUnset">isUnset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shallowEqual">shallowEqual</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-typeOf">typeOf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-batchSetStyle">batchSetStyle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rem">rem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setStyle">setStyle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-drawArc">drawArc</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-drawEquilateral">drawEquilateral</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-drawLine">drawLine</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-compose">compose</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debounce">debounce</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-echo">echo</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-guard">guard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-noop">noop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-excludeProps">excludeProps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extend">extend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProp">getProp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-obj2qs">obj2qs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-propCompact">propCompact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-selectProps">selectProps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-charLength">charLength</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dashToCamel">dashToCamel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-padZero">padZero</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-trim">trim</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-IDFactory">IDFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addComma">addComma</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-angle2deg">angle2deg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentTime">currentTime</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deg2angle">deg2angle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parseQuery">parseQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-queryJoin">queryJoin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randInt">randInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randStr">randStr</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reverse">reverse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strToDate">strToDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strToTime">strToTime</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeToStr">timeToStr</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timestamp">timestamp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-performanceNow">performanceNow</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-cityCN">cityCN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-provinceCN">provinceCN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-regionCN">regionCN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-tick">tick</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/dom.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  typeOf
+} from &apos;./base&apos;
+import {
+  trim,
+  dashToCamel,
+} from &apos;./string&apos;
+import { delay } from &apos;./func&apos;
+import Queue from &apos;./queue&apos;
+import { nextFrame } from &apos;./tick&apos;
+
+let styleKeys = null
+
+/**
+ * @ignore
+ */
+const setSingleStyle = (ele, name, value) =&gt; {
+  if (!ele || !ele.style) {
+    throw new Error(&apos;missing HTML node element for setStyle!&apos;)
+  }
+  name = dashToCamel(name)
+  name = checkVendorPrefix(name)
+  if (typeOf(name) !== &apos;Undefined&apos; &amp;&amp; typeOf(value) !== &apos;Undefined&apos;) {
+    ele.style[name] = tryAddPX(name, value)
+  }
+}
+
+/**
+ * @param {HTMLElement} ele - dom element 
+ * @param {String} name - the style property name, it also can be an object to set multiple style properties
+ * @param {String|Number} value - the value of the style property
+ * 
+ * @example
+ * 
+ * setStyle(document.body, &apos;fontSize&apos;, &apos;16px&apos;)
+ * setStyle(doucment.body, {
+ *  backgroundColor: &apos;#ffffff&apos;,
+ *  minHeight: &apos;100vh&apos;
+ * })
+ */
+export const setStyle = (ele, name, value) =&gt; {
+  if (typeOf(name) === &apos;Object&apos;) {
+    Object.keys(name)
+      .map(n =&gt; {
+        setSingleStyle(ele, n, name[n])
+      })
+  } else {
+    setSingleStyle(ele, name, value)
+  }
+}
+
+/**
+ * @ignore
+ */
+function checkVendorPrefix(name) {
+  let styleKeys = getStyleKeys()
+
+  return styleKeys[name] || name
+}
+
+/**
+ * @ignore
+ */
+function getStyleKeys() {
+  if (styleKeys !== null) return styleKeys
+
+  if (typeof document === &apos;undefined&apos;) {
+    throw new Error(&apos;missing document!&apos;)
+  }
+
+  let computedStyles = Array.from(getComputedStyle(document.body))
+  let keys = Object.keys(computedStyles).filter(
+    key =&gt; /^webkit(transform|transition)$/i.test(key)
+  )
+  styleKeys = keys.reduce((res, key) =&gt; {
+    let name = key.replace(/^webkit(\w)/, (a, s) =&gt; s.toLowerCase())
+    res[name] = key
+    return res
+  }, {})
+
+  return styleKeys
+}
+
+const properties = [
+  &apos;width&apos;,
+  &apos;height&apos;,
+  &apos;minWidth&apos;,
+  &apos;maxWidth&apos;,
+  &apos;minHeight&apos;,
+  &apos;maxHeight&apos;,
+  &apos;left&apos;,
+  &apos;top&apos;,
+  &apos;right&apos;,
+  &apos;bottom&apos;,
+  &apos;borderWidth&apos;,
+  &apos;borderTopWidth&apos;,
+  &apos;borderBottomWidth&apos;,
+  &apos;borderLeftWidth&apos;,
+  &apos;borderRightWidth&apos;,
+  &apos;borderRadius&apos;,
+  &apos;borderTopLeftRadius&apos;,
+  &apos;borderTopRightRadius&apos;,
+  &apos;borderBottomLeftRadius&apos;,
+  &apos;borderBottomRightRadius&apos;,
+  &apos;borderSpacing&apos;,
+  &apos;fontSize&apos;,
+  &apos;letterSpacing&apos;,
+  &apos;margin&apos;,
+  &apos;marginLeft&apos;,
+  &apos;marginRight&apos;,
+  &apos;marginTop&apos;,
+  &apos;marginBottom&apos;,
+  &apos;padding&apos;,
+  &apos;paddingLeft&apos;,
+  &apos;paddingRight&apos;,
+  &apos;paddingTop&apos;,
+  &apos;paddingBottom&apos;,
+]
+/**
+ * @ignore 
+ */
+function tryAddPX(name, value) {
+  // check if name in the property list which can add px, if not return value 
+  if (properties.indexOf(name) == -1) {
+    return value
+  }
+
+  let cValue = trim(value) - 0
+
+  // only add px to numeric value
+  if (typeOf(cValue) !== &apos;Number&apos;) {
+    return value
+  }
+
+  return `${cValue}px`
+}
+
+/**
+ * @desc set styles in batch style. It merge separate style setting into a task and execute it as soon as possible.
+ * 
+ * @todo 
+ *  1. async set style call by delay
+ *  2. merge separate call into a task
+ *  3. lock the style setting when doing a task, put incoming task into a queue
+ *  4. use tick as setting frame, check remaining task at every frame
+ */
+
+class TaskQueue extends Queue {
+  constructor(options) {
+    super(options)
+    this.waittingTasks = []
+    this.doingTask = false
+  }
+  enqueue(item) {
+    if (this.doingTask) {
+      this.waittingTasks.push(item)
+    } else {
+      super.enqueue(item)
+    }
+    return this
+  }
+  doTask() {
+    if (this.doingTask) return
+
+    this.doingTask = true
+    let task
+    while (task = tasks.dequeue()) {
+      try {
+        setStyle(...task)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    this.doingTask = false
+    if (this.waittingTasks.length &gt; 0) {
+      this.mergeTask()
+      nextFrame(() =&gt; {
+        this.doTask()
+      })
+    }
+    return this
+  }
+  mergeTask() {
+    this.data = [...this.data, ...this.waittingTasks]
+    return this
+  }
+}
+
+const tasks = new TaskQueue()
+let delayHandle = null
+
+export function batchSetStyle(...args) {
+  if (delayHandle) {
+    clearTimeout(delayHandle)
+    delayHandle = null
+  }
+  tasks.enqueue(args)
+  delayHandle = delay(() =&gt; {
+    tasks.doTask()
+    delayHandle = null
+  }, 0)
+}
+
+let remSetuped = false
+
+export function rem({
+  designWidth = 750,
+  designDPR = 1,
+  rem2px = 100,
+  bodyFontSize = 14,
+  win,
+  doc
+}) {
+  let documentElement = doc.documentElement
+  const dpr = () =&gt; win.devicePixelRatio || 1
+  let expectedWidth = designWidth * designDPR
+  let expectedDocumentElementFontSize = rem2px
+
+  !remSetuped &amp;&amp; setBodyFontSize()
+
+  function setDocumentElementFontSize() {
+    let adaptedWidth = documentElement.clientWidth * dpr()
+    let adaptedDocumentElementFontSize = expectedDocumentElementFontSize * adaptedWidth / expectedWidth
+    setStyle(documentElement, &apos;font-size&apos;, adaptedDocumentElementFontSize)
+    console.log(`dpr: ${dpr()}, expectedWidth: ${expectedWidth}, deFontSize: ${expectedDocumentElementFontSize}, adaptedWidth: ${adaptedWidth}, adaptedFontSize: ${adaptedDocumentElementFontSize}`)
+  }
+
+  function setBodyFontSize() {
+    if (doc.body) {
+      setStyle(doc.body, &apos;font-size&apos;, bodyFontSize * dpr())
+    }
+    else {
+      doc.addEventListener(&apos;DOMContentLoaded&apos;, setBodyFontSize)
+    }
+  }
+  if (!remSetuped) {
+    setDocumentElementFontSize()
+
+    // reset rem unit on page resize
+    window.addEventListener(&apos;resize&apos;, setDocumentElementFontSize)
+    window.addEventListener(&apos;pageshow&apos;, function (e) {
+      if (e.persisted) {
+        setDocumentElementFontSize()
+      }
+    })
+  }
+
+  remSetuped = true
+}
+
+export const performanceNow = (function () {
+  let now
+  if (typeof performance !== &apos;undefined&apos;) {
+    now = () =&gt; performance.now()
+  } else {
+    now = () =&gt; +new Date
+  }
+  return now
+})()</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

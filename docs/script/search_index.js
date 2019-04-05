@@ -6,9 +6,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "mytoolkit/src/idfactory.js~idfactory",
+    "mytoolkit/src/utils.js~idfactory",
     "function/index.html#static-function-IDFactory",
-    "<span>IDFactory</span> <span class=\"search-result-import-path\">mytoolkit/src/IDFactory.js</span>",
+    "<span>IDFactory</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
@@ -18,117 +18,381 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "mytoolkit/src/addcomma.js~addcomma",
+    "mytoolkit/src/utils.js~addcomma",
     "function/index.html#static-function-addComma",
-    "<span>addComma</span> <span class=\"search-result-import-path\">mytoolkit/src/addComma.js</span>",
+    "<span>addComma</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/addkey.js~addkey",
+    "mytoolkit/src/array.js~addkey",
     "function/index.html#static-function-addKey",
-    "<span>addKey</span> <span class=\"search-result-import-path\">mytoolkit/src/addKey.js</span>",
+    "<span>addKey</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/charlength.js~charlength",
+    "mytoolkit/src/utils.js~angle2deg",
+    "function/index.html#static-function-angle2deg",
+    "<span>angle2deg</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~assert",
+    "function/index.html#static-function-assert",
+    "<span>assert</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/dom.js~batchsetstyle",
+    "function/index.html#static-function-batchSetStyle",
+    "<span>batchSetStyle</span> <span class=\"search-result-import-path\">mytoolkit/src/dom.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/string.js~charlength",
     "function/index.html#static-function-charLength",
-    "<span>charLength</span> <span class=\"search-result-import-path\">mytoolkit/src/charLength.js</span>",
+    "<span>charLength</span> <span class=\"search-result-import-path\">mytoolkit/src/string.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/currenttime.js~currenttime",
-    "function/index.html#static-function-currentTime",
-    "<span>currentTime</span> <span class=\"search-result-import-path\">mytoolkit/src/currentTime.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/debounce.js~debounce",
-    "function/index.html#static-function-debounce",
-    "<span>debounce</span> <span class=\"search-result-import-path\">mytoolkit/src/debounce.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/deepcopy.js~deepcopy",
-    "function/index.html#static-function-deepCopy",
-    "<span>deepCopy</span> <span class=\"search-result-import-path\">mytoolkit/src/deepCopy.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/delay.js~delay",
-    "function/index.html#static-function-delay",
-    "<span>delay</span> <span class=\"search-result-import-path\">mytoolkit/src/delay.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/echo.js~echo",
-    "function/index.html#static-function-echo",
-    "<span>echo</span> <span class=\"search-result-import-path\">mytoolkit/src/echo.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/isemail.js~isemail",
-    "function/index.html#static-function-isEmail",
-    "<span>isEmail</span> <span class=\"search-result-import-path\">mytoolkit/src/isEmail.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/isset.js~isset",
-    "function/index.html#static-function-isSet",
-    "<span>isSet</span> <span class=\"search-result-import-path\">mytoolkit/src/isSet.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/isuint.js~isuint",
-    "function/index.html#static-function-isUInt",
-    "<span>isUInt</span> <span class=\"search-result-import-path\">mytoolkit/src/isUInt.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/noop.js~noop",
-    "function/index.html#static-function-noop",
-    "<span>noop</span> <span class=\"search-result-import-path\">mytoolkit/src/noop.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/padzero.js~padzero",
-    "function/index.html#static-function-padZero",
-    "<span>padZero</span> <span class=\"search-result-import-path\">mytoolkit/src/padZero.js</span>",
-    "function"
-  ],
-  [
-    "mytoolkit/src/performancenow.js~performancenow",
-    "variable/index.html#static-variable-performanceNow",
-    "<span>performanceNow</span> <span class=\"search-result-import-path\">mytoolkit/src/performanceNow.js</span>",
+    "mytoolkit/src/regions.js~citycn",
+    "variable/index.html#static-variable-cityCN",
+    "<span>cityCN</span> <span class=\"search-result-import-path\">mytoolkit/src/regions.js</span>",
     "variable"
   ],
   [
-    "mytoolkit/src/randint.js~randint",
+    "mytoolkit/src/array.js~compact",
+    "function/index.html#static-function-compact",
+    "<span>compact</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/func.js~compose",
+    "function/index.html#static-function-compose",
+    "<span>compose</span> <span class=\"search-result-import-path\">mytoolkit/src/func.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/utils.js~currenttime",
+    "function/index.html#static-function-currentTime",
+    "<span>currentTime</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/string.js~dashtocamel",
+    "function/index.html#static-function-dashToCamel",
+    "<span>dashToCamel</span> <span class=\"search-result-import-path\">mytoolkit/src/string.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/func.js~debounce",
+    "function/index.html#static-function-debounce",
+    "<span>debounce</span> <span class=\"search-result-import-path\">mytoolkit/src/func.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~deepcopy",
+    "function/index.html#static-function-deepCopy",
+    "<span>deepCopy</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~deepequal",
+    "function/index.html#static-function-deepEqual",
+    "<span>deepEqual</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/utils.js~deg2angle",
+    "function/index.html#static-function-deg2angle",
+    "<span>deg2angle</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/func.js~delay",
+    "function/index.html#static-function-delay",
+    "<span>delay</span> <span class=\"search-result-import-path\">mytoolkit/src/func.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/draw.js~drawarc",
+    "function/index.html#static-function-drawArc",
+    "<span>drawArc</span> <span class=\"search-result-import-path\">mytoolkit/src/draw.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/draw.js~drawequilateral",
+    "function/index.html#static-function-drawEquilateral",
+    "<span>drawEquilateral</span> <span class=\"search-result-import-path\">mytoolkit/src/draw.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/draw.js~drawline",
+    "function/index.html#static-function-drawLine",
+    "<span>drawLine</span> <span class=\"search-result-import-path\">mytoolkit/src/draw.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/func.js~echo",
+    "function/index.html#static-function-echo",
+    "<span>echo</span> <span class=\"search-result-import-path\">mytoolkit/src/func.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/object.js~excludeprops",
+    "function/index.html#static-function-excludeProps",
+    "<span>excludeProps</span> <span class=\"search-result-import-path\">mytoolkit/src/object.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/object.js~extend",
+    "function/index.html#static-function-extend",
+    "<span>extend</span> <span class=\"search-result-import-path\">mytoolkit/src/object.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/object.js~getprop",
+    "function/index.html#static-function-getProp",
+    "<span>getProp</span> <span class=\"search-result-import-path\">mytoolkit/src/object.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/func.js~guard",
+    "function/index.html#static-function-guard",
+    "<span>guard</span> <span class=\"search-result-import-path\">mytoolkit/src/func.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~head",
+    "function/index.html#static-function-head",
+    "<span>head</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isarray",
+    "function/index.html#static-function-isArray",
+    "<span>isArray</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isemail",
+    "function/index.html#static-function-isEmail",
+    "<span>isEmail</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isempty",
+    "function/index.html#static-function-isEmpty",
+    "<span>isEmpty</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isemptyarray",
+    "function/index.html#static-function-isEmptyArray",
+    "<span>isEmptyArray</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isemptyobject",
+    "function/index.html#static-function-isEmptyObject",
+    "<span>isEmptyObject</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isemptystring",
+    "function/index.html#static-function-isEmptyString",
+    "<span>isEmptyString</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isfunction",
+    "function/index.html#static-function-isFunction",
+    "<span>isFunction</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isnumber",
+    "function/index.html#static-function-isNumber",
+    "<span>isNumber</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isobject",
+    "function/index.html#static-function-isObject",
+    "<span>isObject</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isset",
+    "function/index.html#static-function-isSet",
+    "<span>isSet</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isstring",
+    "function/index.html#static-function-isString",
+    "<span>isString</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isuint",
+    "function/index.html#static-function-isUInt",
+    "<span>isUInt</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/base.js~isunset",
+    "function/index.html#static-function-isUnset",
+    "<span>isUnset</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~midindex",
+    "function/index.html#static-function-midIndex",
+    "<span>midIndex</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~middle",
+    "function/index.html#static-function-middle",
+    "<span>middle</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~nlargest",
+    "function/index.html#static-function-nlargest",
+    "<span>nlargest</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/func.js~noop",
+    "function/index.html#static-function-noop",
+    "<span>noop</span> <span class=\"search-result-import-path\">mytoolkit/src/func.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~nsmallest",
+    "function/index.html#static-function-nsmallest",
+    "<span>nsmallest</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/object.js~obj2qs",
+    "function/index.html#static-function-obj2qs",
+    "<span>obj2qs</span> <span class=\"search-result-import-path\">mytoolkit/src/object.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/string.js~padzero",
+    "function/index.html#static-function-padZero",
+    "<span>padZero</span> <span class=\"search-result-import-path\">mytoolkit/src/string.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/utils.js~parsequery",
+    "function/index.html#static-function-parseQuery",
+    "<span>parseQuery</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/dom.js~performancenow",
+    "variable/index.html#static-variable-performanceNow",
+    "<span>performanceNow</span> <span class=\"search-result-import-path\">mytoolkit/src/dom.js</span>",
+    "variable"
+  ],
+  [
+    "mytoolkit/src/object.js~propcompact",
+    "function/index.html#static-function-propCompact",
+    "<span>propCompact</span> <span class=\"search-result-import-path\">mytoolkit/src/object.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/regions.js~provincecn",
+    "variable/index.html#static-variable-provinceCN",
+    "<span>provinceCN</span> <span class=\"search-result-import-path\">mytoolkit/src/regions.js</span>",
+    "variable"
+  ],
+  [
+    "mytoolkit/src/utils.js~queryjoin",
+    "function/index.html#static-function-queryJoin",
+    "<span>queryJoin</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~quicksort",
+    "function/index.html#static-function-quickSort",
+    "<span>quickSort</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/utils.js~randint",
     "function/index.html#static-function-randInt",
-    "<span>randInt</span> <span class=\"search-result-import-path\">mytoolkit/src/randInt.js</span>",
+    "<span>randInt</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/randstr.js~randstr",
+    "mytoolkit/src/utils.js~randstr",
     "function/index.html#static-function-randStr",
-    "<span>randStr</span> <span class=\"search-result-import-path\">mytoolkit/src/randStr.js</span>",
+    "<span>randStr</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/setstyle.js~setstyle",
+    "mytoolkit/src/regions.js~regioncn",
+    "variable/index.html#static-variable-regionCN",
+    "<span>regionCN</span> <span class=\"search-result-import-path\">mytoolkit/src/regions.js</span>",
+    "variable"
+  ],
+  [
+    "mytoolkit/src/dom.js~rem",
+    "function/index.html#static-function-rem",
+    "<span>rem</span> <span class=\"search-result-import-path\">mytoolkit/src/dom.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/utils.js~reverse",
+    "function/index.html#static-function-reverse",
+    "<span>reverse</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/object.js~selectprops",
+    "function/index.html#static-function-selectProps",
+    "<span>selectProps</span> <span class=\"search-result-import-path\">mytoolkit/src/object.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/dom.js~setstyle",
     "function/index.html#static-function-setStyle",
-    "<span>setStyle</span> <span class=\"search-result-import-path\">mytoolkit/src/setStyle.js</span>",
+    "<span>setStyle</span> <span class=\"search-result-import-path\">mytoolkit/src/dom.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/strtodate.js~strtodate",
+    "mytoolkit/src/base.js~shallowequal",
+    "function/index.html#static-function-shallowEqual",
+    "<span>shallowEqual</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~shuffle",
+    "function/index.html#static-function-shuffle",
+    "<span>shuffle</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/utils.js~strtodate",
     "function/index.html#static-function-strToDate",
-    "<span>strToDate</span> <span class=\"search-result-import-path\">mytoolkit/src/strToDate.js</span>",
+    "<span>strToDate</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/strtotime.js~strtotime",
+    "mytoolkit/src/utils.js~strtotime",
     "function/index.html#static-function-strToTime",
-    "<span>strToTime</span> <span class=\"search-result-import-path\">mytoolkit/src/strToTime.js</span>",
+    "<span>strToTime</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~tail",
+    "function/index.html#static-function-tail",
+    "<span>tail</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
     "function"
   ],
   [
@@ -138,27 +402,33 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "mytoolkit/src/timetostr.js~timetostr",
+    "mytoolkit/src/utils.js~timetostr",
     "function/index.html#static-function-timeToStr",
-    "<span>timeToStr</span> <span class=\"search-result-import-path\">mytoolkit/src/timeToStr.js</span>",
+    "<span>timeToStr</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/timestamp.js~timestamp",
+    "mytoolkit/src/utils.js~timestamp",
     "function/index.html#static-function-timestamp",
-    "<span>timestamp</span> <span class=\"search-result-import-path\">mytoolkit/src/timestamp.js</span>",
+    "<span>timestamp</span> <span class=\"search-result-import-path\">mytoolkit/src/utils.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/trim.js~trim",
+    "mytoolkit/src/string.js~trim",
     "function/index.html#static-function-trim",
-    "<span>trim</span> <span class=\"search-result-import-path\">mytoolkit/src/trim.js</span>",
+    "<span>trim</span> <span class=\"search-result-import-path\">mytoolkit/src/string.js</span>",
     "function"
   ],
   [
-    "mytoolkit/src/typeof.js~typeof",
+    "mytoolkit/src/base.js~typeof",
     "function/index.html#static-function-typeOf",
-    "<span>typeOf</span> <span class=\"search-result-import-path\">mytoolkit/src/typeOf.js</span>",
+    "<span>typeOf</span> <span class=\"search-result-import-path\">mytoolkit/src/base.js</span>",
+    "function"
+  ],
+  [
+    "mytoolkit/src/array.js~uniq",
+    "function/index.html#static-function-uniq",
+    "<span>uniq</span> <span class=\"search-result-import-path\">mytoolkit/src/array.js</span>",
     "function"
   ],
   [
@@ -444,39 +714,15 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/idfactory.js",
-    "file/src/IDFactory.js.html",
-    "src/IDFactory.js",
+    "src/array.js",
+    "file/src/array.js.html",
+    "src/array.js",
     "file"
   ],
   [
-    "src/addcomma.js",
-    "file/src/addComma.js.html",
-    "src/addComma.js",
-    "file"
-  ],
-  [
-    "src/addkey.js",
-    "file/src/addKey.js.html",
-    "src/addKey.js",
-    "file"
-  ],
-  [
-    "src/charlength.js",
-    "file/src/charLength.js.html",
-    "src/charLength.js",
-    "file"
-  ],
-  [
-    "src/currenttime.js",
-    "file/src/currentTime.js.html",
-    "src/currentTime.js",
-    "file"
-  ],
-  [
-    "src/debounce.js",
-    "file/src/debounce.js.html",
-    "src/debounce.js",
+    "src/base.js",
+    "file/src/base.js.html",
+    "src/base.js",
     "file"
   ],
   [
@@ -564,21 +810,21 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/deepcopy.js",
-    "file/src/deepCopy.js.html",
-    "src/deepCopy.js",
+    "src/dom.js",
+    "file/src/dom.js.html",
+    "src/dom.js",
     "file"
   ],
   [
-    "src/delay.js",
-    "file/src/delay.js.html",
-    "src/delay.js",
+    "src/draw.js",
+    "file/src/draw.js.html",
+    "src/draw.js",
     "file"
   ],
   [
-    "src/echo.js",
-    "file/src/echo.js.html",
-    "src/echo.js",
+    "src/func.js",
+    "file/src/func.js.html",
+    "src/func.js",
     "file"
   ],
   [
@@ -588,93 +834,27 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/isemail.js",
-    "file/src/isEmail.js.html",
-    "src/isEmail.js",
+    "src/object.js",
+    "file/src/object.js.html",
+    "src/object.js",
     "file"
   ],
   [
-    "src/isset.js",
-    "file/src/isSet.js.html",
-    "src/isSet.js",
+    "src/regions.js",
+    "file/src/regions.js.html",
+    "src/regions.js",
     "file"
   ],
   [
-    "src/isuint.js",
-    "file/src/isUInt.js.html",
-    "src/isUInt.js",
-    "file"
-  ],
-  [
-    "src/noop.js",
-    "file/src/noop.js.html",
-    "src/noop.js",
-    "file"
-  ],
-  [
-    "src/padzero.js",
-    "file/src/padZero.js.html",
-    "src/padZero.js",
-    "file"
-  ],
-  [
-    "src/performancenow.js",
-    "file/src/performanceNow.js.html",
-    "src/performanceNow.js",
-    "file"
-  ],
-  [
-    "src/randint.js",
-    "file/src/randInt.js.html",
-    "src/randInt.js",
-    "file"
-  ],
-  [
-    "src/randstr.js",
-    "file/src/randStr.js.html",
-    "src/randStr.js",
-    "file"
-  ],
-  [
-    "src/setstyle.js",
-    "file/src/setStyle.js.html",
-    "src/setStyle.js",
-    "file"
-  ],
-  [
-    "src/strtodate.js",
-    "file/src/strToDate.js.html",
-    "src/strToDate.js",
-    "file"
-  ],
-  [
-    "src/strtotime.js",
-    "file/src/strToTime.js.html",
-    "src/strToTime.js",
+    "src/string.js",
+    "file/src/string.js.html",
+    "src/string.js",
     "file"
   ],
   [
     "src/tick.js",
     "file/src/tick.js.html",
     "src/tick.js",
-    "file"
-  ],
-  [
-    "src/timetostr.js",
-    "file/src/timeToStr.js.html",
-    "src/timeToStr.js",
-    "file"
-  ],
-  [
-    "src/timestamp.js",
-    "file/src/timestamp.js.html",
-    "src/timestamp.js",
-    "file"
-  ],
-  [
-    "src/trim.js",
-    "file/src/trim.js.html",
-    "src/trim.js",
     "file"
   ],
   [
@@ -714,6 +894,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tween.js~tween#istweening",
+    "class/src/tween.js~Tween.html#instance-method-isTweening",
+    "src/tween.js~Tween#isTweening",
+    "method"
+  ],
+  [
     "src/tween.js~tween#options",
     "class/src/tween.js~Tween.html#instance-member-options",
     "src/tween.js~Tween#options",
@@ -724,6 +910,12 @@ window.esdocSearchIndex = [
     "class/src/tween.js~Tween.html#instance-method-pause",
     "src/tween.js~Tween#pause",
     "method"
+  ],
+  [
+    "src/tween.js~tween#pausedtime",
+    "class/src/tween.js~Tween.html#instance-member-pausedTime",
+    "src/tween.js~Tween#pausedTime",
+    "member"
   ],
   [
     "src/tween.js~tween#percent",
@@ -762,9 +954,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/typeof.js",
-    "file/src/typeOf.js.html",
-    "src/typeOf.js",
+    "src/utils.js",
+    "file/src/utils.js.html",
+    "src/utils.js",
     "file"
   ]
 ]
