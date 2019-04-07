@@ -192,3 +192,21 @@ export function reverse(obj) {
   })
   return reverseObj
 }
+
+export function encodeJSON(obj) {
+  try {
+    return JSON.parse(obj)
+  } catch (error) {
+    console.log(error)
+  }
+  return obj
+}
+
+export function decodeJSON(str) {
+  try {
+    return JSON.parse(str)
+  } catch (error) {
+    console.log(error)
+  }
+  return str
+}
