@@ -10,10 +10,6 @@ import {
 
 let sessStore = null
 
-function isJSONStr(str) {
-  return /^[{\]]|[{\]]$/.test(str)
-}
-
 function getSessStore() {
   if (sessStore) {
     return sessStore
@@ -30,20 +26,29 @@ export const sessionStore = {
     if (!store) return ''
 
     let value = store.getItem(key) || ''
-    return isJSONStr(value) ? JSON.parse(value) : value
+    return decodeJSON(value)
   },
   set(key, value) {
     const store = getSessStore()
     if (!store) return
 
+    if (isArray(value) || isObject(value)) {
+      value = encodeJSON(value)
+    }
 
-
+    store.setItem(key, value)
   },
   remove(key) {
+    const store = getSessStore()
+    if (!store) return
 
+    store.removeItem(key)
   },
   clear() {
+    const store = getSessStore()
+    if (!store) return
 
+    store.clear()
   }
 }
 
