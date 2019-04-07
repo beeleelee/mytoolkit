@@ -13,6 +13,7 @@ export * from './utils'
 export * from './dom'
 export * from './regions'
 export * from './draw'
+export * from './store'
 
 export {
   Tween,
