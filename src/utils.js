@@ -193,18 +193,18 @@ export function reverse(obj) {
   return reverseObj
 }
 
-export function encodeJSON(obj) {
+export function encodeJSON(obj, replacer, space) {
   try {
-    return JSON.parse(obj)
+    return JSON.stringify(obj, replacer, space)
   } catch (error) {
     console.log(error)
   }
   return obj
 }
 
-export function decodeJSON(str) {
+export function decodeJSON(str, reviver) {
   try {
-    return JSON.parse(str)
+    return JSON.parse(str, reviver)
   } catch (error) {
     console.log(error)
   }
