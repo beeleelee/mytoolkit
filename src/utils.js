@@ -8,6 +8,9 @@ import {
   isObject,
 } from './base'
 import { _dateConvert } from './internal/_date'
+import {
+  shuffle,
+} from './array'
 
 /**
  * 
@@ -105,13 +108,23 @@ export function queryJoin(left, right) {
 export function randInt(min, max) {
   min = parseInt(min)
   max = parseInt(max)
-  assert(isNumber(min), `randInt(min): expect min to be type of Number, but got ${typeOf(min)}`)
+  assert(isNumber(min), `randInt(min, max): expect min to be type of Number, but got ${typeOf(min)}`)
 
   if (!max) {
     max = min
     min = 0
   }
   return Math.floor(Math.random() * (max - min) + min)
+}
+
+export function sample1(list) {
+  assert(isArray(list), `sample1(list): expect list to be type of Array, but got ${typeOf(list)}`)
+  return list[randInt(list.length)]
+}
+
+export function sample(list) {
+  assert(isArray(list), `sample(list): expect list to be type of Array, but got ${typeOf(list)}`)
+  return shuffle(list).slice(0, randInt(list.length))
 }
 
 /**
