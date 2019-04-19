@@ -219,7 +219,7 @@ export function rem({
   !remSetuped && setBodyFontSize()
 
   function setDocumentElementFontSize() {
-    let adaptedWidth = documentElement.clientWidth * dpr()
+    let adaptedWidth = documentElement.clientWidth
     let adaptedDocumentElementFontSize = expectedDocumentElementFontSize * adaptedWidth / expectedWidth
     setStyle(documentElement, 'font-size', adaptedDocumentElementFontSize)
     console.log(`dpr: ${dpr()}, expectedWidth: ${expectedWidth}, deFontSize: ${expectedDocumentElementFontSize}, adaptedWidth: ${adaptedWidth}, adaptedFontSize: ${adaptedDocumentElementFontSize}`)
@@ -227,7 +227,7 @@ export function rem({
 
   function setBodyFontSize() {
     if (doc.body) {
-      setStyle(doc.body, 'font-size', bodyFontSize * dpr())
+      setStyle(doc.body, 'font-size', bodyFontSize)
     }
     else {
       doc.addEventListener('DOMContentLoaded', setBodyFontSize)
