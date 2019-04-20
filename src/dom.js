@@ -208,6 +208,8 @@ export function rem({
   designDPR = 1,
   rem2px = 100,
   bodyFontSize = 14,
+  maxAdaptedWidth = 1920,
+  minAdaptedWidth = 0,
   win,
   doc
 }) {
@@ -220,6 +222,7 @@ export function rem({
 
   function setDocumentElementFontSize() {
     let adaptedWidth = documentElement.clientWidth
+    adaptedWidth = Math.max(minAdaptedWidth, Math.min(adaptedWidth, maxAdaptedWidth))
     let adaptedDocumentElementFontSize = expectedDocumentElementFontSize * adaptedWidth / expectedWidth
     setStyle(documentElement, 'font-size', adaptedDocumentElementFontSize)
     console.log(`dpr: ${dpr()}, expectedWidth: ${expectedWidth}, deFontSize: ${expectedDocumentElementFontSize}, adaptedWidth: ${adaptedWidth}, adaptedFontSize: ${adaptedDocumentElementFontSize}`)
