@@ -2,7 +2,8 @@ const test = require('tape')
 const mytoolkit = require('../dist/mytoolkit.cjs')
 const {
   Tween,
-  typeOf
+  typeOf,
+  interpolateNumber,
 } = mytoolkit
 
 const wait = time => {
@@ -53,6 +54,32 @@ test('tween can be paused', async t => {
   await wait(100)
   tween.pause()
   t.true(tween.pausedTime)
+
+  t.end()
+})
+
+test('tween can be delayed', async t => {
+  let tweenValue = 0
+  let interpolate = interpolateNumber(0, 100)
+  let tween = new Tween({
+    duration: 1000,
+    delay: 1000,
+    onStep: (t, p) => {
+      tweenValue = interpolate(p)
+    },
+    onPause: t => {
+      //console.log(t)
+    },
+    onEnd: t => {
+      tweenValue = interpolate(1)
+    }
+  }).start()
+  await wait(100)
+  t.is(tweenValue, 0)
+  await wait(1000)
+  t.true(tweenValue > 0)
+  await wait(1000)
+  t.is(tweenValue, 100)
 
   t.end()
 })
