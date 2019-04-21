@@ -82,7 +82,11 @@ export class Tween {
   }
   step(time) {
     this.currentTime = time
-    let span = time - this.startTime
+    let delay = this.options.delay || 0
+    let span = time - this.startTime - delay
+    if (span <= 0) { //do nothing during delay time 
+      return
+    }
     let leftTime = this.duration - span
     let shouldStop = false
     if (leftTime > 0) {
