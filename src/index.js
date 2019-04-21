@@ -14,6 +14,7 @@ export * from './dom'
 export * from './regions'
 export * from './draw'
 export * from './store'
+export * from './interpolate'
 
 export {
   Tween,
