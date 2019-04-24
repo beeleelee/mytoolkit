@@ -3,10 +3,8 @@ import {
   deepCopy,
   assert,
   isArray,
+  randInt,
 } from './base'
-import {
-  randInt
-} from './utils'
 
 /**
  * 

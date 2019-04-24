@@ -1,7 +1,7 @@
 import {
+  tick,
   performanceNow,
-} from './dom'
-import tick from './tick'
+} from './tick'
 /**
  * @class Deceleration - simple animation
  *    - an animation that mimic natrual slow down during scrolling

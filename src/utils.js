@@ -6,6 +6,7 @@ import {
   assert,
   isArray,
   isObject,
+  randInt,
 } from './base'
 import { _dateConvert } from './internal/_date'
 import {
@@ -100,23 +101,6 @@ export function queryJoin(left, right) {
   return [left, joinCharacter, right].join('')
 }
 
-/**
- * @param {Number} min - a simple int 
- * @param {Number} max - a simple int
- * @returns {Number} - a random int between min and max, maybe include min but not max
- */
-export function randInt(min, max) {
-  min = parseInt(min)
-  max = parseInt(max)
-  assert(isNumber(min), `randInt(min, max): expect min to be type of Number, but got ${typeOf(min)}`)
-
-  if (!max) {
-    max = min
-    min = 0
-  }
-  return Math.floor(Math.random() * (max - min) + min)
-}
-
 export function sample1(list) {
   assert(isArray(list), `sample1(list): expect list to be type of Array, but got ${typeOf(list)}`)
   return list[randInt(list.length)]
@@ -125,24 +109,6 @@ export function sample1(list) {
 export function sample(list) {
   assert(isArray(list), `sample(list): expect list to be type of Array, but got ${typeOf(list)}`)
   return shuffle(list).slice(0, randInt(list.length))
-}
-
-/**
- * 
- * @param {Number} size - the size of the return string 
- * @param {String} sourceCode - the source characters from which to generate the random string
- * @returns {String} - a random string 
- */
-export function randStr(size = 6, sourceCode) {
-  let code = '0123456789abcdefghijklmnopqrstuvwxyzsABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  let characters = Array.from({ length: size })
-
-  if (typeOf(sourceCode) === 'String') {
-    code = sourceCode
-  }
-  let codeLength = code.length
-
-  return characters.map(() => code[randInt(codeLength)]).join('')
 }
 
 /**

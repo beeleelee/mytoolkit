@@ -1,6 +1,13 @@
-import {
-  performanceNow,
-} from './dom'
+export const performanceNow = (function () {
+  let now
+  if (typeof performance !== 'undefined') {
+    now = () => performance.now()
+  } else {
+    now = () => +new Date
+  }
+  return now
+})()
+
 /**
  * @ignore
  */

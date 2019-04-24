@@ -266,3 +266,39 @@ export function assert(condition, message) {
     throw new Error(message)
   }
 }
+
+/**
+ * @param {Number} min - a simple int 
+ * @param {Number} max - a simple int
+ * @returns {Number} - a random int between min and max, maybe include min but not max
+ */
+export function randInt(min, max) {
+  min = parseInt(min)
+  max = parseInt(max)
+  assert(isNumber(min), `randInt(min, max): expect min to be type of Number, but got ${typeOf(min)}`)
+
+  if (!max) {
+    max = min
+    min = 0
+  }
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
+
+/**
+ * 
+ * @param {Number} size - the size of the return string 
+ * @param {String} sourceCode - the source characters from which to generate the random string
+ * @returns {String} - a random string 
+ */
+export function randStr(size = 6, sourceCode) {
+  let code = '0123456789abcdefghijklmnopqrstuvwxyzsABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let characters = Array.from({ length: size })
+
+  if (typeOf(sourceCode) === 'String') {
+    code = sourceCode
+  }
+  let codeLength = code.length
+
+  return characters.map(() => code[randInt(codeLength)]).join('')
+}

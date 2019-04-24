@@ -3,11 +3,10 @@ import {
   isUInt
 } from '../base'
 import {
-  currentTime,
-} from '../utils'
-import {
   padZero
 } from '../string'
+
+const currentTime = () => +new Date
 
 const supportedFormats = [
   'yyyy-mm-dd hh:mm:ss',
