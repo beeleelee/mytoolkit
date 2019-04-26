@@ -20,7 +20,9 @@ import {
  */
 export function addComma(num) {
   let numberToAddComma = parseFloat(num)
-  assert(isNumber(num), `addComma(num): expect num to be type of Number, but got ${typeOf(num)}`)
+  if (isNaN(numberToAddComma)) {
+    return num
+  }
 
   let sign = numberToAddComma < 0 ? '-' : ''
   let base = parseInt(Math.abs(numberToAddComma)) + ''
