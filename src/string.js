@@ -98,3 +98,7 @@ export function dashToCamel(dashStr) {
 export function padZero(num, size = 2) {
   return _padStart(num, size, 0)
 }
+
+export function toFixed(num, size = 2) {
+  return Number(num).toFixed(size)
+}
