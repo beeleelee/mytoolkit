@@ -1,7 +1,6 @@
 import {
   typeOf,
   isSet,
-  isNumber,
   isString,
   assert,
   isArray,
