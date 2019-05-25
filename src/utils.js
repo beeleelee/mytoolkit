@@ -190,3 +190,14 @@ export function decodeJSON(str, reviver) {
   }
   return str
 }
+
+export function safeDivide(a, b, digits = 2) {
+  a = parseFloat(a) || 0
+  b = parseFloat(b) || 0
+
+  if (b === 0) {
+    return 0
+  }
+
+  return (a / b).toFixed(digits)
+}
