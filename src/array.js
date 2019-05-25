@@ -166,7 +166,8 @@ export function uniq(list, equalFunc) {
   assert(isArray(list), `uniq(list): expect list to be type of Array, but got ${typeOf(list)}`)
 
   if (isString(equalFunc)) {
-    equalFunc = (a, b) => a[equalFunc] == b[equalFunc]
+    let prop = equalFunc
+    equalFunc = (a, b) => a[prop] == b[prop]
   }
   if (!equalFunc) {
     equalFunc = deepEqual
