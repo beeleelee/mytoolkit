@@ -99,6 +99,6 @@ export function padZero(num, size = 2) {
   return _padStart(num, size, 0)
 }
 
-export function toFixed(num, size = 2) {
-  return Number(num).toFixed(size)
+export function toFixed(num, digits = 2, factor = 1) {
+  return (num * factor).toFixed(digits)
 }

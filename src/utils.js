@@ -201,7 +201,3 @@ export function safeDivide(a, b) {
 
   return a / b
 }
-
-export function toFixed(number, factor = 1, digits = 2) {
-  return (number * factor).toFixed(digits)
-}
