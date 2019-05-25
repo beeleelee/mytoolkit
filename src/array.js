@@ -182,3 +182,25 @@ export function uniq(list, equalFunc) {
 
   return uniqList
 }
+
+export function intersection(lista, listb, equalFunc) {
+  assert(isArray(lista), `uniq(list): expect list to be type of Array, but got ${typeOf(lista)}`)
+  assert(isArray(listb), `uniq(list): expect list to be type of Array, but got ${typeOf(listb)}`)
+
+  if (isString(equalFunc)) {
+    let prop = equalFunc
+    equalFunc = (a, b) => a[prop] == b[prop]
+  }
+  if (!equalFunc) {
+    equalFunc = deepEqual
+  }
+  let intersect = []
+  lista.forEach(itema => {
+    if (listb.some(itemb => equalFunc(itema, itemb))) {
+      intersect.push(itema)
+    }
+  })
+
+  return intersect
+}
+
