@@ -10,7 +10,6 @@ import {
   isString,
   deepEqual,
 } from './base'
-import { isObject, isNumber } from 'util';
 
 
 /**
@@ -262,8 +261,8 @@ export function bounds(list) {
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, x, y
   seek(list)
 
-  function seek(l, index) {
-    l.forEach((item, key) => {
+  function seek(l) {
+    l.forEach((item, index) => {
       if (isString(item) || isNumber(item)) {
         index === 0 && (x0 = Math.min(x0, item))
         index === 1 && (y0 = Math.min(y0, item))
@@ -279,7 +278,7 @@ export function bounds(list) {
         y1 = Math.max(y1, y)
       }
       if (isArray(item)) {
-        seek(item, key)
+        seek(item)
       }
     })
   }
