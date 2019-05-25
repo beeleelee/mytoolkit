@@ -3,11 +3,14 @@ import {
   deepCopy,
   assert,
   isArray,
+  isObject,
+  isFunction,
+  isNumber,
   randInt,
   isString,
   deepEqual,
-  isFunction,
 } from './base'
+import { isObject, isNumber } from 'util';
 
 
 /**
@@ -251,4 +254,34 @@ export function groupBy(list, groupFunc) {
   })
 
   return r
+}
+
+export function bounds(list) {
+  assert(isArray(list), `bounds(list): expect list to be type of Array, but got ${typeOf(list)}`)
+
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, x, y
+  seek(list)
+
+  function seek(l, index) {
+    l.forEach((item, key) => {
+      if (isString(item) || isNumber(item)) {
+        index === 0 && (x0 = Math.min(x0, item))
+        index === 1 && (y0 = Math.min(y0, item))
+        index === 0 && (x1 = Math.max(x1, item))
+        index === 1 && (y1 = Math.max(y1, item))
+      }
+      if (isObject(item)) {
+        x = item['x'] || item['left'] || 0
+        y = item['y'] || item['top'] || 0
+        x0 = Math.min(x0, x)
+        y0 = Math.min(y0, y)
+        x1 = Math.max(x1, x)
+        y1 = Math.max(y1, y)
+      }
+      if (isArray(item)) {
+        seek(item, key)
+      }
+    })
+  }
+  return [[x0, y0], [x1, y1]]
 }
