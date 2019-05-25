@@ -4,7 +4,7 @@ const {
   difference
 } = mytoolkit
 
-test('uniq', t => {
+test('differece', t => {
   let arr1 = [0, 1, 2, 3, 4, 5, 6]
   let arr2 = [2, 3, 4, 8, 9]
   t.deepEqual(difference(arr1, arr2), [0, 1, 5, 6])
