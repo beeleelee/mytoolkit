@@ -4,7 +4,10 @@ import {
   assert,
   isArray,
   randInt,
+  isString,
+  deepEqual,
 } from './base'
+
 
 /**
  * 
@@ -159,8 +162,22 @@ export function shuffle(list) {
  * @param {Array} array - a simple array
  * @returns {Array} - return a new array without doubled values
  */
-export function uniq(list) {
+export function uniq(list, equalFunc) {
   assert(isArray(list), `uniq(list): expect list to be type of Array, but got ${typeOf(list)}`)
 
-  return [...new Set(list)]
+  if (isString(equalFunc)) {
+    equalFunc = (a, b) => a[equalFunc] == b[equalFunc]
+  }
+  if (!equalFunc) {
+    equalFunc = deepEqual
+  }
+  let uniqList = []
+  list.forEach(item => {
+    if (uniqList.some(uniqItem => equalFunc(item, uniqItem))) {
+      return
+    }
+    uniqList.push(item)
+  })
+
+  return uniqList
 }
