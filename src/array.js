@@ -224,3 +224,10 @@ export function difference(lista, listb, equalFunc) {
 
   return r
 }
+
+export function union(lista, listb, equalFunc) {
+  assert(isArray(lista), `uniq(list): expect list to be type of Array, but got ${typeOf(lista)}`)
+  assert(isArray(listb), `uniq(list): expect list to be type of Array, but got ${typeOf(listb)}`)
+
+  return uniq(lista.concat(listb), equalFunc)
+}
