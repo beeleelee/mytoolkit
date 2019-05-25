@@ -6,6 +6,7 @@ import {
   randInt,
   isString,
   deepEqual,
+  isFunction,
 } from './base'
 
 
@@ -163,7 +164,7 @@ export function shuffle(list) {
  * @returns {Array} - return a new array without doubled values
  */
 export function uniq(list, equalFunc) {
-  assert(isArray(list), `uniq(list): expect list to be type of Array, but got ${typeOf(list)}`)
+  assert(isArray(list), `uniq(list, equalFunc): expect list to be type of Array, but got ${typeOf(list)}`)
 
   if (isString(equalFunc)) {
     let prop = equalFunc
@@ -184,8 +185,8 @@ export function uniq(list, equalFunc) {
 }
 
 export function intersection(lista, listb, equalFunc) {
-  assert(isArray(lista), `uniq(list): expect list to be type of Array, but got ${typeOf(lista)}`)
-  assert(isArray(listb), `uniq(list): expect list to be type of Array, but got ${typeOf(listb)}`)
+  assert(isArray(lista), `intersection(lista, listb, equalFunc): expect list to be type of Array, but got ${typeOf(lista)}`)
+  assert(isArray(listb), `intersection(lista, listb, equalFunc): expect list to be type of Array, but got ${typeOf(listb)}`)
 
   if (isString(equalFunc)) {
     let prop = equalFunc
@@ -205,8 +206,8 @@ export function intersection(lista, listb, equalFunc) {
 }
 
 export function difference(lista, listb, equalFunc) {
-  assert(isArray(lista), `uniq(list): expect list to be type of Array, but got ${typeOf(lista)}`)
-  assert(isArray(listb), `uniq(list): expect list to be type of Array, but got ${typeOf(listb)}`)
+  assert(isArray(lista), `difference(lista, listb, equalFunc): expect list to be type of Array, but got ${typeOf(lista)}`)
+  assert(isArray(listb), `difference(lista, listb, equalFunc): expect list to be type of Array, but got ${typeOf(listb)}`)
 
   if (isString(equalFunc)) {
     let prop = equalFunc
@@ -226,8 +227,28 @@ export function difference(lista, listb, equalFunc) {
 }
 
 export function union(lista, listb, equalFunc) {
-  assert(isArray(lista), `uniq(list): expect list to be type of Array, but got ${typeOf(lista)}`)
-  assert(isArray(listb), `uniq(list): expect list to be type of Array, but got ${typeOf(listb)}`)
+  assert(isArray(lista), `union(lista, listb, equalFunc): expect list to be type of Array, but got ${typeOf(lista)}`)
+  assert(isArray(listb), `union(lista, listb, equalFunc): expect list to be type of Array, but got ${typeOf(listb)}`)
 
   return uniq(lista.concat(listb), equalFunc)
+}
+
+export function groupBy(list, groupFunc) {
+  assert(isArray(list), `groupBy(list, groupFunc): expect list to be type of Array, but got ${typeOf(list)}`)
+
+  if (isString(groupFunc)) {
+    let prop = groupFunc
+    groupFunc = item => item[prop]
+  }
+
+  assert(isFunction(groupFunc), `groupBy(list, groupFunc): expect groupFunc to be type of String or Function, but got ${typeOf(groupFunc)}`)
+
+  let r = {}
+  list.forEach(item => {
+    let key = groupFunc(item)
+    r[key] = r[key] || []
+    r[key].push(item)
+  })
+
+  return r
 }
