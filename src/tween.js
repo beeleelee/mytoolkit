@@ -39,6 +39,8 @@ export class Tween {
     this.duration = duration || 0
     this.ease = TimeFunction[ease] || linearEase
     this.options = Object.assign({}, this.options, options)
+
+    return this
   }
   /**
    * @todo add support for restart after pause
@@ -67,6 +69,8 @@ export class Tween {
     if (this.options.onPause) {
       this.options.onPause(this)
     }
+
+    return this
   }
   stop() {
     tick.remove(this.clockId)
@@ -79,6 +83,7 @@ export class Tween {
       this.options.onEnd(this)
     }
     // console.log('tween stop')
+    return this
   }
   step(time) {
     this.currentTime = time
