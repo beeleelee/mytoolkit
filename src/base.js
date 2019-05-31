@@ -57,6 +57,10 @@ export function isEmpty(any) {
   return false
 }
 
+export function hasValue(any) {
+  return isSet(any) && any !== ''
+}
+
 /**
  * we assume Undefined or Null as unsetted value
  * @params {*} value - value to be check
