@@ -1,5 +1,4 @@
 import {
-  isString,
   isObject,
   isArray,
 } from './base'
