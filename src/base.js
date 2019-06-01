@@ -28,31 +28,31 @@ export function isFunction(obj) {
 }
 
 export function isEmptyArray(arr) {
-  assert(isArray(arr), `isEmptyArray(arr): expect arr to be type of Array, but got ${typeOf(arr)}`)
+  // assert(isArray(arr), `isEmptyArray(arr): expect arr to be type of Array, but got ${typeOf(arr)}`)
 
-  return arr.length === 0
+  return isArray(arr) && arr.length === 0
 }
 
 export function isEmptyObject(obj) {
-  assert(isObject(obj), `isEmptyObject(obj): expect obj to be type of Array, but got ${typeOf(obj)}`)
+  // assert(isObject(obj), `isEmptyObject(obj): expect obj to be type of Array, but got ${typeOf(obj)}`)
 
-  return Object.keys(obj).length === 0
+  return isObject(obj) && Object.keys(obj).length === 0
 }
 
 export function isEmptyString(str) {
-  assert(isString(str), `isEmptyString(str): expect str to be type of Array, but got ${typeOf(str)}`)
+  // assert(isString(str), `isEmptyString(str): expect str to be type of Array, but got ${typeOf(str)}`)
 
-  return str === ''
+  return isString(str) && str === ''
 }
 
 export function isEmpty(any) {
   if (isUnset(any)) return true
 
-  if (isArray(any) && isEmptyArray(any)) return true
+  if (isEmptyString(any)) return true
 
-  if (isObject(any) && isEmptyObject(any)) return true
+  if (isEmptyArray(any)) return true
 
-  if (isString(any) && isEmptyString(any)) return true
+  if (isEmptyObject(any)) return true
 
   return false
 }
