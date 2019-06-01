@@ -9,17 +9,24 @@ import {
   randInt,
   isString,
   deepEqual,
+  isSet,
 } from './base'
 
+const defaultFilterFunc = item => isSet(item) && !isNaN(item) && item !== false
 
 /**
  * 
  * @param {Array} array - a simple array
+ * @param {Function} filterFunc - a function to check if item has value 
  * @returns {Array} - a new array without false value
  */
-export function compact(list) {
+export function compact(list, filterFunc) {
   assert(isArray(list), `compact(list): expect list to be type of Array, but got ${typeOf(list)}`)
-  return list.filter(item => item ? true : false)
+  if (!isFunction(filterFunc)) {
+    filterFunc = defaultFilterFunc
+  }
+
+  return list.filter(filterFunc)
 }
 
 /**
