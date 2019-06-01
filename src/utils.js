@@ -17,17 +17,20 @@ import {
  * @param {String|Number} num -  1000 | 10000000.001
  * @returns {String} 1,000 | 10,000,000.001
  */
-export function addComma(num) {
+export function addComma(num, comma) {
   let numberToAddComma = parseFloat(num)
   if (isNaN(numberToAddComma)) {
     return num
+  }
+  if (!isSet(comma)) {
+    comma = ','
   }
 
   let sign = numberToAddComma < 0 ? '-' : ''
   let base = parseInt(Math.abs(numberToAddComma)) + ''
   let decimal = (numberToAddComma + '').replace(/-?\d*/, '')
   let mod = base.length > 3 ? base.length % 3 : 0
-  return sign + (mod ? base.substr(0, mod) + ',' : '') + base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1,') + decimal
+  return sign + (mod ? base.substr(0, mod) + comma : '') + base.substr(mod).replace(/(\d{3})(?=\d)/g, '$1' + comma) + decimal
 }
 
 export function angle2deg(angle) {
