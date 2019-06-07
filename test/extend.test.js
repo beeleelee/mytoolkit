@@ -13,6 +13,6 @@ test('extend', t => {
   t.deepEqual(extend({}, a, c), { a: 'a', b: 'b', c: 'c', d: 'd', x: 'x', z: 'z' })
   t.deepEqual(extend({}, o, a), { a: 'a', b: 'b', c: 'c', d: 'd' })
   t.deepEqual(extend(o, a), { a: 'a', b: 'b', c: 'c', d: 'd' })
-
+  t.deepEqual(extend({}, undefined), {})
   t.end()
 })
