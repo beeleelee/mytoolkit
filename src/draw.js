@@ -1,3 +1,7 @@
+import {
+  deg2angle
+} from './utils'
+
 export const drawLine = (points) => {
   let len = points.length
   let data = []
@@ -69,10 +73,11 @@ export const drawEquilateral = ({
 }) => {
   let path = ''
   let meanAngle = 2 * Math.PI / sidesNum
+  let angleFixed = deg2angle(-90)
   for (let i = 0; i < sidesNum; i++) {
     let action, angle, x, y
     action = i == 0 ? 'M' : 'L'
-    angle = startAngle + meanAngle * i
+    angle = startAngle + angleFixed + meanAngle * i
     x = radius * Math.cos(angle)
     y = radius * Math.sin(angle)
     path += `${action}${x},${y}`
