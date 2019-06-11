@@ -2,7 +2,7 @@ import {
   deg2angle
 } from './utils'
 
-export const drawLine = (points) => {
+export const drawLine = (points, end) => {
   let len = points.length
   let data = []
   let index, point
@@ -10,7 +10,7 @@ export const drawLine = (points) => {
     point = points[index]
     data.push(`${point[0]},${point[1]}`)
   }
-  return `M${data.join('L')}`
+  return `M${data.join('L')}${end ? 'Z' : ''}`
 }
 
 export const drawArc = ({
