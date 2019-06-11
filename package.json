@@ -1,6 +1,6 @@
 {
   "name": "mytoolkit",
-  "version": "1.2.18",
+  "version": "1.2.19",
   "description": "my javascript toolkit",
   "main": "dist/mytoolkit.cjs.js",
   "module": "dist/mytoolkit.esm.js",
