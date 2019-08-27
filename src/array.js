@@ -156,7 +156,9 @@ export function nsmallest(list, num = 1) {
 export function shuffle(list) {
   assert(isArray(list), `shuffle(list): expect list to be type of Array, but got ${typeOf(list)}`)
   const len = list.length
-  const r = [...list]
+  const r = Array.from({ length: len }).map((_, k) => {
+    return list[k]
+  })
   let randIdx, midValue
   for (let i = 0; i < len - 1; i++) {
     randIdx = randInt(i + 1, len)
