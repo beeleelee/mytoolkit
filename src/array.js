@@ -293,3 +293,13 @@ export function bounds(list) {
   }
   return [[x0, y0], [x1, y1]]
 }
+
+export function contains(list, t) {
+  assert(isArray(list), `contains(list): expect list to be type of Array, but got ${typeOf(list)}`)
+  let testFunc = t
+  if (!isFunction(t)) {
+    testFunc = item => item === t
+  }
+  let index = list.findIndex(testFunc)
+  return index > -1
+}
